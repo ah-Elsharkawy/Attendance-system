@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<attendance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\Users\Elsharkawy\Desktop\xml project\attendanceScheme.xsd">
+<attendance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="attendanceScheme.xsd">
 	<record>
 		<std_id>15</std_id>
 		<date>2024-02-02</date>
