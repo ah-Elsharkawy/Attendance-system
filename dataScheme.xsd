@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- types -->
+	<xs:simpleType name="nameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="3"/>
+			<xs:pattern value="[A-Za-z ]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="emailType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="passType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="8"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="roleType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="admin"/>
+			<xs:enumeration value="teacher"/>
+			<xs:enumeration value="student"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="statusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="present"/>
+			<xs:enumeration value="absent"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="classType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PD"/>
+			<xs:enumeration value="OS"/>
+			<xs:enumeration value="AI"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="id" type="xs:integer"/>
+	<xs:element name="name" type="nameType"/>
+	<xs:element name="email" type="emailType"/>
+	<xs:element name="password" type="passType"/>
+	<xs:element name="role" type="roleType"/>
+	<xs:element name="class" type="classType"/>
+	<xs:element name="sClass" type="classType"/>
+	<xs:element name="date" type="xs:date"/>
+	<xs:element name="status" type="statusType"/>
+	<xs:group name="recordGroup">
+		<xs:sequence>
+			<xs:element ref="date"/>
+			<xs:element ref="status"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="recordType">
+		<xs:group ref="recordGroup"/>
+	</xs:complexType>
+	<xs:complexType name="attendType">
+		<xs:sequence>
+			<xs:element name="record" type="recordType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="classesType">
+		<xs:sequence>
+			<xs:element ref="class" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="userInfo">
+		<xs:sequence>
+			<xs:element ref="id"/>
+			<xs:element ref="name"/>
+			<xs:element ref="email"/>
+			<xs:element ref="password"/>
+			<xs:element ref="role"/>
+			<xs:element name="classes" type="classesType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="attendance" type="attendType" minOccurs="0"/>
+			<xs:element ref="sClass" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="userType">
+		<xs:group ref="userInfo"/>
+	</xs:complexType>
+	<!--
+	<xs:group name="userInfo2">
+		<xs:sequence>
+			<xs:element ref="id"/>
+			<xs:element ref="name"/>
+			<xs:element ref="email"/>
+			<xs:element ref="password"/>
+			<xs:element ref="role"/>
+			<xs:element name="classes" type="classesType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="userType2">
+		<xs:group ref="userInfo2"/>
+	</xs:complexType>
+	
+	<xs:complexType name="studentType" >
+		<xs:sequence>
+			<xs:group ref="userInfo2"/>
+			<xs:element name="attendance" type="attendType"/>
+			<xs:element ref="sClass"/>
+		</xs:sequence>
+	</xs:complexType>
+	-->
+	<xs:complexType name="usersType">
+		<xs:sequence>
+			<xs:element name="user" type="userType" maxOccurs="unbounded"/>
+			<!--
+				<xs:element name="student" type="studentType" maxOccurs="unbounded" minOccurs="0"></xs:element>
+				-->
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="users" type="usersType">
+		
+	</xs:element>
+</xs:schema>
