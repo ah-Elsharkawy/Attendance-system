@@ -57,7 +57,7 @@
 				<status>absent</status>
 			</record>
 		</attendance>
-		<sClass>PD</sClass>
+		<sClass>AI</sClass>
 	</user>
 	<user>
 		<id>6</id>
@@ -89,13 +89,21 @@
 	</user>
 	<user>
 		<id>8</id>
-		<name>ahmed</name>
+		<name>Mohamed</name>
 		<email>f@gmail.com</email>
 		<password>12345678</password>
 		<role>student</role>
 		<attendance>
 			<record>
 				<date>2024-02-02</date>
+				<status>absent</status>
+			</record>
+			<record>
+				<date>2024-03-02</date>
+				<status>absent</status>
+			</record>
+			<record>
+				<date>2024-03-02</date>
 				<status>absent</status>
 			</record>
 		</attendance>
