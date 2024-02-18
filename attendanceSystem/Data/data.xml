@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dataScheme.xsd">
 	<user>
 		<id>1</id>
@@ -57,7 +57,7 @@
 				<status>absent</status>
 			</record>
 		</attendance>
-		<sClass>AI</sClass>
+		<sClass>PD</sClass>
 	</user>
 	<user>
 		<id>6</id>
@@ -89,21 +89,13 @@
 	</user>
 	<user>
 		<id>8</id>
-		<name>Mohamed</name>
+		<name>ahmed</name>
 		<email>f@gmail.com</email>
 		<password>12345678</password>
 		<role>student</role>
 		<attendance>
 			<record>
 				<date>2024-02-02</date>
-				<status>absent</status>
-			</record>
-			<record>
-				<date>2024-03-02</date>
-				<status>absent</status>
-			</record>
-			<record>
-				<date>2024-03-02</date>
 				<status>absent</status>
 			</record>
 		</attendance>
@@ -139,7 +131,7 @@
 	</user>
 	<user>
 		<id>11</id>
-		<name>saif</name>
+		<name>ahmed</name>
 		<email>i@gmail.com</email>
 		<password>12345678</password>
 		<role>student</role>
@@ -153,7 +145,7 @@
 	</user>
 	<user>
 		<id>12</id>
-		<name>ali</name>
+		<name>ahmed</name>
 		<email>j@gmail.com</email>
 		<password>12345678</password>
 		<role>student</role>
@@ -170,8 +162,8 @@
 		<sClass>PD</sClass>
 	</user>
 	<user>
-		<id>13</id>
-		<name>mohamed</name>
+		<id>12</id>
+		<name>ahmed</name>
 		<email>j@gmail.com</email>
 		<password>12345678</password>
 		<role>student</role>
@@ -183,5 +175,5 @@
 		</attendance>
 		<sClass>PD</sClass>
 	</user>
-	
+
 </users>

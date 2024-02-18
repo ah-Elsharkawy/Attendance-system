@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!-- types -->
 	<xs:simpleType name="nameType">
@@ -73,7 +73,7 @@
 			<xs:element ref="email"/>
 			<xs:element ref="password"/>
 			<xs:element ref="role"/>
-			<xs:element name="classes" type="classesType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="classes" type="classesType" minOccurs="0"/>
 			<xs:element name="attendance" type="attendType" minOccurs="0"/>
 			<xs:element ref="sClass" minOccurs="0"/>
 		</xs:sequence>
@@ -113,7 +113,5 @@
 				-->
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="users" type="usersType">
-		
-	</xs:element>
+	<xs:element name="users" type="usersType"/>
 </xs:schema>
