@@ -6,7 +6,7 @@
 	
 	<xsl:template match="/">
 		<xsl:for-each select="//user">
-			<xsl:if test="id = $userId">
+			<xsl:if test="Id = $userId">
 				<xsl:copy-of select="."/>
 			</xsl:if>
 		</xsl:for-each>

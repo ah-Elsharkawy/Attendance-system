@@ -10,7 +10,7 @@
 		<h2 style="text-align:center; font-weight:600; color:blue;">Student Report by Date range</h2>
 
 		<table border="1" align="center">
-			<xsl:apply-templates select="user[id=$userId]" />
+			<xsl:apply-templates select="user[Id=$userId]" />
 		</table>
 	</xsl:template>
 
@@ -21,18 +21,18 @@
 				Attendance records for <xsl:value-of select="name" />
 			</th>
 		</tr>
-		<xsl:apply-templates select="attendance/record[date=$startDate]" />
-		<xsl:apply-templates select="attendance/record[date=$endDate]" />
+		<xsl:apply-templates select="attendance/record[Date=$startDate]" />
+		<xsl:apply-templates select="attendance/record[Date=$endDate]" />
 	</xsl:template>
 
 	<!-- Template to match attendance record for the specified date -->
-	<xsl:template match="record">
+	<xsl:template match="Record">
 		<tr>
 			<td>
-				<xsl:value-of select="date" />
+				<xsl:value-of select="Date" />
 			</td>
 			<td>
-				<xsl:value-of select="status" />
+				<xsl:value-of select="Status" />
 			</td>
 		</tr>
 	</xsl:template>

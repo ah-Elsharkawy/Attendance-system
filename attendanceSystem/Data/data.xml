@@ -1,178 +1,178 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dataScheme.xsd">
 	<user>
-		<id>1</id>
-		<name>ahmed</name>
-		<email>a@gmail.com</email>
-		<password>12345678</password>
-		<role>admin</role>
+		<Id>1</Id>
+		<Name>ahmed</Name>
+		<Email>a@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>admin</Role>
 	</user>
 	<user>
-		<id>2</id>
-		<name>mohamed</name>
-		<email>n@gmail.com</email>
-		<password>12345678</password>
-		<role>teacher</role>
-		<classes>
+		<Id>2</Id>
+		<Name>mohamed</Name>
+		<Email>n@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>teacher</Role>
+		<Classes>
 			<class>PD</class>
 			<class>OS</class>
 			<class>AI</class>
-		</classes>
+		</Classes>
 	</user>
 	<user>
-		<id>3</id>
-		<name>mahmoud</name>
-		<email>m@gmail.com</email>
-		<password>12345678</password>
-		<role>teacher</role>
-		<classes>
+		<Id>3</Id>
+		<Name>mahmoud</Name>
+		<Email>m@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>teacher</Role>
+		<Classes>
 			<class>PD</class>
 			<class>OS</class>
 			<class>AI</class>
-		</classes>
+		</Classes>
 	</user>
 	<user>
-		<id>4</id>
-		<name>ahmed</name>
-		<email>b@gmail.com</email>
-		<password>12345678</password>
-		<role>student</role>
-		<attendance>
-			<record>
-				<date>2024-02-02</date>
-				<status>absent</status>
-			</record>
-		</attendance>
+		<Id>4</Id>
+		<Name>ahmed</Name>
+		<Email>b@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>student</Role>
+		<Attendance>
+			<Record>
+				<Date>2024-02-02</Date>
+				<Status>absent</Status>
+			</Record>
+		</Attendance>
 		<sClass>PD</sClass>
 	</user>
 	<user>
-		<id>5</id>
-		<name>ahmed</name>
-		<email>c@gmail.com</email>
-		<password>12345678</password>
-		<role>student</role>
-		<attendance>
-			<record>
-				<date>2024-02-02</date>
-				<status>absent</status>
-			</record>
-		</attendance>
+		<Id>5</Id>
+		<Name>ahmed</Name>
+		<Email>c@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>student</Role>
+		<Attendance>
+			<Record>
+				<Date>2024-02-02</Date>
+				<Status>absent</Status>
+			</Record>
+		</Attendance>
 		<sClass>PD</sClass>
 	</user>
 	<user>
-		<id>6</id>
-		<name>ahmed</name>
-		<email>d@gmail.com</email>
-		<password>12345678</password>
-		<role>student</role>
-		<attendance>
-			<record>
-				<date>2024-02-02</date>
-				<status>absent</status>
-			</record>
-		</attendance>
+		<Id>6</Id>
+		<Name>ahmed</Name>
+		<Email>d@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>student</Role>
+		<Attendance>
+			<Record>
+				<Date>2024-02-02</Date>
+				<Status>absent</Status>
+			</Record>
+		</Attendance>
 		<sClass>PD</sClass>
 	</user>
 	<user>
-		<id>7</id>
-		<name>ahmed</name>
-		<email>e@gmail.com</email>
-		<password>12345678</password>
-		<role>student</role>
-		<attendance>
-			<record>
-				<date>2024-02-02</date>
-				<status>absent</status>
-			</record>
-		</attendance>
+		<Id>7</Id>
+		<Name>ahmed</Name>
+		<Email>e@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>student</Role>
+		<Attendance>
+			<Record>
+				<Date>2024-02-02</Date>
+				<Status>absent</Status>
+			</Record>
+		</Attendance>
 		<sClass>PD</sClass>
 	</user>
 	<user>
-		<id>8</id>
-		<name>ahmed</name>
-		<email>f@gmail.com</email>
-		<password>12345678</password>
-		<role>student</role>
-		<attendance>
-			<record>
-				<date>2024-02-02</date>
-				<status>absent</status>
-			</record>
-		</attendance>
+		<Id>8</Id>
+		<Name>ahmed</Name>
+		<Email>f@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>student</Role>
+		<Attendance>
+			<Record>
+				<Date>2024-02-02</Date>
+				<Status>absent</Status>
+			</Record>
+		</Attendance>
 		<sClass>PD</sClass>
 	</user>
 	<user>
-		<id>9</id>
-		<name>ahmed</name>
-		<email>g@gmail.com</email>
-		<password>12345678</password>
-		<role>student</role>
-		<attendance>
-			<record>
-				<date>2024-02-02</date>
-				<status>absent</status>
-			</record>
-		</attendance>
+		<Id>9</Id>
+		<Name>ahmed</Name>
+		<Email>g@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>student</Role>
+		<Attendance>
+			<Record>
+				<Date>2024-02-02</Date>
+				<Status>absent</Status>
+			</Record>
+		</Attendance>
 		<sClass>PD</sClass>
 	</user>
 	<user>
-		<id>10</id>
-		<name>ahmed</name>
-		<email>h@gmail.com</email>
-		<password>12345678</password>
-		<role>student</role>
-		<attendance>
-			<record>
-				<date>2024-02-02</date>
-				<status>absent</status>
-			</record>
-		</attendance>
+		<Id>10</Id>
+		<Name>ahmed</Name>
+		<Email>h@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>student</Role>
+		<Attendance>
+			<Record>
+				<Date>2024-02-02</Date>
+				<Status>absent</Status>
+			</Record>
+		</Attendance>
 		<sClass>PD</sClass>
 	</user>
 	<user>
-		<id>11</id>
-		<name>ahmed</name>
-		<email>i@gmail.com</email>
-		<password>12345678</password>
-		<role>student</role>
-		<attendance>
-			<record>
-				<date>2024-02-02</date>
-				<status>absent</status>
-			</record>
-		</attendance>
+		<Id>11</Id>
+		<Name>ahmed</Name>
+		<Email>i@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>student</Role>
+		<Attendance>
+			<Record>
+				<Date>2024-02-02</Date>
+				<Status>absent</Status>
+			</Record>
+		</Attendance>
 		<sClass>PD</sClass>
 	</user>
 	<user>
-		<id>12</id>
-		<name>ahmed</name>
-		<email>j@gmail.com</email>
-		<password>12345678</password>
-		<role>student</role>
-		<attendance>
-			<record>
-				<date>2024-02-02</date>
-				<status>present</status>
-			</record>
-			<record>
-				<date>2024-02-03</date>
-				<status>present</status>
-			</record>
-		</attendance>
+		<Id>12</Id>
+		<Name>ahmed</Name>
+		<Email>j@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>student</Role>
+		<Attendance>
+			<Record>
+				<Date>2024-02-02</Date>
+				<Status>present</Status>
+			</Record>
+			<Record>
+				<Date>2024-02-03</Date>
+				<Status>present</Status>
+			</Record>
+		</Attendance>
 		<sClass>PD</sClass>
 	</user>
 	<user>
-		<id>12</id>
-		<name>ahmed</name>
-		<email>j@gmail.com</email>
-		<password>12345678</password>
-		<role>student</role>
-		<attendance>
-			<record>
-				<date>2024-02-03</date>
-				<status>present</status>
-			</record>
-		</attendance>
+		<Id>12</Id>
+		<Name>ahmed</Name>
+		<Email>j@gmail.com</Email>
+		<Password>12345678</Password>
+		<Role>student</Role>
+		<Attendance>
+			<Record>
+				<Date>2024-02-03</Date>
+				<Status>present</Status>
+			</Record>
+		</Attendance>
 		<sClass>PD</sClass>
 	</user>
 
