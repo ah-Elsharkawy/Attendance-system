@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!-- types -->
 	<xs:simpleType name="nameType">
@@ -38,19 +38,19 @@
 			<xs:enumeration value="AI"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:element name="id" type="xs:integer"/>
-	<xs:element name="name" type="nameType"/>
-	<xs:element name="email" type="emailType"/>
-	<xs:element name="password" type="passType"/>
-	<xs:element name="role" type="roleType"/>
+	<xs:element name="Id" type="xs:integer"/>
+	<xs:element name="Name" type="nameType"/>
+	<xs:element name="Email" type="emailType"/>
+	<xs:element name="Password" type="passType"/>
+	<xs:element name="Role" type="roleType"/>
 	<xs:element name="class" type="classType"/>
 	<xs:element name="sClass" type="classType"/>
-	<xs:element name="date" type="xs:date"/>
-	<xs:element name="status" type="statusType"/>
+	<xs:element name="Date" type="xs:date"/>
+	<xs:element name="Status" type="statusType"/>
 	<xs:group name="recordGroup">
 		<xs:sequence>
-			<xs:element ref="date"/>
-			<xs:element ref="status"/>
+			<xs:element ref="Date"/>
+			<xs:element ref="Status"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="recordType">
@@ -58,7 +58,7 @@
 	</xs:complexType>
 	<xs:complexType name="attendType">
 		<xs:sequence>
-			<xs:element name="record" type="recordType" maxOccurs="unbounded"/>
+			<xs:element name="Record" type="recordType" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="classesType">
@@ -68,13 +68,13 @@
 	</xs:complexType>
 	<xs:group name="userInfo">
 		<xs:sequence>
-			<xs:element ref="id"/>
-			<xs:element ref="name"/>
-			<xs:element ref="email"/>
-			<xs:element ref="password"/>
-			<xs:element ref="role"/>
-			<xs:element name="classes" type="classesType" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="attendance" type="attendType" minOccurs="0"/>
+			<xs:element ref="Id"/>
+			<xs:element ref="Name"/>
+			<xs:element ref="Email"/>
+			<xs:element ref="Password"/>
+			<xs:element ref="Role"/>
+			<xs:element name="Classes" type="classesType" minOccurs="0"/>
+			<xs:element name="Attendance" type="attendType" minOccurs="0"/>
 			<xs:element ref="sClass" minOccurs="0"/>
 		</xs:sequence>
 	</xs:group>
@@ -113,7 +113,5 @@
 				-->
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="users" type="usersType">
-		
-	</xs:element>
+	<xs:element name="users" type="usersType"/>
 </xs:schema>
