@@ -5,14 +5,14 @@
 		<Name>ahmed</Name>
 		<Email>a@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>admin</Role>
+		<Role>Admin</Role>
 	</user>
 	<user>
 		<Id>2</Id>
 		<Name>mohamed</Name>
 		<Email>n@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>teacher</Role>
+		<Role>Teacher</Role>
 		<Classes>
 			<class>PD</class>
 			<class>OS</class>
@@ -24,7 +24,7 @@
 		<Name>mahmoud</Name>
 		<Email>m@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>teacher</Role>
+		<Role>Teacher</Role>
 		<Classes>
 			<class>PD</class>
 			<class>OS</class>
@@ -36,7 +36,7 @@
 		<Name>ahmed</Name>
 		<Email>b@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>student</Role>
+		<Role>Student</Role>
 		<Attendance>
 			<Record>
 				<Date>2024-02-02</Date>
@@ -50,7 +50,7 @@
 		<Name>ahmed</Name>
 		<Email>c@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>student</Role>
+		<Role>Student</Role>
 		<Attendance>
 			<Record>
 				<Date>2024-02-02</Date>
@@ -64,7 +64,7 @@
 		<Name>ahmed</Name>
 		<Email>d@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>student</Role>
+		<Role>Student</Role>
 		<Attendance>
 			<Record>
 				<Date>2024-02-02</Date>
@@ -78,7 +78,7 @@
 		<Name>ahmed</Name>
 		<Email>e@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>student</Role>
+		<Role>Student</Role>
 		<Attendance>
 			<Record>
 				<Date>2024-02-02</Date>
@@ -92,7 +92,7 @@
 		<Name>ahmed</Name>
 		<Email>f@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>student</Role>
+		<Role>Student</Role>
 		<Attendance>
 			<Record>
 				<Date>2024-02-02</Date>
@@ -106,7 +106,7 @@
 		<Name>ahmed</Name>
 		<Email>g@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>student</Role>
+		<Role>Student</Role>
 		<Attendance>
 			<Record>
 				<Date>2024-02-02</Date>
@@ -120,7 +120,7 @@
 		<Name>ahmed</Name>
 		<Email>h@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>student</Role>
+		<Role>Student</Role>
 		<Attendance>
 			<Record>
 				<Date>2024-02-02</Date>
@@ -134,7 +134,7 @@
 		<Name>ahmed</Name>
 		<Email>i@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>student</Role>
+		<Role>Student</Role>
 		<Attendance>
 			<Record>
 				<Date>2024-02-02</Date>
@@ -148,7 +148,7 @@
 		<Name>ahmed</Name>
 		<Email>j@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>student</Role>
+		<Role>Student</Role>
 		<Attendance>
 			<Record>
 				<Date>2024-02-02</Date>
@@ -166,7 +166,7 @@
 		<Name>ahmed</Name>
 		<Email>j@gmail.com</Email>
 		<Password>12345678</Password>
-		<Role>student</Role>
+		<Role>Student</Role>
 		<Attendance>
 			<Record>
 				<Date>2024-02-03</Date>

@@ -46,7 +46,7 @@ namespace attendanceSystem
 
     public class Record
     {
-        public DateTime Date { get; set; }
+        public DateOnly Date { get; set; }
         public string Status { get; set; }
     }
 

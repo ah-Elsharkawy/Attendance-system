@@ -20,9 +20,9 @@
 	</xs:simpleType>
 	<xs:simpleType name="roleType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="admin"/>
-			<xs:enumeration value="teacher"/>
-			<xs:enumeration value="student"/>
+			<xs:enumeration value="Admin"/>
+			<xs:enumeration value="Teacher"/>
+			<xs:enumeration value="Student"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="statusType">
