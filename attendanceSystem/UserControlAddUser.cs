@@ -16,17 +16,17 @@ namespace attendanceSystem
         {
             InitializeComponent();
         }
-        public void ClearTextBox()
-textBoxName.Clear( ) ;
-textBoxHmStudent.Clear( ) ;
-textBoxMa1e.C1ear();
-textBoxFema1e.Clear( ) ;
-tabControIAddCIass.SelectedTab = tabPageAddCIass;
-private void ClearTextBox1()
-textBoxName1.Clear() ;
-textBoxHmStudent1.Clear( ) ;
-textBoxMa1e1.C1ear();
-textBoxFema1eI.Clear( ) ;
-CID =
+//        public void ClearTextBox()
+//textBoxName.Clear( ) ;
+//textBoxHmStudent.Clear( ) ;
+//textBoxMa1e.C1ear();
+//textBoxFema1e.Clear( ) ;
+//tabControIAddCIass.SelectedTab = tabPageAddCIass;
+//private void ClearTextBox1()
+//textBoxName1.Clear() ;
+//textBoxHmStudent1.Clear( ) ;
+//textBoxMa1e1.C1ear();
+//textBoxFema1eI.Clear( ) ;
+//CID =
     }
 }
