@@ -60,7 +60,7 @@ namespace attendanceSystem
                 }
             };
 
-            DataManager.currentUser = student;
+            DataManager.currentUser = admin;
             currentUserNameLabel.Text = DataManager.currentUser.Name;
             var role = DataManager.currentUser.Role;
             if (role == "Admin")
