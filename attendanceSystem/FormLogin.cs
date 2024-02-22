@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Attendance_Management_System.PAL.Forms
+namespace attendanceSystem
 {
     public partial class FormLogin : Form
     {
@@ -119,7 +119,7 @@ namespace Attendance_Management_System.PAL.Forms
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            string check = Attendance.Attendance.IsValidNamePass(textBoxName.Text.Trim(),textBoxPassword.Text.Trim, XmlReadMode)
+            //string check = Attendance.Attendance.IsValidNamePass(textBoxName.Text.Trim(),textBoxPassword.Text.Trim, XmlReadMode)
         }
     }
 }

@@ -218,7 +218,7 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Image = global::Attendance_Management_System.Properties.Resources.icons8_login_50__1_;
+            //this.buttonLogin.Image = global::Attendance_Management_System.Properties.Resources.icons8_login_50__1_;
             this.buttonLogin.Location = new System.Drawing.Point(78, 255);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonLogin.Name = "buttonLogin";
@@ -233,7 +233,7 @@
             // pictureBoxError
             // 
             this.pictureBoxError.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxError.Image = global::Attendance_Management_System.Properties.Resources.icons8_exclamation_mark_96__1_;
+            //this.pictureBoxError.Image = global::Attendance_Management_System.Properties.Resources.icons8_exclamation_mark_96__1_;
             this.pictureBoxError.Location = new System.Drawing.Point(78, 187);
             this.pictureBoxError.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBoxError.Name = "pictureBoxError";
@@ -247,7 +247,7 @@
             // 
             this.pictureBoxShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxShow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxShow.Image = global::Attendance_Management_System.Properties.Resources.icons8_eye_961;
+            //this.pictureBoxShow.Image = global::Attendance_Management_System.Properties.Resources.icons8_eye_961;
             this.pictureBoxShow.Location = new System.Drawing.Point(266, 152);
             this.pictureBoxShow.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBoxShow.Name = "pictureBoxShow";
@@ -262,7 +262,7 @@
             // 
             this.pictureBoxHide.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxHide.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxHide.Image = global::Attendance_Management_System.Properties.Resources.icons8_hide_96;
+            //this.pictureBoxHide.Image = global::Attendance_Management_System.Properties.Resources.icons8_hide_96;
             this.pictureBoxHide.Location = new System.Drawing.Point(266, 152);
             this.pictureBoxHide.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBoxHide.Name = "pictureBoxHide";
@@ -276,7 +276,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Image = global::Attendance_Management_System.Properties.Resources.icons8_graduate_64;
+            //this.pictureBox1.Image = global::Attendance_Management_System.Properties.Resources.icons8_graduate_64;
             this.pictureBox1.Location = new System.Drawing.Point(990, 160);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -290,7 +290,7 @@
             // 
             this.pictureBoxMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxMinimize.Image = global::Attendance_Management_System.Properties.Resources.icons8_minimize_96;
+            //this.pictureBoxMinimize.Image = global::Attendance_Management_System.Properties.Resources.icons8_minimize_96;
             this.pictureBoxMinimize.Location = new System.Drawing.Point(1263, 8);
             this.pictureBoxMinimize.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBoxMinimize.Name = "pictureBoxMinimize";
@@ -305,7 +305,7 @@
             // 
             this.pictureBoxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxClose.Image = global::Attendance_Management_System.Properties.Resources.icons8_x_96__3_;
+            //this.pictureBoxClose.Image = global::Attendance_Management_System.Properties.Resources.icons8_x_96__3_;
             this.pictureBoxClose.Location = new System.Drawing.Point(1294, 8);
             this.pictureBoxClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBoxClose.Name = "pictureBoxClose";
