@@ -28,336 +28,347 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.labelError = new System.Windows.Forms.Label();
-            this.labelFP = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonLogin = new System.Windows.Forms.Button();
-            this.pictureBoxError = new System.Windows.Forms.PictureBox();
-            this.pictureBoxShow = new System.Windows.Forms.PictureBox();
-            this.pictureBoxHide = new System.Windows.Forms.PictureBox();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMinimize = new System.Windows.Forms.PictureBox();
-            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxError)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHide)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
-            this.SuspendLayout();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            panel2 = new Panel();
+            label1 = new Label();
+            textBoxName = new TextBox();
+            label2 = new Label();
+            textBoxPassword = new TextBox();
+            labelError = new Label();
+            labelFP = new Label();
+            groupBox1 = new GroupBox();
+            buttonLogin = new Button();
+            pictureBoxError = new PictureBox();
+            pictureBoxShow = new PictureBox();
+            pictureBoxHide = new PictureBox();
+            toolTip = new ToolTip(components);
+            pictureBoxMinimize = new PictureBox();
+            pictureBoxClose = new PictureBox();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxError).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxShow).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxHide).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(3)))), ((int)(((byte)(125)))));
-            this.label3.Location = new System.Drawing.Point(906, 377);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(362, 32);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Attendance Management ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(67, 3, 125);
+            label3.Location = new Point(906, 377);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(362, 32);
+            label3.TabIndex = 0;
+            label3.Text = "Attendance Management ";
+            label3.Click += label3_Click;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(3)))), ((int)(((byte)(125)))));
-            this.label4.Location = new System.Drawing.Point(1031, 415);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 32);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "System";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold);
+            label4.ForeColor = Color.FromArgb(67, 3, 125);
+            label4.Location = new Point(1031, 415);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(106, 32);
+            label4.TabIndex = 0;
+            label4.Text = "System";
+            label4.Click += label4_Click;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(123)))), ((int)(((byte)(201)))));
-            this.label5.Location = new System.Drawing.Point(944, 461);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(282, 33);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "By C# Model Design";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 15.75F);
+            label5.ForeColor = Color.FromArgb(17, 123, 201);
+            label5.Location = new Point(944, 461);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(282, 33);
+            label5.TabIndex = 0;
+            label5.Text = "By C# Model Design";
+            label5.Click += label5_Click;
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.label6.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label6.Location = new System.Drawing.Point(11, 591);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(275, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "copyright © 2024.All Rights Reserved.";
+            label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Font = new Font("Century Gothic", 9F);
+            label6.ForeColor = SystemColors.WindowText;
+            label6.Location = new Point(11, 591);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(275, 20);
+            label6.TabIndex = 6;
+            label6.Text = "copyright © 2024.All Rights Reserved.";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Location = new System.Drawing.Point(732, 149);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(4, 373);
-            this.panel2.TabIndex = 0;
+            panel2.BackColor = SystemColors.Control;
+            panel2.Location = new Point(732, 149);
+            panel2.Margin = new Padding(2, 3, 2, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(4, 373);
+            panel2.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 54);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(77, 54);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(96, 19);
+            label1.TabIndex = 0;
+            label1.Text = "Username:";
+            label1.Click += label1_Click;
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(79, 84);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(222, 28);
-            this.textBoxName.TabIndex = 1;
+            textBoxName.Location = new Point(79, 84);
+            textBoxName.Margin = new Padding(2, 3, 2, 3);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(222, 28);
+            textBoxName.TabIndex = 1;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(77, 121);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Password:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(77, 121);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(92, 19);
+            label2.TabIndex = 0;
+            label2.Text = "Password:";
+            label2.Click += label2_Click;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPassword.Location = new System.Drawing.Point(79, 152);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(222, 28);
-            this.textBoxPassword.TabIndex = 2;
+            textBoxPassword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxPassword.Location = new Point(79, 152);
+            textBoxPassword.Margin = new Padding(2, 3, 2, 3);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(222, 28);
+            textBoxPassword.TabIndex = 2;
             // 
             // labelError
             // 
-            this.labelError.AutoSize = true;
-            this.labelError.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.labelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.labelError.Location = new System.Drawing.Point(103, 189);
-            this.labelError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(230, 20);
-            this.labelError.TabIndex = 0;
-            this.labelError.Text = "Invalid Username or Password";
+            labelError.AutoSize = true;
+            labelError.Font = new Font("Century Gothic", 9F);
+            labelError.ForeColor = Color.FromArgb(234, 73, 73);
+            labelError.Location = new Point(103, 189);
+            labelError.Margin = new Padding(2, 0, 2, 0);
+            labelError.Name = "labelError";
+            labelError.Size = new Size(230, 20);
+            labelError.TabIndex = 0;
+            labelError.Text = "Invalid Username or Password";
             // 
             // labelFP
             // 
-            this.labelFP.AutoSize = true;
-            this.labelFP.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelFP.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(3)))), ((int)(((byte)(125)))));
-            this.labelFP.Location = new System.Drawing.Point(138, 218);
-            this.labelFP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelFP.Name = "labelFP";
-            this.labelFP.Size = new System.Drawing.Size(152, 19);
-            this.labelFP.TabIndex = 0;
-            this.labelFP.Text = "Forget Password?";
+            labelFP.AutoSize = true;
+            labelFP.Cursor = Cursors.Hand;
+            labelFP.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelFP.ForeColor = Color.FromArgb(67, 3, 125);
+            labelFP.Location = new Point(138, 218);
+            labelFP.Margin = new Padding(2, 0, 2, 0);
+            labelFP.Name = "labelFP";
+            labelFP.Size = new Size(152, 19);
+            labelFP.TabIndex = 0;
+            labelFP.Text = "Forget Password?";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.buttonLogin);
-            this.groupBox1.Controls.Add(this.labelFP);
-            this.groupBox1.Controls.Add(this.labelError);
-            this.groupBox1.Controls.Add(this.pictureBoxError);
-            this.groupBox1.Controls.Add(this.pictureBoxShow);
-            this.groupBox1.Controls.Add(this.textBoxPassword);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBoxName);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.pictureBoxHide);
-            this.groupBox1.Location = new System.Drawing.Point(154, 160);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox1.Size = new System.Drawing.Size(440, 344);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Please Login First";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            groupBox1.Controls.Add(buttonLogin);
+            groupBox1.Controls.Add(labelFP);
+            groupBox1.Controls.Add(labelError);
+            groupBox1.Controls.Add(pictureBoxError);
+            groupBox1.Controls.Add(pictureBoxShow);
+            groupBox1.Controls.Add(textBoxPassword);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(textBoxName);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(pictureBoxHide);
+            groupBox1.Controls.Add(pictureBox2);
+            groupBox1.Location = new Point(154, 160);
+            groupBox1.Margin = new Padding(2, 3, 2, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(2, 3, 2, 3);
+            groupBox1.Size = new Size(440, 344);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Please Login First";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // buttonLogin
             // 
-            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(3)))), ((int)(((byte)(125)))));
-            this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonLogin.FlatAppearance.BorderSize = 0;
-            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
-            this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            //this.buttonLogin.Image = global::Attendance_Management_System.Properties.Resources.icons8_login_50__1_;
-            this.buttonLogin.Location = new System.Drawing.Point(78, 255);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(222, 57);
-            this.buttonLogin.TabIndex = 3;
-            this.buttonLogin.Text = "Secure Log In";
-            this.buttonLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            buttonLogin.BackColor = Color.FromArgb(67, 3, 125);
+            buttonLogin.Cursor = Cursors.Hand;
+            buttonLogin.FlatAppearance.BorderSize = 0;
+            buttonLogin.FlatStyle = FlatStyle.Flat;
+            buttonLogin.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            buttonLogin.ForeColor = Color.White;
+            buttonLogin.Image = Properties.Resources.icons8_login_50__1_1;
+            buttonLogin.Location = new Point(78, 255);
+            buttonLogin.Margin = new Padding(2, 3, 2, 3);
+            buttonLogin.Name = "buttonLogin";
+            buttonLogin.Size = new Size(222, 53);
+            buttonLogin.TabIndex = 3;
+            buttonLogin.Text = "Secure Log In";
+            buttonLogin.TextAlign = ContentAlignment.MiddleRight;
+            buttonLogin.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonLogin.UseVisualStyleBackColor = false;
+            buttonLogin.Click += buttonLogin_Click;
             // 
             // pictureBoxError
             // 
-            this.pictureBoxError.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.pictureBoxError.Image = global::Attendance_Management_System.Properties.Resources.icons8_exclamation_mark_96__1_;
-            this.pictureBoxError.Location = new System.Drawing.Point(78, 187);
-            this.pictureBoxError.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBoxError.Name = "pictureBoxError";
-            this.pictureBoxError.Size = new System.Drawing.Size(21, 23);
-            this.pictureBoxError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxError.TabIndex = 5;
-            this.pictureBoxError.TabStop = false;
-            this.pictureBoxError.Click += new System.EventHandler(this.pictureBoxError_Click);
+            pictureBoxError.Cursor = Cursors.Hand;
+            pictureBoxError.Image = Properties.Resources.icons8_exclamation_mark_96__1_;
+            pictureBoxError.Location = new Point(78, 187);
+            pictureBoxError.Margin = new Padding(2, 3, 2, 3);
+            pictureBoxError.Name = "pictureBoxError";
+            pictureBoxError.Size = new Size(21, 23);
+            pictureBoxError.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxError.TabIndex = 5;
+            pictureBoxError.TabStop = false;
+            pictureBoxError.Click += pictureBoxError_Click;
             // 
             // pictureBoxShow
             // 
-            this.pictureBoxShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxShow.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.pictureBoxShow.Image = global::Attendance_Management_System.Properties.Resources.icons8_eye_961;
-            this.pictureBoxShow.Location = new System.Drawing.Point(266, 152);
-            this.pictureBoxShow.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBoxShow.Name = "pictureBoxShow";
-            this.pictureBoxShow.Size = new System.Drawing.Size(35, 24);
-            this.pictureBoxShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxShow.TabIndex = 4;
-            this.pictureBoxShow.TabStop = false;
-            this.pictureBoxShow.Click += new System.EventHandler(this.label2_Click);
-            this.pictureBoxShow.MouseHover += new System.EventHandler(this.pictureBoxShow_MouseHover);
+            pictureBoxShow.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxShow.Cursor = Cursors.Hand;
+            pictureBoxShow.Image = (Image)resources.GetObject("pictureBoxShow.Image");
+            pictureBoxShow.Location = new Point(266, 152);
+            pictureBoxShow.Margin = new Padding(2, 3, 2, 3);
+            pictureBoxShow.Name = "pictureBoxShow";
+            pictureBoxShow.Size = new Size(35, 24);
+            pictureBoxShow.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxShow.TabIndex = 4;
+            pictureBoxShow.TabStop = false;
+            pictureBoxShow.Click += label2_Click;
+            pictureBoxShow.MouseHover += pictureBoxShow_MouseHover;
             // 
             // pictureBoxHide
             // 
-            this.pictureBoxHide.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxHide.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.pictureBoxHide.Image = global::Attendance_Management_System.Properties.Resources.icons8_hide_96;
-            this.pictureBoxHide.Location = new System.Drawing.Point(266, 152);
-            this.pictureBoxHide.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBoxHide.Name = "pictureBoxHide";
-            this.pictureBoxHide.Size = new System.Drawing.Size(35, 24);
-            this.pictureBoxHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxHide.TabIndex = 7;
-            this.pictureBoxHide.TabStop = false;
-            this.pictureBoxHide.Click += new System.EventHandler(this.pictureBoxHide_Click);
-            this.pictureBoxHide.MouseHover += new System.EventHandler(this.pictureBoxHide_MouseHover);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            //this.pictureBox1.Image = global::Attendance_Management_System.Properties.Resources.icons8_graduate_64;
-            this.pictureBox1.Location = new System.Drawing.Point(990, 160);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 199);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            pictureBoxHide.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxHide.Cursor = Cursors.Hand;
+            pictureBoxHide.Location = new Point(266, 152);
+            pictureBoxHide.Margin = new Padding(2, 3, 2, 3);
+            pictureBoxHide.Name = "pictureBoxHide";
+            pictureBoxHide.Size = new Size(35, 24);
+            pictureBoxHide.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxHide.TabIndex = 7;
+            pictureBoxHide.TabStop = false;
+            pictureBoxHide.Click += pictureBoxHide_Click;
+            pictureBoxHide.MouseHover += pictureBoxHide_MouseHover;
             // 
             // pictureBoxMinimize
             // 
-            this.pictureBoxMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.pictureBoxMinimize.Image = global::Attendance_Management_System.Properties.Resources.icons8_minimize_96;
-            this.pictureBoxMinimize.Location = new System.Drawing.Point(1263, 8);
-            this.pictureBoxMinimize.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBoxMinimize.Name = "pictureBoxMinimize";
-            this.pictureBoxMinimize.Size = new System.Drawing.Size(26, 28);
-            this.pictureBoxMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxMinimize.TabIndex = 1;
-            this.pictureBoxMinimize.TabStop = false;
-            this.pictureBoxMinimize.Click += new System.EventHandler(this.pictureBoxMinimize_Click);
-            this.pictureBoxMinimize.MouseHover += new System.EventHandler(this.pictureBoxMinimize_MouseHover);
+            pictureBoxMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBoxMinimize.Cursor = Cursors.Hand;
+            pictureBoxMinimize.Image = Properties.Resources.icons8_minimize_100;
+            pictureBoxMinimize.Location = new Point(1263, 8);
+            pictureBoxMinimize.Margin = new Padding(2, 3, 2, 3);
+            pictureBoxMinimize.Name = "pictureBoxMinimize";
+            pictureBoxMinimize.Size = new Size(26, 28);
+            pictureBoxMinimize.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxMinimize.TabIndex = 1;
+            pictureBoxMinimize.TabStop = false;
+            pictureBoxMinimize.Click += pictureBoxMinimize_Click;
+            pictureBoxMinimize.MouseHover += pictureBoxMinimize_MouseHover;
             // 
             // pictureBoxClose
             // 
-            this.pictureBoxClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            //this.pictureBoxClose.Image = global::Attendance_Management_System.Properties.Resources.icons8_x_96__3_;
-            this.pictureBoxClose.Location = new System.Drawing.Point(1294, 8);
-            this.pictureBoxClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBoxClose.Name = "pictureBoxClose";
-            this.pictureBoxClose.Size = new System.Drawing.Size(26, 28);
-            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxClose.TabIndex = 0;
-            this.pictureBoxClose.TabStop = false;
-            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
-            this.pictureBoxClose.MouseHover += new System.EventHandler(this.pictureBoxClose_MouseHover);
+            pictureBoxClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBoxClose.Cursor = Cursors.Hand;
+            pictureBoxClose.Image = Properties.Resources.icons8_x_96__4_;
+            pictureBoxClose.Location = new Point(1294, 8);
+            pictureBoxClose.Margin = new Padding(2, 3, 2, 3);
+            pictureBoxClose.Name = "pictureBoxClose";
+            pictureBoxClose.Size = new Size(26, 28);
+            pictureBoxClose.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxClose.TabIndex = 0;
+            pictureBoxClose.TabStop = false;
+            pictureBoxClose.Click += pictureBoxClose_Click;
+            pictureBoxClose.MouseHover += pictureBoxClose_MouseHover;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.icons8_graduate_64;
+            pictureBox1.Location = new Point(990, 160);
+            pictureBox1.Margin = new Padding(2, 3, 2, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(168, 199);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox2.Cursor = Cursors.Hand;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(266, 152);
+            pictureBox2.Margin = new Padding(2, 3, 2, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(35, 24);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1402, 634);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.pictureBoxMinimize);
-            this.Controls.Add(this.pictureBoxClose);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormLogin_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxError)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHide)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1402, 634);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(pictureBox1);
+            Controls.Add(panel2);
+            Controls.Add(groupBox1);
+            Controls.Add(pictureBoxMinimize);
+            Controls.Add(pictureBoxClose);
+            Cursor = Cursors.Hand;
+            Font = new Font("Century Gothic", 10F);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4);
+            Name = "FormLogin";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
+            WindowState = FormWindowState.Maximized;
+            Load += FormLogin_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxError).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxShow).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxHide).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.PictureBox pictureBoxMinimize;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -375,5 +386,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.PictureBox pictureBoxHide;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
