@@ -20,7 +20,65 @@ namespace attendanceSystem
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            currentUserName.Text = DataManager.currentUser.Name;
+            Admin admin = new Admin
+            {
+                Id = 1,
+                Name = "AdminName",
+                Email = "admin@example.com",
+                Password = "adminPassword",
+                Role = "Admin"
+            };
+
+            // Creating an instance of Teacher
+            Teacher teacher = new Teacher
+            {
+                Id = 2,
+                Name = "TeacherName",
+                Email = "teacher@example.com",
+                Password = "teacherPassword",
+                Role = "Teacher",
+                Classes = new List<string> { "ClassA", "ClassB" }
+            };
+
+            // Creating an instance of Student
+            Student student = new Student
+            {
+                Id = 3,
+                Name = "StudentName",
+                Email = "student@example.com",
+                Password = "studentPassword",
+                Role = "Student",
+                SClass = "ClassA",
+                Attendance = new Attendance
+                {
+                    Records = new List<Record>
+                    {
+                        new Record { Date = new DateOnly(2024, 2, 20), Status = "Present" },
+                        new Record { Date = new DateOnly(2024, 2, 21), Status = "Absent" }
+                        // Add more records as needed
+                    }
+                }
+            };
+
+            DataManager.currentUser = student;
+            currentUserNameLabel.Text = DataManager.currentUser.Name;
+            var role = DataManager.currentUser.Role;
+            if (role == "Admin")
+                attendanceBtn.Hide();
+            else if(role == "Teacher")
+            {
+                button2.Hide();
+                usersBtn.Hide();
+                addUserBtn.Hide();
+            }
+            else
+            {
+                button2.Hide();
+                usersBtn.Hide();
+                addUserBtn.Hide();
+                attendanceBtn.Hide();
+                // hide get class attendance don't forget 
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

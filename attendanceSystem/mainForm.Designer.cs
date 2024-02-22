@@ -43,7 +43,7 @@
             panel3 = new Panel();
             label2 = new Label();
             panel5 = new Panel();
-            currentUserName = new Label();
+            currentUserNameLabel = new Label();
             label3 = new Label();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
@@ -234,7 +234,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(22, 36);
+            label2.Location = new Point(23, 27);
             label2.Name = "label2";
             label2.Size = new Size(238, 20);
             label2.TabIndex = 2;
@@ -243,7 +243,7 @@
             // panel5
             // 
             panel5.BackColor = Color.Indigo;
-            panel5.Controls.Add(currentUserName);
+            panel5.Controls.Add(currentUserNameLabel);
             panel5.Controls.Add(label3);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(274, 74);
@@ -251,15 +251,15 @@
             panel5.Size = new Size(908, 56);
             panel5.TabIndex = 2;
             // 
-            // currentUserName
+            // currentUserNameLabel
             // 
-            currentUserName.AutoSize = true;
-            currentUserName.ForeColor = SystemColors.Window;
-            currentUserName.Location = new Point(142, 16);
-            currentUserName.Name = "currentUserName";
-            currentUserName.Size = new Size(39, 20);
-            currentUserName.TabIndex = 3;
-            currentUserName.Text = "user";
+            currentUserNameLabel.AutoSize = true;
+            currentUserNameLabel.ForeColor = SystemColors.Window;
+            currentUserNameLabel.Location = new Point(142, 16);
+            currentUserNameLabel.Name = "currentUserNameLabel";
+            currentUserNameLabel.Size = new Size(39, 20);
+            currentUserNameLabel.TabIndex = 3;
+            currentUserNameLabel.Text = "user";
             // 
             // label3
             // 
@@ -311,7 +311,7 @@
         private Panel panel5;
         private Label label3;
         private Panel sidePanel;
-        private Label currentUserName;
+        private Label currentUserNameLabel;
         private Button button2;
         private Button reportsBtn;
         private Button attendanceBtn;
