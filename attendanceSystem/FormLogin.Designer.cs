@@ -46,19 +46,19 @@
             pictureBoxError = new PictureBox();
             pictureBoxShow = new PictureBox();
             pictureBoxHide = new PictureBox();
+            pictureBox2 = new PictureBox();
             toolTip = new ToolTip(components);
             pictureBoxMinimize = new PictureBox();
             pictureBoxClose = new PictureBox();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxError).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShow).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label3
@@ -273,6 +273,19 @@
             pictureBoxHide.Click += pictureBoxHide_Click;
             pictureBoxHide.MouseHover += pictureBoxHide_MouseHover;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox2.Cursor = Cursors.Hand;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(266, 152);
+            pictureBox2.Margin = new Padding(2, 3, 2, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(35, 24);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
+            // 
             // pictureBoxMinimize
             // 
             pictureBoxMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -315,19 +328,6 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click_1;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox2.Cursor = Cursors.Hand;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(266, 152);
-            pictureBox2.Margin = new Padding(2, 3, 2, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(35, 24);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 8;
-            pictureBox2.TabStop = false;
-            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -357,10 +357,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxError).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShow).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
