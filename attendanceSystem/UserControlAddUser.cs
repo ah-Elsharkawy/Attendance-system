@@ -61,9 +61,7 @@ namespace attendanceSystem
         }
         public void HideErrorPic()
         {
-            pictureBoxStudentEmail.Visible = false;
             pictureBoxStudentEmailU.Visible = false;
-            pictureBoxTeacherEmail.Visible = false;
             pictureBoxTeacherEmailU.Visible = false;
         }
 
@@ -89,27 +87,31 @@ namespace attendanceSystem
 
         private void tabPageAddTeacher_Enter(object sender, EventArgs e)
         {
-
+            ClearTextTeacherBoxUpdate();
+            pictureBoxTeacherEmail.Visible = false;
         }
 
         private void tabPageAddTeacher_Leave(object sender, EventArgs e)
         {
-
+            ClearTextTeacherBox();
         }
 
         private void tabPageUpdate_Leave(object sender, EventArgs e)
         {
             ClearTextStudentBoxUpdate();
+            pictureBoxStudentEmailU.Visible = false;
         }
 
         private void tabPageAddStudent_Enter(object sender, EventArgs e)
         {
             ClearTextStudentBoxUpdate();
+            pictureBoxStudentEmail.Visible = false;
         }
 
         private void tabPageAddStudent_Leave(object sender, EventArgs e)
         {
             ClearTextStudentBox();
+
         }
 
         private void comboBoxClass_Click(object sender, EventArgs e)
@@ -120,7 +122,12 @@ namespace attendanceSystem
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (textBoxName.Text.Trim() == string.Empty || textBoxEmail.Text.Trim() == string.Empty || textBoxPassword.Text.Trim() == string.Empty || comboBoxClass.SelectedIndex == -1)
+
+            if (textBoxName.Text.Trim() == string.Empty
+                               || textBoxEmail.Text.Trim() == string.Empty
+                                              || !IsVaildEmail(textBoxEmail.Text)
+                                                             || textBoxPassword.Text.Trim() == string.Empty
+                                                                            || comboBoxClass.SelectedIndex == -1)
             {
                 MessageBox.Show("First fill out all fields", "Required all fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -130,7 +137,11 @@ namespace attendanceSystem
         }
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            if (textBoxNameU.Text.Trim() == string.Empty || textBoxEmailU.Text.Trim() == string.Empty || textBoxPasswordU.Text.Trim() == string.Empty || comboBoxClassU.SelectedIndex == -1)
+            if (textBoxNameU.Text.Trim() == string.Empty
+                || textBoxEmailU.Text.Trim() == string.Empty
+                || !IsVaildEmail(textBoxEmailU.Text)
+                || textBoxPasswordU.Text.Trim() == string.Empty
+                || comboBoxClassU.SelectedIndex == -1)
             {
                 MessageBox.Show("First fill out all fields", "Required all fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -173,20 +184,163 @@ namespace attendanceSystem
 
         private void tabPageAddTeacher_Leave_1(object sender, EventArgs e)
         {
-
-            HideErrorPic();
             ClearTextTeacherBox();
+            pictureBoxTeacherEmail.Visible = false;
+        }
+        private void tabPageAddTeacher_Enter_1(object sender, EventArgs e)
+        {
+            ClearTextTeacherBox();
+            pictureBoxTeacherEmail.Visible = false;
         }
 
         private void buttonAddTeacher_Click(object sender, EventArgs e)
         {
-            if (textBoxTeacherName.Text.Trim() == string.Empty || textBoxTeacherEmail.Text.Trim() == string.Empty || textBoxTeacherPassword.Text.Trim() == string.Empty || (!checkBoxAI.Checked && !checkBoxOS.Checked && !checkBoxPD.Checked))
+
+            if (textBoxTeacherName.Text.Trim() == string.Empty
+                || !IsVaildEmail(textBoxTeacherEmail.Text)
+                || textBoxTeacherEmail.Text == "abdullah@gmail.com"
+                || textBoxTeacherPassword.Text.Trim() == string.Empty
+                || (!checkBoxAI.Checked && !checkBoxOS.Checked && !checkBoxPD.Checked))
             {
                 MessageBox.Show("First fill out all fields", "Required all fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             ClearTextTeacherBox();
             //compelete add code here 
+        }
+
+        private void textBoxEmail_Enter(object sender, EventArgs e)
+        {
+
+            if (textBoxEmail.Text == "abdullah@gmail.com")
+            {
+                textBoxEmail.Text = "";
+                textBoxEmail.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBoxEmail_Leave(object sender, EventArgs e)
+        {
+            if (textBoxEmail.Text == "")
+            {
+                textBoxEmail.Text = "abdullah@gmail.com";
+                textBoxEmail.ForeColor = Color.DarkGray;
+            }
+            else if (!IsVaildEmail(textBoxEmail.Text) || textBoxEmail.Text == "abdullah@gmail.com")
+            {
+                pictureBoxStudentEmail.Visible = true;
+            }
+            else
+            {
+                pictureBoxStudentEmail.Visible = false;
+            }
+        }
+        private void pictureBoxStudentEmail_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.Show("Invalid Email", pictureBoxStudentEmail);
+        }
+
+        private void pictureBoxStudentEmailU_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.Show("Invalid Email", pictureBoxStudentEmailU);
+        }
+
+        private void pictureBoxTeacherEmailU_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.Show("Invalid Email", pictureBoxTeacherEmailU);
+        }
+
+        private void textBoxEmailU_Enter(object sender, EventArgs e)
+        {
+
+            if (textBoxEmailU.Text == "abdullah@gmail.com")
+            {
+                textBoxEmailU.Text = "";
+                textBoxEmailU.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBoxEmailU_Leave(object sender, EventArgs e)
+        {
+
+            if (textBoxEmailU.Text == "")
+            {
+                textBoxEmailU.Text = "abdullah@gmail.com";
+                textBoxEmailU.ForeColor = Color.DarkGray;
+            }
+            else if (!IsVaildEmail(textBoxEmailU.Text) || textBoxEmailU.Text == "abdullah@gmail.com")
+            {
+                pictureBoxStudentEmailU.Visible = true;
+            }
+            else
+            {
+                pictureBoxStudentEmailU.Visible = false;
+            }
+        }
+        private void textBoxTeacherEmailU_Enter(object sender, EventArgs e)
+        {
+
+            if (textBoxTeacherEmailU.Text == "abdullah@gmail.com")
+            {
+                textBoxTeacherEmailU.Text = "";
+                textBoxTeacherEmailU.ForeColor = Color.Black;
+            }
+        }
+        private void textBoxTeacherEmailU_Leave(object sender, EventArgs e)
+        {
+
+            if (textBoxTeacherEmailU.Text == "")
+            {
+                textBoxTeacherEmailU.Text = "abdullah@gmail.com";
+                textBoxTeacherEmailU.ForeColor = Color.DarkGray;
+            }
+            else if (!IsVaildEmail(textBoxTeacherEmailU.Text) || textBoxTeacherEmailU.Text == "abdullah@gmail.com")
+            {
+                pictureBoxTeacherEmailU.Visible = true;
+            }
+            else
+            {
+                pictureBoxTeacherEmailU.Visible = false;
+            }
+        }
+
+        private void tabPageUpdateTeacher_Leave(object sender, EventArgs e)
+        {
+
+            ClearTextTeacherBoxUpdate();
+            pictureBoxTeacherEmailU.Visible = false;
+        }
+
+        private void tabPageUpdate_Enter(object sender, EventArgs e)
+        {
+
+            ClearTextStudentBoxUpdate();
+            pictureBoxStudentEmailU.Visible = false;
+        }
+
+        private void tabPageUpdateTeacher_Enter(object sender, EventArgs e)
+        {
+
+            ClearTextTeacherBoxUpdate();
+            pictureBoxTeacherEmailU.Visible = false;
+        }
+
+        private void buttonTeacherUpdate_Click(object sender, EventArgs e)
+        {
+
+            if (textBoxTeacherNameU.Text.Trim() == string.Empty
+                               || !IsVaildEmail(textBoxTeacherEmailU.Text)
+                                              || textBoxTeacherEmailU.Text == "abdullah@gmail.com"
+                                              || textBoxTeacherPasswordU.Text.Trim() == string.Empty
+                                                                                || (!checkBoxAIU.Checked && !checkBoxOSU.Checked && !checkBoxPDU.Checked)
+                )
+            {
+
+                MessageBox.Show("First fill out all fields", "Required all fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ClearTextTeacherBoxUpdate();
+            //compelete add code here
         }
     }
 }

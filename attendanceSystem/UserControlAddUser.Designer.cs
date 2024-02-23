@@ -149,6 +149,7 @@
             tabPageAddTeacher.TabIndex = 1;
             tabPageAddTeacher.Text = "Add Teacher";
             tabPageAddTeacher.UseVisualStyleBackColor = true;
+            tabPageAddTeacher.Enter += tabPageAddTeacher_Enter_1;
             tabPageAddTeacher.Leave += tabPageAddTeacher_Leave_1;
             // 
             // pictureBoxTeacherEmail
@@ -352,6 +353,7 @@
             pictureBoxStudentEmail.TabIndex = 32;
             pictureBoxStudentEmail.TabStop = false;
             pictureBoxStudentEmail.Visible = false;
+            pictureBoxStudentEmail.MouseHover += pictureBoxStudentEmail_MouseHover;
             // 
             // comboBoxClass
             // 
@@ -442,6 +444,8 @@
             textBoxEmail.Size = new Size(270, 21);
             textBoxEmail.TabIndex = 2;
             textBoxEmail.Text = "abdullah@gmail.com";
+            textBoxEmail.Enter += textBoxEmail_Enter;
+            textBoxEmail.Leave += textBoxEmail_Leave;
             // 
             // label3
             // 
@@ -515,6 +519,7 @@
             tabPageUpdate.TabIndex = 2;
             tabPageUpdate.Text = "Update Student";
             tabPageUpdate.UseVisualStyleBackColor = true;
+            tabPageUpdate.Enter += tabPageUpdate_Enter;
             tabPageUpdate.Leave += tabPageUpdate_Leave;
             // 
             // pictureBoxStudentEmailU
@@ -528,6 +533,7 @@
             pictureBoxStudentEmailU.TabIndex = 32;
             pictureBoxStudentEmailU.TabStop = false;
             pictureBoxStudentEmailU.Visible = false;
+            pictureBoxStudentEmailU.MouseHover += pictureBoxStudentEmailU_MouseHover;
             // 
             // comboBoxClassU
             // 
@@ -617,6 +623,8 @@
             textBoxEmailU.Size = new Size(270, 21);
             textBoxEmailU.TabIndex = 19;
             textBoxEmailU.Text = "abdullah@gmail.com";
+            textBoxEmailU.Enter += textBoxEmailU_Enter;
+            textBoxEmailU.Leave += textBoxEmailU_Leave;
             // 
             // label8
             // 
@@ -691,6 +699,8 @@
             tabPageUpdateTeacher.TabIndex = 3;
             tabPageUpdateTeacher.Text = "UpdateTeacher";
             tabPageUpdateTeacher.UseVisualStyleBackColor = true;
+            tabPageUpdateTeacher.Enter += tabPageUpdateTeacher_Enter;
+            tabPageUpdateTeacher.Leave += tabPageUpdateTeacher_Leave;
             // 
             // pictureBoxTeacherEmailU
             // 
@@ -703,6 +713,7 @@
             pictureBoxTeacherEmailU.TabIndex = 47;
             pictureBoxTeacherEmailU.TabStop = false;
             pictureBoxTeacherEmailU.Visible = false;
+            pictureBoxTeacherEmailU.MouseHover += pictureBoxTeacherEmailU_MouseHover;
             // 
             // checkBoxAIU
             // 
@@ -746,6 +757,7 @@
             buttonTeacherUpdate.TabIndex = 43;
             buttonTeacherUpdate.Text = "Update";
             buttonTeacherUpdate.UseVisualStyleBackColor = false;
+            buttonTeacherUpdate.Click += buttonTeacherUpdate_Click;
             // 
             // label6
             // 
@@ -802,6 +814,8 @@
             textBoxTeacherEmailU.Size = new Size(270, 21);
             textBoxTeacherEmailU.TabIndex = 39;
             textBoxTeacherEmailU.Text = "abdullah@gmail.com";
+            textBoxTeacherEmailU.Enter += textBoxTeacherEmailU_Enter;
+            textBoxTeacherEmailU.Leave += textBoxTeacherEmailU_Leave;
             // 
             // label18
             // 
