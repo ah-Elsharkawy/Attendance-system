@@ -63,9 +63,6 @@ namespace attendanceSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TEST {
-            get {
-                object obj = ResourceManager.GetObject("TEST", resourceCulture);
         internal static System.Drawing.Bitmap add_user {
             get {
                 object obj = ResourceManager.GetObject("add-user", resourceCulture);
@@ -249,6 +246,16 @@ namespace attendanceSystem.Properties {
         internal static System.Drawing.Bitmap report__1_ {
             get {
                 object obj = ResourceManager.GetObject("report (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TEST {
+            get {
+                object obj = ResourceManager.GetObject("TEST", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
