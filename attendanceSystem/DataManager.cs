@@ -125,6 +125,11 @@ namespace attendanceSystem
 
         }
 
+        public static void addUser()
+        {
+            // add logic
+        }
+
     }
 
 

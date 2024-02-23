@@ -104,7 +104,7 @@ namespace attendanceSystem.userControls
             {
                 column.SortMode = DataGridViewColumnSortMode.Automatic;
             }
-
+            testDataGridView1.AutoResizeColumns();
         }
 
         private void testDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

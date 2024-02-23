@@ -34,16 +34,18 @@
             textBox1 = new TextBox();
             userBindingSource = new BindingSource(components);
             testDataGridView1 = new DataGridView();
+            userBindingSource1 = new BindingSource(components);
+            userBindingSource2 = new BindingSource(components);
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             emailDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             roleDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             editUser = new DataGridViewButtonColumn();
             deleteUser = new DataGridViewButtonColumn();
-            userBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)testDataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)userBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)userBindingSource2).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -84,12 +86,20 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             testDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            testDataGridView1.Location = new Point(76, 193);
+            testDataGridView1.Location = new Point(69, 230);
             testDataGridView1.Name = "testDataGridView1";
             testDataGridView1.RowHeadersWidth = 51;
             testDataGridView1.Size = new Size(803, 188);
             testDataGridView1.TabIndex = 2;
             testDataGridView1.CellContentClick += testDataGridView1_CellContentClick;
+            // 
+            // userBindingSource1
+            // 
+            userBindingSource1.DataSource = typeof(User);
+            // 
+            // userBindingSource2
+            // 
+            userBindingSource2.DataSource = typeof(User);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -97,7 +107,6 @@
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             idDataGridViewTextBoxColumn.Width = 125;
             // 
             // nameDataGridViewTextBoxColumn
@@ -106,6 +115,7 @@
             nameDataGridViewTextBoxColumn.HeaderText = "Name";
             nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
             nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // emailDataGridViewTextBoxColumn
@@ -142,10 +152,6 @@
             deleteUser.UseColumnTextForButtonValue = true;
             deleteUser.Width = 125;
             // 
-            // userBindingSource1
-            // 
-            userBindingSource1.DataSource = typeof(User);
-            // 
             // usersPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -159,6 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)userBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)testDataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)userBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)userBindingSource2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -167,12 +174,13 @@
         private TextBox textBox1;
         private BindingSource userBindingSource;
         private DataGridView testDataGridView1;
+        private BindingSource userBindingSource1;
+        private BindingSource userBindingSource2;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
         private DataGridViewButtonColumn editUser;
         private DataGridViewButtonColumn deleteUser;
-        private BindingSource userBindingSource1;
     }
 }
