@@ -45,7 +45,7 @@
             panel5 = new Panel();
             currentUserNameLabel = new Label();
             label3 = new Label();
-            userControlAddUser1 = new UserControlAddUser();
+            usersPage1 = new userControls.usersPage();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
@@ -272,16 +272,14 @@
             label3.TabIndex = 2;
             label3.Text = "Welcome: ";
             // 
-            // userControlAddUser1
+            // usersPage1
             // 
-            userControlAddUser1.BackColor = Color.White;
-            userControlAddUser1.Dock = DockStyle.Fill;
-            userControlAddUser1.Font = new Font("Century Gothic", 9.75F);
-            userControlAddUser1.Location = new Point(252, 130);
-            userControlAddUser1.Margin = new Padding(4);
-            userControlAddUser1.Name = "userControlAddUser1";
-            userControlAddUser1.Size = new Size(930, 543);
-            userControlAddUser1.TabIndex = 3;
+            usersPage1.BackColor = Color.White;
+            usersPage1.Dock = DockStyle.Fill;
+            usersPage1.Location = new Point(252, 130);
+            usersPage1.Name = "usersPage1";
+            usersPage1.Size = new Size(930, 543);
+            usersPage1.TabIndex = 3;
             // 
             // mainForm
             // 
@@ -289,7 +287,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1182, 673);
-            Controls.Add(userControlAddUser1);
+            Controls.Add(usersPage1);
             Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -331,6 +329,6 @@
         private Button usersBtn;
         private Button LogoutBtn;
         private Button addUserBtn;
-        private UserControlAddUser userControlAddUser1;
+        private userControls.usersPage usersPage1;
     }
 }

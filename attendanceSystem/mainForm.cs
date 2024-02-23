@@ -51,7 +51,7 @@ namespace attendanceSystem
                 SClass = "ClassA",
                 Attendance = new Attendance
                 {
-                    Records = new List<Record>
+                    Record = new List<Record>
                     {
                         new Record { Date = new DateOnly(2024, 2, 20), Status = "Present" },
                         new Record { Date = new DateOnly(2024, 2, 21), Status = "Absent" }

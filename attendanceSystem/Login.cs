@@ -20,7 +20,7 @@ namespace attendanceSystem
             // Create an instance of the Attendance class
             Attendance attendance = new Attendance
             {
-                Records = attendanceRecords
+                Record = attendanceRecords
             };
 
             Student student = new Student
@@ -38,8 +38,8 @@ namespace attendanceSystem
 
             if (button != null)
             {
-                textBox1.Text = DataManager.getUserXmlById(5).DocumentElement.InnerXml;
-                textBox1.Text = FormatsConverter.Serialize<Student>(student);
+                textBox1.Text = DataManager.getUsers();
+                //textBox1.Text = FormatsConverter.Serialize<Student>(student);
             }
         }
        

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -18,7 +19,25 @@ namespace attendanceSystem
             XmlSerializer serializer = new XmlSerializer(typeof(T));
             using (StringReader reader = new StringReader(xmlData))
             {
-                return (T)serializer.Deserialize(reader);
+                T result = (T)serializer.Deserialize(reader);
+                if(role == "Teacher")
+                {
+                    PropertyInfo classesProp = typeof(T).GetProperty("Classes");
+                    if (classesProp != null && classesProp.PropertyType == typeof(List<string>))
+                    {
+                        List<string> classesList = new List<string>();
+                        XmlDocument doc = new XmlDocument();
+                        doc.LoadXml(xmlData);
+                        var classes = doc.SelectNodes("//class");
+                        foreach (XmlNode c in classes)
+                        {
+                            classesList.Add(c.InnerText);
+                        }
+                        classesProp.SetValue(result, classesList);
+                    }
+                    
+                }
+                return result;
             }
         }
         public static string Serialize<T>(T obj)
