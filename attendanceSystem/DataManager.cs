@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Xsl;
+using attendanceSystem;
 using HtmlAgilityPack;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -15,6 +16,16 @@ namespace attendanceSystem
     {
         private static XmlDocument DataDocument;
         private static XmlDocument TestDocument;
+        public static User currentUser = new Admin
+        {
+            Id = 1,
+            Name = "AdminName",
+            Email = "admin@example.com",
+            Password = "adminPassword",
+            Role = "Admin"
+        };
+
+
         private static string dataFolderPath = @"..\..\..\Data";
         static DataManager() {
             DataDocument = new XmlDocument();
@@ -54,7 +65,7 @@ namespace attendanceSystem
 
         public static string getUsers()
         {
-            return DataDocument.DocumentElement.InnerXml;
+            return DataDocument.DocumentElement.OuterXml;
         }
 
         private static HtmlAgilityPack.HtmlDocument GetHtmlDocumentFromXslt(XslCompiledTransform xsltFilter, XsltArgumentList xsltArgs)
@@ -114,8 +125,9 @@ namespace attendanceSystem
 
         }
 
-
-
-
     }
+
+
 }
+
+
