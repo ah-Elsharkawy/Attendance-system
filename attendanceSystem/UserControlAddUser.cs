@@ -8,19 +8,36 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace attendanceSystem
 {
     public partial class UserControlAddUser : UserControl
     {
+        public string UID;
+        private string ID = "";
+        private const string XmlFilePath = "../../../Data/data.xml";
+
         public UserControlAddUser()
         {
             InitializeComponent();
+            InitializeDefaultValues();
         }
-        public string UID;
-        private string ID = "";
-        public void ClearTextStudentBox()
+        private void InitializeDefaultValues()
+        {
+            textBoxEmail.Text = "abdullah@gmail.com";
+            textBoxEmail.ForeColor = Color.DarkGray;
+            textBoxTeacherEmail.Text = "abdullah@gmail.com";
+            textBoxTeacherEmail.ForeColor = Color.DarkGray;
+            textBoxEmailU.Text = "abdullah@gmail.com";
+            textBoxEmailU.ForeColor = Color.DarkGray;
+            textBoxTeacherEmailU.Text = "abdullah@gmail.com";
+            textBoxTeacherEmailU.ForeColor = Color.DarkGray;
+        }
+
+        private void ClearTextStudentBox()
         {
             textBoxName.Clear();
             textBoxPassword.Clear();
@@ -29,15 +46,8 @@ namespace attendanceSystem
             comboBoxClass.SelectedIndex = -1;
             tabControlAddUser.SelectedTab = tabPageAddStudent;
         }
-        private void ClearTextStudentBoxUpdate()
-        {
-            textBoxNameU.Clear();
-            textBoxPasswordU.Clear();
-            textBoxEmailU.Text = "abdullah@gmail.com";
-            textBoxEmailU.ForeColor = Color.DarkGray;
-            comboBoxClassU.SelectedIndex = -1;
-        }
-        public void ClearTextTeacherBox()
+
+        private void ClearTextTeacherBox()
         {
             textBoxTeacherName.Clear();
             textBoxTeacherPassword.Clear();
@@ -48,6 +58,15 @@ namespace attendanceSystem
             checkBoxOS.Checked = false;
             tabControlAddUser.SelectedTab = tabPageAddTeacher;
         }
+        private void ClearTextStudentBoxUpdate()
+        {
+            textBoxNameU.Clear();
+            textBoxPasswordU.Clear();
+            textBoxEmailU.Text = "abdullah@gmail.com";
+            textBoxEmailU.ForeColor = Color.DarkGray;
+            comboBoxClassU.SelectedIndex = -1;
+        }
+
         private void ClearTextTeacherBoxUpdate()
         {
             textBoxTeacherNameU.Clear();
@@ -72,14 +91,14 @@ namespace attendanceSystem
                 txtBox.Select(0, 0);
             });
         }
-        private bool IsVaildEmail(string email)
+        private bool IsValidEmail(string email)
         {
             try
             {
                 var addr = new MailAddress(email);
                 return addr.Address == email;
             }
-            catch (Exception)
+            catch (FormatException)
             {
                 return false;
             }
@@ -119,34 +138,89 @@ namespace attendanceSystem
             comboBoxClass.Items.Clear();
             //write code here
         }
-
+        /*
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
-            if (textBoxName.Text.Trim() == string.Empty
-                               || textBoxEmail.Text.Trim() == string.Empty
-                                              || !IsVaildEmail(textBoxEmail.Text)
-                                                             || textBoxPassword.Text.Trim() == string.Empty
-                                                                            || comboBoxClass.SelectedIndex == -1)
+            if (string.IsNullOrWhiteSpace(textBoxName.Text) || string.IsNullOrWhiteSpace(textBoxEmail.Text)
+                || !IsValidEmail(textBoxEmail.Text) || string.IsNullOrWhiteSpace(textBoxPassword.Text)
+                || comboBoxClass.SelectedIndex == -1)
             {
-                MessageBox.Show("First fill out all fields", "Required all fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill out all fields correctly.", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             ClearTextStudentBox();
-            //compelete add code here 
+            // Complete add code here 
+        }
+        */
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxName.Text) 
+                || string.IsNullOrWhiteSpace(textBoxEmail.Text)
+                || !IsValidEmail(textBoxEmail.Text) 
+                || string.IsNullOrWhiteSpace(textBoxPassword.Text)
+                || comboBoxClass.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please fill out all fields correctly.", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Generate a unique ID for the new student
+            string newUserId = GenerateUniqueId();
+
+            // Create a new XmlDocument instance
+            XmlDocument xmlDoc = new XmlDocument();
+
+            try
+            {
+                // Load the XML file
+                xmlDoc.Load(XmlFilePath);
+
+                // Create a new "user" element
+                XmlElement newUserElement = xmlDoc.CreateElement("user");
+
+                // Create and append child elements for the new student
+                AddXmlElement(xmlDoc, newUserElement, "Id", newUserId);
+                AddXmlElement(xmlDoc, newUserElement, "Name", textBoxName.Text.Trim());
+                AddXmlElement(xmlDoc, newUserElement, "Email", textBoxEmail.Text.Trim());
+                AddXmlElement(xmlDoc, newUserElement, "Password", textBoxPassword.Text.Trim());
+                AddXmlElement(xmlDoc, newUserElement, "Role", "Student");
+
+                // If a class is selected, add it as a child element
+                if (comboBoxClass.SelectedIndex != -1)
+                {
+                    string selectedClass = comboBoxClass.SelectedItem.ToString();
+                    AddXmlElement(xmlDoc, newUserElement, "SClass", selectedClass);
+                }
+
+                // Append the new user element to the root "users" element
+                xmlDoc.DocumentElement.AppendChild(newUserElement);
+
+                // Save the changes back to the XML file
+                xmlDoc.Save(XmlFilePath);
+
+                // Clear text boxes after successful addition
+                ClearTextStudentBox();
+
+                // Show success message
+                MessageBox.Show("Student added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while adding the student: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            if (textBoxNameU.Text.Trim() == string.Empty
-                || textBoxEmailU.Text.Trim() == string.Empty
-                || !IsVaildEmail(textBoxEmailU.Text)
-                || textBoxPasswordU.Text.Trim() == string.Empty
+            if (string.IsNullOrWhiteSpace(textBoxNameU.Text) || string.IsNullOrWhiteSpace(textBoxEmailU.Text)
+                || !IsValidEmail(textBoxEmailU.Text) || string.IsNullOrWhiteSpace(textBoxPasswordU.Text)
                 || comboBoxClassU.SelectedIndex == -1)
             {
-                MessageBox.Show("First fill out all fields", "Required all fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill out all fields correctly.", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            //compelete add code here 
+
+            // Complete update code here
             ClearTextStudentBoxUpdate();
         }
 
@@ -167,7 +241,7 @@ namespace attendanceSystem
                 textBoxTeacherEmail.Text = "abdullah@gmail.com";
                 textBoxTeacherEmail.ForeColor = Color.DarkGray;
             }
-            else if (!IsVaildEmail(textBoxTeacherEmail.Text) || textBoxTeacherEmail.Text == "abdullah@gmail.com")
+            else if (!IsValidEmail(textBoxTeacherEmail.Text) || textBoxTeacherEmail.Text == "abdullah@gmail.com")
             {
                 pictureBoxTeacherEmail.Visible = true;
             }
@@ -192,12 +266,12 @@ namespace attendanceSystem
             ClearTextTeacherBox();
             pictureBoxTeacherEmail.Visible = false;
         }
-
+        /*
         private void buttonAddTeacher_Click(object sender, EventArgs e)
         {
 
             if (textBoxTeacherName.Text.Trim() == string.Empty
-                || !IsVaildEmail(textBoxTeacherEmail.Text)
+                || !IsValidEmail(textBoxTeacherEmail.Text)
                 || textBoxTeacherEmail.Text == "abdullah@gmail.com"
                 || textBoxTeacherPassword.Text.Trim() == string.Empty
                 || (!checkBoxAI.Checked && !checkBoxOS.Checked && !checkBoxPD.Checked))
@@ -207,6 +281,72 @@ namespace attendanceSystem
             }
             ClearTextTeacherBox();
             //compelete add code here 
+        }
+
+        */
+        private void buttonAddTeacher_Click(object sender, EventArgs e)
+        {
+            if (textBoxTeacherName.Text.Trim() == string.Empty
+                || !IsValidEmail(textBoxTeacherEmail.Text)
+                || textBoxTeacherEmail.Text == "abdullah@gmail.com"
+                || textBoxTeacherPassword.Text.Trim() == string.Empty
+                || (!checkBoxAI.Checked && !checkBoxOS.Checked && !checkBoxPD.Checked))
+            {
+                MessageBox.Show("Please fill out all fields correctly.", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Generate a unique ID for the new user
+            string newUserId = GenerateUniqueId();
+
+            // Create a new XmlDocument instance
+            XmlDocument xmlDoc = new XmlDocument();
+
+            try
+            {
+                // Load the XML file
+                xmlDoc.Load(XmlFilePath);
+
+                // Create a new "user" element
+                XmlElement newUserElement = xmlDoc.CreateElement("user");
+
+                // Create and append child elements for the new user
+                AddXmlElement(xmlDoc, newUserElement, "Id", newUserId);
+                AddXmlElement(xmlDoc, newUserElement, "Name", textBoxTeacherName.Text.Trim());
+                AddXmlElement(xmlDoc, newUserElement, "Email", textBoxTeacherEmail.Text.Trim());
+                AddXmlElement(xmlDoc, newUserElement, "Password", textBoxTeacherPassword.Text.Trim());
+                AddXmlElement(xmlDoc, newUserElement, "Role", "Teacher");
+
+                // Create a "Classes" element if any class checkbox is checked
+                if (checkBoxAI.Checked || checkBoxOS.Checked || checkBoxPD.Checked)
+                {
+                    XmlElement classesElement = xmlDoc.CreateElement("Classes");
+
+                    if (checkBoxAI.Checked)
+                        AddXmlElement(xmlDoc, classesElement, "class", "AI");
+                    if (checkBoxOS.Checked)
+                        AddXmlElement(xmlDoc, classesElement, "class", "OS");
+                    if (checkBoxPD.Checked)
+                        AddXmlElement(xmlDoc, classesElement, "class", "PD");
+
+                    newUserElement.AppendChild(classesElement);
+                }
+
+                // Append the new user element to the root "users" element
+                xmlDoc.DocumentElement.AppendChild(newUserElement);
+
+                // Save the changes back to the XML file
+                xmlDoc.Save(XmlFilePath);
+
+                // Clear text boxes after successful addition
+                ClearTextTeacherBox();
+                // Show success message
+                MessageBox.Show("Teacher added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while adding the user: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void textBoxEmail_Enter(object sender, EventArgs e)
@@ -221,12 +361,12 @@ namespace attendanceSystem
 
         private void textBoxEmail_Leave(object sender, EventArgs e)
         {
-            if (textBoxEmail.Text == "")
+            if (string.IsNullOrWhiteSpace(textBoxEmail.Text) || textBoxEmail.Text == "abdullah@gmail.com")
             {
                 textBoxEmail.Text = "abdullah@gmail.com";
                 textBoxEmail.ForeColor = Color.DarkGray;
             }
-            else if (!IsVaildEmail(textBoxEmail.Text) || textBoxEmail.Text == "abdullah@gmail.com")
+            else if (!IsValidEmail(textBoxEmail.Text))
             {
                 pictureBoxStudentEmail.Visible = true;
             }
@@ -268,7 +408,7 @@ namespace attendanceSystem
                 textBoxEmailU.Text = "abdullah@gmail.com";
                 textBoxEmailU.ForeColor = Color.DarkGray;
             }
-            else if (!IsVaildEmail(textBoxEmailU.Text) || textBoxEmailU.Text == "abdullah@gmail.com")
+            else if (!IsValidEmail(textBoxEmailU.Text) || textBoxEmailU.Text == "abdullah@gmail.com")
             {
                 pictureBoxStudentEmailU.Visible = true;
             }
@@ -294,7 +434,7 @@ namespace attendanceSystem
                 textBoxTeacherEmailU.Text = "abdullah@gmail.com";
                 textBoxTeacherEmailU.ForeColor = Color.DarkGray;
             }
-            else if (!IsVaildEmail(textBoxTeacherEmailU.Text) || textBoxTeacherEmailU.Text == "abdullah@gmail.com")
+            else if (!IsValidEmail(textBoxTeacherEmailU.Text) || textBoxTeacherEmailU.Text == "abdullah@gmail.com")
             {
                 pictureBoxTeacherEmailU.Visible = true;
             }
@@ -328,19 +468,48 @@ namespace attendanceSystem
         private void buttonTeacherUpdate_Click(object sender, EventArgs e)
         {
 
-            if (textBoxTeacherNameU.Text.Trim() == string.Empty
-                               || !IsVaildEmail(textBoxTeacherEmailU.Text)
+             if (textBoxTeacherNameU.Text.Trim() == string.Empty
+                               || !IsValidEmail(textBoxTeacherEmailU.Text)
                                               || textBoxTeacherEmailU.Text == "abdullah@gmail.com"
                                               || textBoxTeacherPasswordU.Text.Trim() == string.Empty
                                                                                 || (!checkBoxAIU.Checked && !checkBoxOSU.Checked && !checkBoxPDU.Checked)
                 )
             {
-
                 MessageBox.Show("First fill out all fields", "Required all fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             ClearTextTeacherBoxUpdate();
             //compelete add code here
         }
+
+
+
+
+
+
+
+
+        // Helper method to add a new XML element
+        private void AddXmlElement(XmlDocument xmlDoc, XmlElement parentElement, string elementName, string elementValue)
+        {
+            XmlElement newElement = xmlDoc.CreateElement(elementName);
+            newElement.InnerText = elementValue;
+            parentElement.AppendChild(newElement);
+        }
+
+        // Generate a unique ID for the new user (you can implement your own logic here)
+        private string GenerateUniqueId()
+        {
+            // This is just a placeholder implementation
+            return Guid.NewGuid().ToString();
+        }
+
+        private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+
+

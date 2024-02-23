@@ -364,8 +364,18 @@
             comboBoxClass.Location = new Point(553, 212);
             comboBoxClass.Name = "comboBoxClass";
             comboBoxClass.Size = new Size(270, 29);
-            comboBoxClass.TabIndex = 3;
-            comboBoxClass.Click += comboBoxClass_Click;
+            comboBoxClass.TabIndex = 28;
+
+            //comboBoxClass.DropDownStyle = ComboBoxStyle.DropDownList;
+            //comboBoxClass.FlatStyle = FlatStyle.Flat;
+            //comboBoxClass.FormattingEnabled = true;
+            //comboBoxClass.Items.AddRange(new object[] { "PD", "OS", "AI", "PD", "OS", "AI", "PD", "OS", "AI" });
+            //comboBoxClass.Location = new Point(553, 212);
+            //comboBoxClass.Name = "comboBoxClass";
+            //comboBoxClass.Size = new Size(270, 29);
+            //comboBoxClass.TabIndex = 3;
+            //comboBoxClass.SelectedIndexChanged += comboBoxClass_SelectedIndexChanged;
+            //comboBoxClass.Click += comboBoxClass_Click;
             // 
             // buttonAdd
             // 
