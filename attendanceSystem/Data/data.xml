@@ -43,7 +43,7 @@
 				<Status>absent</Status>
 			</Record>
 		</Attendance>
-		<sClass>PD</sClass>
+		<SClass>PD</SClass>
 	</user>
 	<user>
 		<Id>5</Id>
@@ -57,7 +57,7 @@
 				<Status>absent</Status>
 			</Record>
 		</Attendance>
-		<sClass>PD</sClass>
+		<SClass>PD</SClass>
 	</user>
 	<user>
 		<Id>6</Id>
@@ -71,7 +71,7 @@
 				<Status>absent</Status>
 			</Record>
 		</Attendance>
-		<sClass>PD</sClass>
+		<SClass>PD</SClass>
 	</user>
 	<user>
 		<Id>7</Id>
@@ -85,7 +85,7 @@
 				<Status>absent</Status>
 			</Record>
 		</Attendance>
-		<sClass>PD</sClass>
+		<SClass>PD</SClass>
 	</user>
 	<user>
 		<Id>8</Id>
@@ -99,7 +99,7 @@
 				<Status>absent</Status>
 			</Record>
 		</Attendance>
-		<sClass>PD</sClass>
+		<SClass>PD</SClass>
 	</user>
 	<user>
 		<Id>9</Id>
@@ -113,7 +113,7 @@
 				<Status>absent</Status>
 			</Record>
 		</Attendance>
-		<sClass>PD</sClass>
+		<SClass>PD</SClass>
 	</user>
 	<user>
 		<Id>10</Id>
@@ -127,7 +127,7 @@
 				<Status>absent</Status>
 			</Record>
 		</Attendance>
-		<sClass>PD</sClass>
+		<SClass>PD</SClass>
 	</user>
 	<user>
 		<Id>11</Id>
@@ -141,7 +141,7 @@
 				<Status>absent</Status>
 			</Record>
 		</Attendance>
-		<sClass>PD</sClass>
+		<SClass>PD</SClass>
 	</user>
 	<user>
 		<Id>12</Id>
@@ -159,7 +159,7 @@
 				<Status>present</Status>
 			</Record>
 		</Attendance>
-		<sClass>PD</sClass>
+		<SClass>PD</SClass>
 	</user>
 	<user>
 		<Id>12</Id>
@@ -173,7 +173,7 @@
 				<Status>present</Status>
 			</Record>
 		</Attendance>
-		<sClass>PD</sClass>
+		<SClass>PD</SClass>
 	</user>
 
 </users>

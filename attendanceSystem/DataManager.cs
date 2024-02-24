@@ -65,7 +65,7 @@ namespace attendanceSystem
 
         public static string getUsers()
         {
-            return DataDocument.DocumentElement.InnerXml;
+            return DataDocument.DocumentElement.OuterXml;
         }
 
         private static HtmlAgilityPack.HtmlDocument GetHtmlDocumentFromXslt(XslCompiledTransform xsltFilter, XsltArgumentList xsltArgs)
@@ -123,6 +123,11 @@ namespace attendanceSystem
 
             return GetXmlDocumentFromXslt(xslt, xsltArgs);
 
+        }
+
+        public static void addUser()
+        {
+            // add logic
         }
 
     }

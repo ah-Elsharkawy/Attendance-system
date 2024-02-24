@@ -44,7 +44,7 @@
 	<xs:element name="Password" type="passType"/>
 	<xs:element name="Role" type="roleType"/>
 	<xs:element name="class" type="classType"/>
-	<xs:element name="sClass" type="classType"/>
+	<xs:element name="SClass" type="classType"/>
 	<xs:element name="Date" type="xs:date"/>
 	<xs:element name="Status" type="statusType"/>
 	<xs:group name="recordGroup">
@@ -75,7 +75,7 @@
 			<xs:element ref="Role"/>
 			<xs:element name="Classes" type="classesType" minOccurs="0"/>
 			<xs:element name="Attendance" type="attendType" minOccurs="0"/>
-			<xs:element ref="sClass" minOccurs="0"/>
+			<xs:element ref="SClass" minOccurs="0"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="userType">
@@ -101,7 +101,7 @@
 		<xs:sequence>
 			<xs:group ref="userInfo2"/>
 			<xs:element name="attendance" type="attendType"/>
-			<xs:element ref="sClass"/>
+			<xs:element ref="SClass"/>
 		</xs:sequence>
 	</xs:complexType>
 	-->
