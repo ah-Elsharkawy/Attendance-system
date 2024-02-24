@@ -36,7 +36,7 @@
             label6 = new Label();
             panel2 = new Panel();
             label1 = new Label();
-            textBoxName = new TextBox();
+            textBoxEmail = new TextBox();
             label2 = new Label();
             textBoxPassword = new TextBox();
             labelError = new Label();
@@ -129,18 +129,19 @@
             label1.Location = new Point(77, 54);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(96, 19);
+            label1.Size = new Size(58, 19);
             label1.TabIndex = 0;
-            label1.Text = "Username:";
+            label1.Text = "Email:";
             label1.Click += label1_Click;
             // 
-            // textBoxName
+            // textBoxEmail
             // 
-            textBoxName.Location = new Point(79, 84);
-            textBoxName.Margin = new Padding(2, 3, 2, 3);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(222, 28);
-            textBoxName.TabIndex = 1;
+            textBoxEmail.Location = new Point(79, 84);
+            textBoxEmail.Margin = new Padding(2, 3, 2, 3);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(222, 28);
+            textBoxEmail.TabIndex = 1;
+            textBoxEmail.TextChanged += textBoxEmail_TextChanged;
             // 
             // label2
             // 
@@ -162,6 +163,7 @@
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(222, 28);
             textBoxPassword.TabIndex = 2;
+            textBoxPassword.TextChanged += textBoxPassword_TextChanged;
             // 
             // labelError
             // 
@@ -197,7 +199,7 @@
             groupBox1.Controls.Add(pictureBoxShow);
             groupBox1.Controls.Add(textBoxPassword);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBoxName);
+            groupBox1.Controls.Add(textBoxEmail);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(pictureBoxHide);
             groupBox1.Controls.Add(pictureBox2);
@@ -225,7 +227,7 @@
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(222, 53);
             buttonLogin.TabIndex = 3;
-            buttonLogin.Text = "Secure Log In";
+            buttonLogin.Text = "Log In";
             buttonLogin.TextAlign = ContentAlignment.MiddleRight;
             buttonLogin.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonLogin.UseVisualStyleBackColor = false;
@@ -252,7 +254,7 @@
             pictureBoxShow.Location = new Point(266, 152);
             pictureBoxShow.Margin = new Padding(2, 3, 2, 3);
             pictureBoxShow.Name = "pictureBoxShow";
-            pictureBoxShow.Size = new Size(35, 24);
+            pictureBoxShow.Size = new Size(35, 28);
             pictureBoxShow.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxShow.TabIndex = 4;
             pictureBoxShow.TabStop = false;
@@ -375,7 +377,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.PictureBox pictureBoxShow;

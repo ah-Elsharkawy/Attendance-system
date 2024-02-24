@@ -66,7 +66,7 @@ namespace attendanceSystem
             var role = DataManager.currentUser.Role;
             if (role == "Admin")
                 attendanceBtn.Hide();
-            else if(role == "Teacher")
+            else if (role == "Teacher")
             {
                 button2.Hide();
                 usersBtn.Hide();
@@ -141,7 +141,7 @@ namespace attendanceSystem
         private void reportsBtn_Click(object sender, EventArgs e, UserControlReport userControlReport)
         {
             MoveSidePanel(reportsBtn);
-            userControlAddUser1.Visible = false;            
+            //userControlAddUser1.Visible = false;            
         }
 
         private void addUserBtn_Click(object sender, EventArgs e)
@@ -149,6 +149,9 @@ namespace attendanceSystem
             MoveSidePanel(addUserBtn);
         }
 
-
+        private void reportsBtn_Click(object sender, EventArgs e)
+        {
+            MoveSidePanel(reportsBtn);
+        }
     }
 }

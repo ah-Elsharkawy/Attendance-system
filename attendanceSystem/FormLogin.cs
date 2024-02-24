@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace attendanceSystem
 {
     public partial class FormLogin : Form
@@ -102,7 +103,7 @@ namespace attendanceSystem
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
         private void pictureBoxClose_MouseHover(object sender, EventArgs e)
@@ -119,7 +120,32 @@ namespace attendanceSystem
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            //string check = Attendance.Attendance.IsValidNamePass(textBoxName.Text.Trim(),textBoxPassword.Text.Trim, XmlReadMode)
+            string email = textBoxEmail.Text.Trim(); //trim to remove spaces before or after their email address
+            string password = textBoxPassword.Text;
+            if (IsValidPassword(email) && IsValidPassword(password))
+            {
+                // Valid email and password, perform login logic here
+                MessageBox.Show("Login successful!");
+            }
+            else
+            {
+                MessageBox.Show("Invalid email or password. Please try again.");
+            }
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            string email = textBoxEmail.Text.Trim(); //trim to remove spaces before or after their email address
+            string password = textBoxPassword.Text;
+        }
+        private bool IsValidPassword(string password)
+        {
+
+        }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
