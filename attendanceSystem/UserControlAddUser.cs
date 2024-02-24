@@ -166,7 +166,7 @@ namespace attendanceSystem
             }
 
             // Generate a unique ID for the new student
-            string newUserId = GenerateUniqueId();
+            //string newUserId = GenerateUniqueId();
 
             // Create a new XmlDocument instance
             XmlDocument xmlDoc = new XmlDocument();
@@ -176,11 +176,15 @@ namespace attendanceSystem
                 // Load the XML file
                 xmlDoc.Load(XmlFilePath);
 
+                Student newUser = new (textBoxName.Text, textBoxEmail.Text, textBoxPassword.Text, "Student", comboBoxClass.SelectedItem.ToString());
+               // FormatsConverter.Serialize<Student>(newUser);
+                textBox1.Text = FormatsConverter.Serialize(newUser);
+
                 // Create a new "user" element
                 XmlElement newUserElement = xmlDoc.CreateElement("user");
 
                 // Create and append child elements for the new student
-                AddXmlElement(xmlDoc, newUserElement, "Id", newUserId);
+                //AddXmlElement(xmlDoc, newUserElement, "Id", newUserId);
                 AddXmlElement(xmlDoc, newUserElement, "Name", textBoxName.Text.Trim());
                 AddXmlElement(xmlDoc, newUserElement, "Email", textBoxEmail.Text.Trim());
                 AddXmlElement(xmlDoc, newUserElement, "Password", textBoxPassword.Text.Trim());
@@ -419,7 +423,7 @@ namespace attendanceSystem
             }
 
             // Generate a unique ID for the new user
-            string newUserId = GenerateUniqueId();
+            //string newUserId = GenerateUniqueId();
 
             // Create a new XmlDocument instance
             XmlDocument xmlDoc = new XmlDocument();
@@ -433,7 +437,7 @@ namespace attendanceSystem
                 XmlElement newUserElement = xmlDoc.CreateElement("user");
 
                 // Create and append child elements for the new user
-                AddXmlElement(xmlDoc, newUserElement, "Id", newUserId);
+                //AddXmlElement(xmlDoc, newUserElement, "Id", newUserId);
                 AddXmlElement(xmlDoc, newUserElement, "Name", textBoxTeacherName.Text.Trim());
                 AddXmlElement(xmlDoc, newUserElement, "Email", textBoxTeacherEmail.Text.Trim());
                 AddXmlElement(xmlDoc, newUserElement, "Password", textBoxTeacherPassword.Text.Trim());
@@ -624,11 +628,9 @@ namespace attendanceSystem
         }
 
         // Generate a unique ID for the new user (you can implement your own logic here)
-        private string GenerateUniqueId()
-        {
-            // This is just a placeholder implementation
-            return Guid.NewGuid().ToString();
-        }
+        
+
+
 
         private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
