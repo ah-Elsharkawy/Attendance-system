@@ -23,16 +23,7 @@ namespace attendanceSystem
                 Record = attendanceRecords
             };
 
-            Student student = new Student
-            {
-                Id = 1,
-                Name = "John Doe",
-                Email = "john@example.com",
-                Password = "password123",
-                Role = "Student",
-                SClass = "PD",
-                Attendance = attendance
-            };
+            Student student = new Student("StudentName", "student@example.com", "studentPassword", "Student", "ClassA");
 
             Button button = sender as Button;
 

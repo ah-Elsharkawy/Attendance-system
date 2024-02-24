@@ -48,22 +48,6 @@
             textBoxTeacherName = new TextBox();
             label14 = new Label();
             label15 = new Label();
-            tabPageAddStudent = new TabPage();
-            pictureBoxStudentEmail = new PictureBox();
-            comboBoxClass = new ComboBox();
-            buttonAdd = new Button();
-            panel4 = new Panel();
-            label5 = new Label();
-            panel3 = new Panel();
-            textBoxPassword = new TextBox();
-            label4 = new Label();
-            panel2 = new Panel();
-            textBoxEmail = new TextBox();
-            label3 = new Label();
-            panel1 = new Panel();
-            textBoxName = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
             tabPageUpdate = new TabPage();
             pictureBoxStudentEmailU = new PictureBox();
             comboBoxClassU = new ComboBox();
@@ -98,15 +82,32 @@
             label19 = new Label();
             label20 = new Label();
             toolTip1 = new ToolTip(components);
+            label1 = new Label();
+            label2 = new Label();
+            textBoxName = new TextBox();
+            panel1 = new Panel();
+            label3 = new Label();
+            textBoxEmail = new TextBox();
+            panel2 = new Panel();
+            label4 = new Label();
+            textBoxPassword = new TextBox();
+            panel3 = new Panel();
+            label5 = new Label();
+            panel4 = new Panel();
+            buttonAdd = new Button();
+            comboBoxClass = new ComboBox();
+            pictureBoxStudentEmail = new PictureBox();
+            tabPageAddStudent = new TabPage();
+            textBox1 = new TextBox();
             tabControlAddUser.SuspendLayout();
             tabPageAddTeacher.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmail).BeginInit();
-            tabPageAddStudent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).BeginInit();
             tabPageUpdate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmailU).BeginInit();
             tabPageUpdateTeacher.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmailU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).BeginInit();
+            tabPageAddStudent.SuspendLayout();
             SuspendLayout();
             // 
             // tabControlAddUser
@@ -314,196 +315,6 @@
             label15.Size = new Size(141, 23);
             label15.TabIndex = 14;
             label15.Text = "Add Teacher:";
-            // 
-            // tabPageAddStudent
-            // 
-            tabPageAddStudent.Controls.Add(pictureBoxStudentEmail);
-            tabPageAddStudent.Controls.Add(comboBoxClass);
-            tabPageAddStudent.Controls.Add(buttonAdd);
-            tabPageAddStudent.Controls.Add(panel4);
-            tabPageAddStudent.Controls.Add(label5);
-            tabPageAddStudent.Controls.Add(panel3);
-            tabPageAddStudent.Controls.Add(textBoxPassword);
-            tabPageAddStudent.Controls.Add(label4);
-            tabPageAddStudent.Controls.Add(panel2);
-            tabPageAddStudent.Controls.Add(textBoxEmail);
-            tabPageAddStudent.Controls.Add(label3);
-            tabPageAddStudent.Controls.Add(panel1);
-            tabPageAddStudent.Controls.Add(textBoxName);
-            tabPageAddStudent.Controls.Add(label2);
-            tabPageAddStudent.Controls.Add(label1);
-            tabPageAddStudent.Location = new Point(4, 4);
-            tabPageAddStudent.Name = "tabPageAddStudent";
-            tabPageAddStudent.Padding = new Padding(3);
-            tabPageAddStudent.Size = new Size(934, 464);
-            tabPageAddStudent.TabIndex = 0;
-            tabPageAddStudent.Text = "Add Student";
-            tabPageAddStudent.UseVisualStyleBackColor = true;
-            tabPageAddStudent.Enter += tabPageAddStudent_Enter;
-            tabPageAddStudent.Leave += tabPageAddStudent_Leave;
-            // 
-            // pictureBoxStudentEmail
-            // 
-            pictureBoxStudentEmail.Anchor = AnchorStyles.None;
-            pictureBoxStudentEmail.Image = Properties.Resources.TEST;
-            pictureBoxStudentEmail.Location = new Point(829, 160);
-            pictureBoxStudentEmail.Name = "pictureBoxStudentEmail";
-            pictureBoxStudentEmail.Size = new Size(19, 17);
-            pictureBoxStudentEmail.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxStudentEmail.TabIndex = 32;
-            pictureBoxStudentEmail.TabStop = false;
-            pictureBoxStudentEmail.Visible = false;
-            pictureBoxStudentEmail.MouseHover += pictureBoxStudentEmail_MouseHover;
-            // 
-            // comboBoxClass
-            // 
-            comboBoxClass.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxClass.FlatStyle = FlatStyle.Flat;
-            comboBoxClass.FormattingEnabled = true;
-            comboBoxClass.Items.AddRange(new object[] { "PD", "OS", "AI" });
-            comboBoxClass.Location = new Point(553, 212);
-            comboBoxClass.Name = "comboBoxClass";
-            comboBoxClass.Size = new Size(270, 29);
-            comboBoxClass.TabIndex = 28;
-
-            //comboBoxClass.DropDownStyle = ComboBoxStyle.DropDownList;
-            //comboBoxClass.FlatStyle = FlatStyle.Flat;
-            //comboBoxClass.FormattingEnabled = true;
-            //comboBoxClass.Items.AddRange(new object[] { "PD", "OS", "AI", "PD", "OS", "AI", "PD", "OS", "AI" });
-            //comboBoxClass.Location = new Point(553, 212);
-            //comboBoxClass.Name = "comboBoxClass";
-            //comboBoxClass.Size = new Size(270, 29);
-            //comboBoxClass.TabIndex = 3;
-            //comboBoxClass.SelectedIndexChanged += comboBoxClass_SelectedIndexChanged;
-            //comboBoxClass.Click += comboBoxClass_Click;
-            // 
-            // buttonAdd
-            // 
-            buttonAdd.BackColor = Color.FromArgb(76, 3, 125);
-            buttonAdd.FlatAppearance.BorderSize = 0;
-            buttonAdd.FlatStyle = FlatStyle.Flat;
-            buttonAdd.ForeColor = Color.White;
-            buttonAdd.Location = new Point(112, 291);
-            buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(114, 37);
-            buttonAdd.TabIndex = 4;
-            buttonAdd.Text = "Add";
-            buttonAdd.UseVisualStyleBackColor = false;
-            buttonAdd.Click += buttonAdd_Click;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.LightGray;
-            panel4.Location = new Point(553, 246);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(270, 2);
-            panel4.TabIndex = 0;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label5.Location = new Point(553, 190);
-            label5.Name = "label5";
-            label5.Size = new Size(51, 19);
-            label5.TabIndex = 10;
-            label5.Text = "class";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.LightGray;
-            panel3.Location = new Point(112, 246);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(270, 2);
-            panel3.TabIndex = 0;
-            // 
-            // textBoxPassword
-            // 
-            textBoxPassword.BorderStyle = BorderStyle.None;
-            textBoxPassword.Font = new Font("Century Gothic", 10F);
-            textBoxPassword.Location = new Point(112, 222);
-            textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(270, 21);
-            textBoxPassword.TabIndex = 1;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label4.Location = new Point(112, 190);
-            label4.Name = "label4";
-            label4.Size = new Size(88, 19);
-            label4.TabIndex = 7;
-            label4.Text = "password";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.LightGray;
-            panel2.Location = new Point(553, 180);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(270, 2);
-            panel2.TabIndex = 0;
-            // 
-            // textBoxEmail
-            // 
-            textBoxEmail.BorderStyle = BorderStyle.None;
-            textBoxEmail.Font = new Font("Century Gothic", 10F);
-            textBoxEmail.ForeColor = Color.DarkGray;
-            textBoxEmail.Location = new Point(553, 156);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(270, 21);
-            textBoxEmail.TabIndex = 2;
-            textBoxEmail.Text = "abdullah@gmail.com";
-            textBoxEmail.Enter += textBoxEmail_Enter;
-            textBoxEmail.Leave += textBoxEmail_Leave;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label3.Location = new Point(553, 122);
-            label3.Name = "label3";
-            label3.Size = new Size(58, 19);
-            label3.TabIndex = 4;
-            label3.Text = "Email:";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.LightGray;
-            panel1.Location = new Point(115, 175);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(270, 2);
-            panel1.TabIndex = 0;
-            // 
-            // textBoxName
-            // 
-            textBoxName.BorderStyle = BorderStyle.None;
-            textBoxName.Font = new Font("Century Gothic", 10F);
-            textBoxName.Location = new Point(115, 151);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(270, 21);
-            textBoxName.TabIndex = 0;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label2.Location = new Point(112, 122);
-            label2.Name = "label2";
-            label2.Size = new Size(65, 19);
-            label2.TabIndex = 1;
-            label2.Text = "Name:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(67, 31, 125);
-            label1.Location = new Point(6, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(135, 23);
-            label1.TabIndex = 0;
-            label1.Text = "Add Student:";
             // 
             // tabPageUpdate
             // 
@@ -875,6 +686,194 @@
             label20.TabIndex = 35;
             label20.Text = "Update Teacher:";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(67, 31, 125);
+            label1.Location = new Point(6, 3);
+            label1.Name = "label1";
+            label1.Size = new Size(135, 23);
+            label1.TabIndex = 0;
+            label1.Text = "Add Student:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            label2.Location = new Point(112, 122);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 19);
+            label2.TabIndex = 1;
+            label2.Text = "Name:";
+            // 
+            // textBoxName
+            // 
+            textBoxName.BorderStyle = BorderStyle.None;
+            textBoxName.Font = new Font("Century Gothic", 10F);
+            textBoxName.Location = new Point(115, 151);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(270, 21);
+            textBoxName.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.LightGray;
+            panel1.Location = new Point(115, 175);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(270, 2);
+            panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            label3.Location = new Point(553, 122);
+            label3.Name = "label3";
+            label3.Size = new Size(58, 19);
+            label3.TabIndex = 4;
+            label3.Text = "Email:";
+            // 
+            // textBoxEmail
+            // 
+            textBoxEmail.BorderStyle = BorderStyle.None;
+            textBoxEmail.Font = new Font("Century Gothic", 10F);
+            textBoxEmail.ForeColor = Color.DarkGray;
+            textBoxEmail.Location = new Point(553, 156);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(270, 21);
+            textBoxEmail.TabIndex = 2;
+            textBoxEmail.Text = "abdullah@gmail.com";
+            textBoxEmail.Enter += textBoxEmail_Enter;
+            textBoxEmail.Leave += textBoxEmail_Leave;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.LightGray;
+            panel2.Location = new Point(553, 180);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(270, 2);
+            panel2.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            label4.Location = new Point(112, 190);
+            label4.Name = "label4";
+            label4.Size = new Size(88, 19);
+            label4.TabIndex = 7;
+            label4.Text = "password";
+            // 
+            // textBoxPassword
+            // 
+            textBoxPassword.BorderStyle = BorderStyle.None;
+            textBoxPassword.Font = new Font("Century Gothic", 10F);
+            textBoxPassword.Location = new Point(112, 222);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(270, 21);
+            textBoxPassword.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.LightGray;
+            panel3.Location = new Point(112, 246);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(270, 2);
+            panel3.TabIndex = 0;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            label5.Location = new Point(553, 190);
+            label5.Name = "label5";
+            label5.Size = new Size(51, 19);
+            label5.TabIndex = 10;
+            label5.Text = "class";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.LightGray;
+            panel4.Location = new Point(553, 246);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(270, 2);
+            panel4.TabIndex = 0;
+            // 
+            // buttonAdd
+            // 
+            buttonAdd.BackColor = Color.FromArgb(76, 3, 125);
+            buttonAdd.FlatAppearance.BorderSize = 0;
+            buttonAdd.FlatStyle = FlatStyle.Flat;
+            buttonAdd.ForeColor = Color.White;
+            buttonAdd.Location = new Point(112, 291);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(114, 37);
+            buttonAdd.TabIndex = 4;
+            buttonAdd.Text = "Add";
+            buttonAdd.UseVisualStyleBackColor = false;
+            buttonAdd.Click += buttonAdd_Click;
+            // 
+            // comboBoxClass
+            // 
+            comboBoxClass.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxClass.FlatStyle = FlatStyle.Flat;
+            comboBoxClass.FormattingEnabled = true;
+            comboBoxClass.Items.AddRange(new object[] { "PD", "OS", "AI" });
+            comboBoxClass.Location = new Point(553, 212);
+            comboBoxClass.Name = "comboBoxClass";
+            comboBoxClass.Size = new Size(270, 29);
+            comboBoxClass.TabIndex = 28;
+            // 
+            // pictureBoxStudentEmail
+            // 
+            pictureBoxStudentEmail.Anchor = AnchorStyles.None;
+            pictureBoxStudentEmail.Image = Properties.Resources.TEST;
+            pictureBoxStudentEmail.Location = new Point(829, 160);
+            pictureBoxStudentEmail.Name = "pictureBoxStudentEmail";
+            pictureBoxStudentEmail.Size = new Size(19, 17);
+            pictureBoxStudentEmail.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentEmail.TabIndex = 32;
+            pictureBoxStudentEmail.TabStop = false;
+            pictureBoxStudentEmail.Visible = false;
+            pictureBoxStudentEmail.MouseHover += pictureBoxStudentEmail_MouseHover;
+            // 
+            // tabPageAddStudent
+            // 
+            tabPageAddStudent.Controls.Add(textBox1);
+            tabPageAddStudent.Controls.Add(pictureBoxStudentEmail);
+            tabPageAddStudent.Controls.Add(comboBoxClass);
+            tabPageAddStudent.Controls.Add(buttonAdd);
+            tabPageAddStudent.Controls.Add(panel4);
+            tabPageAddStudent.Controls.Add(label5);
+            tabPageAddStudent.Controls.Add(panel3);
+            tabPageAddStudent.Controls.Add(textBoxPassword);
+            tabPageAddStudent.Controls.Add(label4);
+            tabPageAddStudent.Controls.Add(panel2);
+            tabPageAddStudent.Controls.Add(textBoxEmail);
+            tabPageAddStudent.Controls.Add(label3);
+            tabPageAddStudent.Controls.Add(panel1);
+            tabPageAddStudent.Controls.Add(textBoxName);
+            tabPageAddStudent.Controls.Add(label2);
+            tabPageAddStudent.Controls.Add(label1);
+            tabPageAddStudent.Location = new Point(4, 4);
+            tabPageAddStudent.Name = "tabPageAddStudent";
+            tabPageAddStudent.Padding = new Padding(3);
+            tabPageAddStudent.Size = new Size(934, 464);
+            tabPageAddStudent.TabIndex = 0;
+            tabPageAddStudent.Text = "Add Student";
+            tabPageAddStudent.UseVisualStyleBackColor = true;
+            tabPageAddStudent.Enter += tabPageAddStudent_Enter;
+            tabPageAddStudent.Leave += tabPageAddStudent_Leave;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(369, 353);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(342, 88);
+            textBox1.TabIndex = 33;
+            // 
             // UserControlAddUser
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -889,15 +888,15 @@
             tabPageAddTeacher.ResumeLayout(false);
             tabPageAddTeacher.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmail).EndInit();
-            tabPageAddStudent.ResumeLayout(false);
-            tabPageAddStudent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).EndInit();
             tabPageUpdate.ResumeLayout(false);
             tabPageUpdate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmailU).EndInit();
             tabPageUpdateTeacher.ResumeLayout(false);
             tabPageUpdateTeacher.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmailU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).EndInit();
+            tabPageAddStudent.ResumeLayout(false);
+            tabPageAddStudent.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -905,21 +904,7 @@
 
         private ToolTip toolTip;
         private TabControl tabControlAddUser;
-        private TabPage tabPageAddStudent;
         private TabPage tabPageAddTeacher;
-        private Label label1;
-        private Label label2;
-        private TextBox textBoxName;
-        private Panel panel2;
-        private TextBox textBoxEmail;
-        private Label label3;
-        private Panel panel1;
-        private Panel panel3;
-        private TextBox textBoxPassword;
-        private Label label4;
-        private Panel panel4;
-        private Label label5;
-        private Button buttonAdd;
         private TabPage tabPageUpdate;
         private Button buttonUpdate;
         private Panel panel6;
@@ -944,7 +929,6 @@
         private TextBox textBoxTeacherName;
         private Label label14;
         private Label label15;
-        private ComboBox comboBoxClass;
         private ComboBox comboBoxClassU;
         private Panel panel5;
         private Label label16;
@@ -970,7 +954,23 @@
         private TextBox textBoxTeacherNameU;
         private Label label19;
         private Label label20;
-        private PictureBox pictureBoxStudentEmail;
         private PictureBox pictureBoxStudentEmailU;
+        private TabPage tabPageAddStudent;
+        private TextBox textBox1;
+        private PictureBox pictureBoxStudentEmail;
+        private ComboBox comboBoxClass;
+        private Button buttonAdd;
+        private Panel panel4;
+        private Label label5;
+        private Panel panel3;
+        private TextBox textBoxPassword;
+        private Label label4;
+        private Panel panel2;
+        private TextBox textBoxEmail;
+        private Label label3;
+        private Panel panel1;
+        private TextBox textBoxName;
+        private Label label2;
+        private Label label1;
     }
 }

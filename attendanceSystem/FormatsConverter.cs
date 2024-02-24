@@ -53,20 +53,21 @@ namespace attendanceSystem
                     Indent = true,
                     OmitXmlDeclaration = true // Remove XML declaration
                 };
-                string xmlString;
+
                 using (XmlWriter xmlWriter = XmlWriter.Create(writer, settings))
                 {
-                    
                     serializer.Serialize(xmlWriter, obj, namespaces);
-                    //xmlWriter.WriteEndElement();
-                    // Replace the root element tag with the specified root element name
-                    xmlString = writer.ToString();
-                    xmlString = xmlString.Replace("<" + typeof(T).Name + ">", "<" + "User" + ">");
-                    xmlString = xmlString.Replace("</" + typeof(T).Name + ">", "</" + "User" + ">");
                 }
+
+                string xmlString = writer.ToString();
+
+                // Replace the root element tag with the specified root element name
+                xmlString = xmlString.Replace("<" + typeof(T).Name + ">", "<user>");
+                xmlString = xmlString.Replace("</" + typeof(T).Name + ">", "</user>");
 
                 return xmlString;
             }
         }
+
     }
 }
