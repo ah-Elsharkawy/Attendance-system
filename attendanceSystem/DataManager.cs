@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,14 +16,7 @@ namespace attendanceSystem
     {
         private static XmlDocument DataDocument;
         private static XmlDocument TestDocument;
-        public static User currentUser = new Admin
-        {
-            Id = 1,
-            Name = "AdminName",
-            Email = "admin@example.com",
-            Password = "adminPassword",
-            Role = "Admin"
-        };
+        public static User currentUser = new Admin("AdminName", "admin@example.com", "adminPassword", "Admin");
 
 
         private static string dataFolderPath = @"..\..\..\Data";
@@ -67,6 +60,13 @@ namespace attendanceSystem
         {
             return DataDocument.DocumentElement.OuterXml;
         }
+
+        public static string getUsersByClass(string className)
+        {
+
+            return "string";
+        }
+
 
         private static HtmlAgilityPack.HtmlDocument GetHtmlDocumentFromXslt(XslCompiledTransform xsltFilter, XsltArgumentList xsltArgs)
         {

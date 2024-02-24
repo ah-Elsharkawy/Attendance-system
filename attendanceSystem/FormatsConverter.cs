@@ -20,7 +20,7 @@ namespace attendanceSystem
             using (StringReader reader = new StringReader(xmlData))
             {
                 T result = (T)serializer.Deserialize(reader);
-                if(role == "Teacher")
+                if (role == "Teacher")
                 {
                     PropertyInfo classesProp = typeof(T).GetProperty("Classes");
                     if (classesProp != null && classesProp.PropertyType == typeof(List<string>))
@@ -35,7 +35,7 @@ namespace attendanceSystem
                         }
                         classesProp.SetValue(result, classesList);
                     }
-                    
+
                 }
                 return result;
             }
@@ -53,20 +53,22 @@ namespace attendanceSystem
                     Indent = true,
                     OmitXmlDeclaration = true // Remove XML declaration
                 };
-                string xmlString;
+
                 using (XmlWriter xmlWriter = XmlWriter.Create(writer, settings))
                 {
-                    
                     serializer.Serialize(xmlWriter, obj, namespaces);
-                    //xmlWriter.WriteEndElement();
-                    // Replace the root element tag with the specified root element name
-                    xmlString = writer.ToString();
-                    xmlString = xmlString.Replace("<" + typeof(T).Name + ">", "<" + "User" + ">");
-                    xmlString = xmlString.Replace("</" + typeof(T).Name + ">", "</" + "User" + ">");
                 }
+
+                string xmlString = writer.ToString();
+
+                // Replace the root element tag with the specified root element name
+                xmlString = xmlString.Replace("<" + typeof(T).Name + ">", "<user>");
+                xmlString = xmlString.Replace("</" + typeof(T).Name + ">", "</user>");
+                xmlString = xmlString.Replace("string>", "class>");
 
                 return xmlString;
             }
         }
+
     }
 }

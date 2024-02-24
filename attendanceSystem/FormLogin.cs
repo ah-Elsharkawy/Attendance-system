@@ -137,81 +137,76 @@ namespace attendanceSystem
             var inputEmail = textBoxEmail.Text.Trim();
             //Console.WriteLine(inputEmail);
             var inputPassword = textBoxPassword.Text;
-
-            // Retrieve user XML data by email
-            XmlDocument loggedUser = DataManager.getUserXmlByEmail(inputEmail);
-            Console.WriteLine(loggedUser.OuterXml);
-/*
-            XmlNode emailNode = loggedUser.SelectSingleNode("/user/Email");
-            if (emailNode != null)
+            try
             {
-                // Get the inner text of the Email element
-                string email = emailNode.InnerText;
-                Console.WriteLine("Email: " + email);
-            }
-            else
-            {
-                Console.WriteLine("Email element not found.");
-            }
-            Console.WriteLine(loggedUser.SelectSingleNode("/user/Email").InnerText);
-*/
+
+                // Retrieve user XML data by email
+                XmlDocument loggedUser = DataManager.getUserXmlByEmail(inputEmail);
+                Console.WriteLine(loggedUser.OuterXml);
+                Console.WriteLine(loggedUser.SelectSingleNode("//Password").InnerText);
 
 
-            /*if (loggedUser != null)
-            {
-                // Get the email node
-                var emailNode = loggedUser.SelectSingleNode("//Email");
-                Console.WriteLine(emailNode);
-
-                if (emailNode != null)
+                if (loggedUser != null)
                 {
-                    // Get the email value from the XML
-                    var rightEmail = emailNode.InnerText;
+                    // Get the email node
+                    var emailNode = loggedUser.SelectSingleNode("//Email");
+                    Console.WriteLine(emailNode);
 
-                    if (rightEmail == inputEmail)
+                    if (emailNode != null)
                     {
-                        // Email matches, proceed to check password
-                        var passwordNode = loggedUser.SelectSingleNode("Password");
+                        // Get the email value from the XML
+                        var rightEmail = emailNode.InnerText;
 
-                        if (passwordNode != null)
+                        if (rightEmail == inputEmail)
                         {
-                            // Get the password value from the XML
-                            var rightPassword = passwordNode.InnerText;
+                            // Email matches, proceed to check password
+                            var passwordNode = loggedUser.SelectSingleNode("//Password");
 
-                            if (rightPassword == inputPassword)
+                            if (passwordNode != null)
                             {
-                                // Password matches, login successful
-                                MessageBox.Show("Successful Login.");
+                                // Get the password value from the XML
+                                var rightPassword = passwordNode.InnerText;
+
+                                if (rightPassword == inputPassword)
+                                {
+                                    // Password matches, login successful
+                                    MessageBox.Show("Successful Login.");
+                                }
+                                else
+                                {
+                                    // Incorrect password
+                                    MessageBox.Show("Incorrect Password.");
+                                }
                             }
                             else
                             {
-                                // Incorrect password
+                                // Password node not found, handle accordingly
                                 MessageBox.Show("Incorrect Password.");
                             }
                         }
                         else
                         {
-                            // Password node not found, handle accordingly
-                            MessageBox.Show("Incorrect Password.");
+                            // Email does not match
+                            MessageBox.Show("Incorrect Email.");
                         }
                     }
                     else
                     {
-                        // Email does not match
-                        MessageBox.Show("Incorrect Email.");
+                        // Email node not found, handle accordingly
+                        MessageBox.Show("This Email doesn't exist.");
                     }
                 }
                 else
                 {
-                    // Email node not found, handle accordingly
-                    MessageBox.Show("This Email doesn't exist.");
+                    // User data not found for the given email, handle accordingly
+                    MessageBox.Show("User not found.");
                 }
             }
-            else
+            catch (Exception error)
             {
-                // User data not found for the given email, handle accordingly
-                MessageBox.Show("User not found.");
-            }*/
+                Console.WriteLine("Error" + error.Message);
+                MessageBox.Show("email doesn't exist.");
+            }
         }
 
 
@@ -223,7 +218,7 @@ namespace attendanceSystem
         }
         private void textBoxPassword_Leave(object sender, EventArgs e)
         {
-            /*string password = textBoxPassword.Text;
+            string password = textBoxPassword.Text;
             if (string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Please enter a password.");
@@ -231,19 +226,19 @@ namespace attendanceSystem
             else if (!IsValidPassword(password))
             {
                 MessageBox.Show("Password must be at least 6 characters long.");
-            }*/
+            }
         }
 
         private void textBoxEmail_Leave(object sender, EventArgs e)
         {
-            /*if (string.IsNullOrEmpty(textBoxEmail.Text))
+            if (string.IsNullOrEmpty(textBoxEmail.Text))
             {
                 MessageBox.Show("Please enter an email address.");
             }
             else if (!IsValidEmail(textBoxEmail.Text))
             {
                 MessageBox.Show("Please enter a valid email address.");
-            }*/
+            }
 
         }
 
