@@ -176,7 +176,7 @@
     <SClass>PD</SClass>
   </user>
   <user>
-    <Id>14</Id>
+    <Id>13</Id>
     <Name>addTeacher</Name>
     <Email>test@add.com</Email>
     <Password>1233456</Password>
@@ -187,7 +187,7 @@
     </Classes>
   </user>
   <user>
-    <Id>15</Id>
+    <Id>14</Id>
     <Name>newTeacher</Name>
     <Email>add@teacher.com</Email>
     <Password>12345678</Password>
@@ -197,11 +197,30 @@
     </Classes>
   </user>
   <user>
-    <Id>16</Id>
+    <Id>15</Id>
     <Name>addStudent</Name>
     <Email>add@student.com</Email>
     <Password>s123568</Password>
     <Role>Student</Role>
     <SClass>OS</SClass>
+  </user>
+  <user>
+    <Id>16</Id>
+    <Name>fsafsad</Name>
+    <Email>gsdgsd@vgsdg.das</Email>
+    <Password>dfsdfsd4</Password>
+    <Role>Teacher</Role>
+    <Classes>
+      <class>AI</class>
+      <class>OS</class>
+    </Classes>
+  </user>
+  <user>
+    <Id>17</Id>
+    <Name>addes</Name>
+    <Email>add@gmail.com</Email>
+    <Password>a12365</Password>
+    <Role>Student</Role>
+    <SClass>PD</SClass>
   </user>
 </users>
