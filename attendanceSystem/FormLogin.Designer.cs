@@ -141,7 +141,7 @@
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(222, 28);
             textBoxEmail.TabIndex = 1;
-            textBoxEmail.TextChanged += textBoxEmail_TextChanged;
+            textBoxEmail.Leave += textBoxEmail_Leave;
             // 
             // label2
             // 
@@ -164,6 +164,7 @@
             textBoxPassword.Size = new Size(222, 28);
             textBoxPassword.TabIndex = 2;
             textBoxPassword.TextChanged += textBoxPassword_TextChanged;
+            textBoxPassword.Leave += textBoxPassword_Leave;
             // 
             // labelError
             // 

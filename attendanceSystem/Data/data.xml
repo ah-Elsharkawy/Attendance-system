@@ -20,6 +20,18 @@
 		</Classes>
 	</user>
 	<user>
+		<Id>20</Id>
+		<Name>mohamed</Name>
+		<Email>aaa</Email>
+		<Password>1</Password>
+		<Role>Teacher</Role>
+		<Classes>
+			<class>PD</class>
+			<class>OS</class>
+			<class>AI</class>
+		</Classes>
+	</user>
+	<user>
 		<Id>3</Id>
 		<Name>mahmoud</Name>
 		<Email>m@gmail.com</Email>
