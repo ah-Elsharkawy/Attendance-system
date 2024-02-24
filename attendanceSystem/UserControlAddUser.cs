@@ -169,42 +169,72 @@ namespace attendanceSystem
             //string newUserId = GenerateUniqueId();
 
             // Create a new XmlDocument instance
-            XmlDocument xmlDoc = new XmlDocument();
 
             try
             {
-                // Load the XML file
-                xmlDoc.Load(XmlFilePath);
 
-                Student newUser = new (textBoxName.Text, textBoxEmail.Text, textBoxPassword.Text, "Student", comboBoxClass.SelectedItem.ToString());
-               // FormatsConverter.Serialize<Student>(newUser);
-                textBox1.Text = FormatsConverter.Serialize(newUser);
+                Student newStudent = new Student(textBoxName.Text, textBoxEmail.Text, textBoxPassword.Text, "Student", comboBoxClass.SelectedItem.ToString());
 
-                // Create a new "user" element
+                XmlDocument newStudenXml = FormatsConverter.Serialize<Student>(newStudent);
+                textBox1.Text = newStudenXml.OuterXml;
+                DataManager.addUser(newStudenXml);
+
+                // Load the XML document
+                /*XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(newStudenXml);
+
+                
+
+                // Create a new user element
                 XmlElement newUserElement = xmlDoc.CreateElement("user");
 
-                // Create and append child elements for the new student
-                //AddXmlElement(xmlDoc, newUserElement, "Id", newUserId);
-                AddXmlElement(xmlDoc, newUserElement, "Name", textBoxName.Text.Trim());
-                AddXmlElement(xmlDoc, newUserElement, "Email", textBoxEmail.Text.Trim());
-                AddXmlElement(xmlDoc, newUserElement, "Password", textBoxPassword.Text.Trim());
-                AddXmlElement(xmlDoc, newUserElement, "Role", "Student");
+                // Add child elements for the new student
+                AddXmlElement(xmlDoc, newUserElement, "Id", newStudent.Id.ToString());
+                AddXmlElement(xmlDoc, newUserElement, "Name", newStudent.Name);
+                AddXmlElement(xmlDoc, newUserElement, "Email", newStudent.Email);
+                AddXmlElement(xmlDoc, newUserElement, "Password", newStudent.Password);
+                AddXmlElement(xmlDoc, newUserElement, "Role", newStudent.Role);
+                AddXmlElement(xmlDoc, newUserElement, "SClass", newStudent.SClass);
 
-                // If a class is selected, add it as a child element
-                if (comboBoxClass.SelectedIndex != -1)
-                {
-                    string selectedClass = comboBoxClass.SelectedItem.ToString();
-                    AddXmlElement(xmlDoc, newUserElement, "SClass", selectedClass);
-                }
-
-                // Append the new user element to the root "users" element
+                // Append the new user element to the root element
                 xmlDoc.DocumentElement.AppendChild(newUserElement);
 
                 // Save the changes back to the XML file
-                xmlDoc.Save(XmlFilePath);
+                xmlDoc.Save(XmlFilePath);*/
+
+                // Load the XML file
+                //XmlDocument xmlDoc = new XmlDocument();
+                //xmlDoc.Load(XmlFilePath);
+
+                //Student newStudent = new Student(textBoxName.Text, textBoxEmail.Text, textBoxPassword.Text, "Student", comboBoxClass.SelectedItem.ToString());
+                //// FormatsConverter.Serialize<Student>(newUser);
+                //string serializedStudent = FormatsConverter.Serialize(newStudent);
+                //File.AppendAllText(XmlFilePath, serializedStudent + Environment.NewLine);
+                // Create a new "user" element
+                //XmlElement newUserElement = xmlDoc.CreateElement("user");
+
+                // Create and append child elements for the new student
+                //AddXmlElement(xmlDoc, newUserElement, "Id", newUserId);
+                //AddXmlElement(xmlDoc, newUserElement, "Name", textBoxName.Text.Trim());
+                //AddXmlElement(xmlDoc, newUserElement, "Email", textBoxEmail.Text.Trim());
+                //AddXmlElement(xmlDoc, newUserElement, "Password", textBoxPassword.Text.Trim());
+                //AddXmlElement(xmlDoc, newUserElement, "Role", "Student");
+
+                // If a class is selected, add it as a child element
+                //if (comboBoxClass.SelectedIndex != -1)
+                //{
+                //    string selectedClass = comboBoxClass.SelectedItem.ToString();
+                //    AddXmlElement(xmlDoc, newUserElement, "SClass", selectedClass);
+                //}
+
+                //// Append the new user element to the root "users" element
+                //xmlDoc.DocumentElement.AppendChild(newUserElement);
+
+                //// Save the changes back to the XML file
+                //xmlDoc.Save(XmlFilePath);
 
                 // Clear text boxes after successful addition
-                ClearTextStudentBox();
+                //ClearTextStudentBox();
 
                 // Show success message
                 MessageBox.Show("Student added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -612,13 +642,6 @@ namespace attendanceSystem
             UpdateUserData(UID);
         }
 
-
-
-
-
-
-
-
         // Helper method to add a new XML element
         private void AddXmlElement(XmlDocument xmlDoc, XmlElement parentElement, string elementName, string elementValue)
         {
@@ -628,9 +651,6 @@ namespace attendanceSystem
         }
 
         // Generate a unique ID for the new user (you can implement your own logic here)
-        
-
-
 
         private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
