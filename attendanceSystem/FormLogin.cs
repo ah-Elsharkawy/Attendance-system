@@ -169,8 +169,30 @@ namespace attendanceSystem
 
                                 if (rightPassword == inputPassword)
                                 {
+                                    User loggedUserObj = null;
+                                    var role = loggedUser.SelectSingleNode("//Role").InnerText;
+
+                                    Console.WriteLine(loggedUser.DocumentElement.InnerXml);
+
+                                    if (role == "Student")
+                                        loggedUserObj = FormatsConverter.Deserialize<Student>(loggedUser.DocumentElement.InnerXml, role);
+
+                                    else if (role == "Teacher")
+                                        loggedUserObj = FormatsConverter.Deserialize<Teacher>(loggedUser.DocumentElement.InnerXml, role);
+
+                                    else if (role == "Admin")
+                                    {
+                                        loggedUserObj = FormatsConverter.Deserialize<Admin>(loggedUser.DocumentElement.InnerXml, role);
+                                        Console.WriteLine(loggedUserObj.ToString());
+                                    }
+
+                                    DataManager.currentUser = loggedUserObj;
+                                    Console.WriteLine(DataManager.currentUser);
                                     // Password matches, login successful
                                     MessageBox.Show("Successful Login.");
+                                    mainForm mainForm = new mainForm();
+                                    mainForm.Show();
+                                    this.Hide();
                                 }
                                 else
                                 {
