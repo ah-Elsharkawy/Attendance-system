@@ -223,4 +223,11 @@
     <Role>Student</Role>
     <SClass>PD</SClass>
   </user>
+  <user>
+    <Name>asfsdaf</Name>
+    <Email>sdfsdf@srgsdg</Email>
+    <Password>adsgfasdfg</Password>
+    <Role>Student</Role>
+    <SClass>PD</SClass>
+  </user>
 </users>
