@@ -10,7 +10,7 @@ namespace attendanceSystem
 {
 
 
-    [XmlRoot("User")]
+    [XmlRoot("user")]
     public class User
     {
         private const string XmlFilePath = "../../../Data/data.xml";
@@ -21,7 +21,9 @@ namespace attendanceSystem
         public string Password { get; set; }
         public string Role { get; set; }
 
-        public User(string name, string email, string password, string role) { 
+        public User() { }
+        public User(string name, string email, string password, string role)
+        {
             Id = GenerateUniqueId();
             Name = name;
             Email = email;
@@ -67,6 +69,7 @@ namespace attendanceSystem
 
     public class Admin : User
     {
+        public Admin() { }
         public Admin(string name, string email, string password, string role) : base(name, email, password, role) { }
         // Add any additional properties or methods specific to the Admin class here
     }
@@ -75,6 +78,7 @@ namespace attendanceSystem
     {
         public List<string> Classes { get; set; }
 
+        public Teacher() { }
         public Teacher(string name, string email, string password, string role, List<string> classes) : base(name, email, password, role)
         {
             Classes = classes;
@@ -87,9 +91,10 @@ namespace attendanceSystem
 
     public class Student : User
     {
-        public string SClass { get; set; } 
+        public string SClass { get; set; }
         public Attendance Attendance { get; set; }
 
+        public Student() { }
         public Student(string name, string email, string password, string role, string sClass) : base(name, email, password, role)
         {
             SClass = sClass;
@@ -97,7 +102,7 @@ namespace attendanceSystem
         public override string ToString()
         {
             return $"Student Id: {Id}, Name: {Name}, Email: {Email}, Role: {Role}, SClass: {SClass}, Attendance: {Attendance}";
-        }   
+        }
     }
 
     public class Attendance
