@@ -162,7 +162,7 @@
     <SClass>PD</SClass>
   </user>
   <user>
-    <Id>12</Id>
+    <Id>13</Id>
     <Name>ahmed</Name>
     <Email>j@gmail.com</Email>
     <Password>12345678</Password>
@@ -176,7 +176,7 @@
     <SClass>PD</SClass>
   </user>
   <user>
-    <Id>db0ee21c-dc55-47f9-9546-30bf0a0453a2</Id>
+    <Id>14</Id>
     <Name>addTeacher</Name>
     <Email>test@add.com</Email>
     <Password>1233456</Password>
@@ -187,7 +187,7 @@
     </Classes>
   </user>
   <user>
-    <Id>e88fa615-bb6c-4973-b34b-e6c63f059c80</Id>
+    <Id>15</Id>
     <Name>newTeacher</Name>
     <Email>add@teacher.com</Email>
     <Password>12345678</Password>
@@ -197,7 +197,7 @@
     </Classes>
   </user>
   <user>
-    <Id>774392e3-f582-4499-94a5-9fd26aec1685</Id>
+    <Id>16</Id>
     <Name>addStudent</Name>
     <Email>add@student.com</Email>
     <Password>s123568</Password>

@@ -13,7 +13,7 @@ namespace attendanceSystem
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new mainForm());
-           // Application.Run(new tet());
+            //Application.Run(new tet());
         }
     }
 }

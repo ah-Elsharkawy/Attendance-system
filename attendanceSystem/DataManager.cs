@@ -68,6 +68,13 @@ namespace attendanceSystem
             return DataDocument.DocumentElement.OuterXml;
         }
 
+        public static string getUsersByClass(string className)
+        {
+
+            return "string";
+        }
+
+
         private static HtmlAgilityPack.HtmlDocument GetHtmlDocumentFromXslt(XslCompiledTransform xsltFilter, XsltArgumentList xsltArgs)
         {
             HtmlAgilityPack.HtmlDocument htmlDocument = new();
