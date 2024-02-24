@@ -45,7 +45,7 @@
             panel5 = new Panel();
             currentUserNameLabel = new Label();
             label3 = new Label();
-            usersPage1 = new userControls.usersPage();
+            userControlReport2 = new userControls.UserControlReport();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
@@ -272,14 +272,16 @@
             label3.TabIndex = 2;
             label3.Text = "Welcome: ";
             // 
-            // usersPage1
+            // userControlReport2
             // 
-            usersPage1.BackColor = Color.White;
-            usersPage1.Dock = DockStyle.Fill;
-            usersPage1.Location = new Point(252, 130);
-            usersPage1.Name = "usersPage1";
-            usersPage1.Size = new Size(930, 543);
-            usersPage1.TabIndex = 3;
+            userControlReport2.BackColor = Color.White;
+            userControlReport2.Dock = DockStyle.Fill;
+            userControlReport2.Font = new Font("Century Gothic", 9.75F);
+            userControlReport2.Location = new Point(252, 130);
+            userControlReport2.Margin = new Padding(3, 4, 3, 4);
+            userControlReport2.Name = "userControlReport2";
+            userControlReport2.Size = new Size(930, 543);
+            userControlReport2.TabIndex = 3;
             // 
             // mainForm
             // 
@@ -287,7 +289,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1182, 673);
-            Controls.Add(usersPage1);
+            Controls.Add(userControlReport2);
             Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -329,6 +331,6 @@
         private Button usersBtn;
         private Button LogoutBtn;
         private Button addUserBtn;
-        private userControls.usersPage usersPage1;
+        private userControls.UserControlReport userControlReport2;
     }
 }

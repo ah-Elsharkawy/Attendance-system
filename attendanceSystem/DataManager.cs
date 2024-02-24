@@ -96,7 +96,7 @@ namespace attendanceSystem
             }
 
             // Print the transformed XML content
-            Console.WriteLine(xmlDocument.OuterXml);
+            //Console.WriteLine(xmlDocument.OuterXml);
 
             return xmlDocument;
         }
@@ -123,6 +123,16 @@ namespace attendanceSystem
 
             return GetXmlDocumentFromXslt(xslt, xsltArgs);
 
+        }
+        public static XmlDocument getUserXmlByEmail(string email)
+        {
+            XslCompiledTransform xslt = new();
+            xslt.Load($@"{dataFolderPath}\filterByEmail.xslt");
+
+            XsltArgumentList xsltArgs = new XsltArgumentList();
+            xsltArgs.AddParam("userEmail", "", email);
+
+            return GetXmlDocumentFromXslt(xslt, xsltArgs);
         }
 
         public static void addUser()
