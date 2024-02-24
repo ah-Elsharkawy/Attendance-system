@@ -30,45 +30,14 @@ namespace attendanceSystem.userControls
 
         private void usersPage_Load(object sender, EventArgs e)
         {
-            Admin admin = new Admin
-            {
-                Id = 1,
-                Name = "AdminName",
-                Email = "admin@example.com",
-                Password = "adminPassword",
-                Role = "Admin"
-            };
+            Admin admin = new Admin("AdminName", "admin@example.com", "adminPassword", "Admin");
 
             // Creating an instance of Teacher
-            Teacher teacher = new Teacher
-            {
-                Id = 2,
-                Name = "TeacherName",
-                Email = "teacher@example.com",
-                Password = "teacherPassword",
-                Role = "Teacher",
-                Classes = new List<string> { "ClassA", "ClassB" }
-            };
+            Teacher teacher = new Teacher("TeacherName", "teacher@example.com", "teacherPassword", "Teacher", new List<string> { "ClassA", "ClassB" });
 
             // Creating an instance of Student
-            Student student = new Student
-            {
-                Id = 3,
-                Name = "StudentName",
-                Email = "student@example.com",
-                Password = "studentPassword",
-                Role = "Student",
-                SClass = "ClassA",
-                Attendance = new Attendance
-                {
-                    Record = new List<Record>
-                    {
-                        new Record { Date = new DateOnly(2024, 2, 20), Status = "Present" },
-                        new Record { Date = new DateOnly(2024, 2, 21), Status = "Absent" }
-                        // Add more records as needed
-                    }
-                }
-            };
+            Student student = new Student("StudentName", "student@example.com", "studentPassword", "Student", "ClassA");
+
             List<User> users = new List<User>
             {
                 student,teacher,admin
