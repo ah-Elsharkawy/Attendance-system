@@ -91,8 +91,9 @@ namespace attendanceSystem
 
     public class Student : User
     {
+        public Attendance Attendance { get; set; } = new Attendance();
         public string SClass { get; set; }
-        public Attendance Attendance { get; set; }
+        
 
         public Student() { }
         public Student(string name, string email, string password, string role, string sClass) : base(name, email, password, role)

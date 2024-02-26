@@ -179,7 +179,7 @@
     <Id>13</Id>
     <Name>addTeacher</Name>
     <Email>test@add.com</Email>
-    <Password>1233456</Password>
+    <Password>12345678</Password>
     <Role>Teacher</Role>
     <Classes>
       <class>OS</class>
@@ -200,8 +200,9 @@
     <Id>15</Id>
     <Name>addStudent</Name>
     <Email>add@student.com</Email>
-    <Password>s123568</Password>
+    <Password>12345678</Password>
     <Role>Student</Role>
+    <Attendance />
     <SClass>OS</SClass>
   </user>
   <user>
@@ -219,9 +220,63 @@
     <Id>17</Id>
     <Name>addes</Name>
     <Email>add@gmail.com</Email>
-    <Password>a12365</Password>
+    <Password>12345678</Password>
     <Role>Student</Role>
+    <Attendance />
     <SClass>PD</SClass>
   </user>
-  
+  <user>
+    <Id>18</Id>
+    <Name>abdo</Name>
+    <Email>abdo@gmail.com</Email>
+    <Password>12345678</Password>
+    <Role>Student</Role>
+    <Attendance />
+    <SClass>PD</SClass>
+  </user>
+  <user>
+    <Id>19</Id>
+    <Name>abdo</Name>
+    <Email>dsvz@gmail.com</Email>
+    <Password>12345678</Password>
+    <Role>Student</Role>
+    <Attendance />
+    <SClass>PD</SClass>
+  </user>
+  <user>
+    <Id>20</Id>
+    <Name>abdo</Name>
+    <Email>dsvz@gmail.com</Email>
+    <Password>12345678</Password>
+    <Role>Student</Role>
+    <Attendance />
+    <SClass>PD</SClass>
+  </user>
+  <user>
+    <Id>21</Id>
+    <Name>dvcz</Name>
+    <Email>zvc@dfb.com</Email>
+    <Password>12345678</Password>
+    <Role>Student</Role>
+    <Attendance />
+    <SClass>OS</SClass>
+  </user>
+  <user>
+    <Id>22</Id>
+    <Name>fjdb</Name>
+    <Email>sbdvsc@fgbd.eg</Email>
+    <Password>12345678</Password>
+    <Role>Student</Role>
+    <Attendance />
+    <SClass>AI</SClass>
+  </user>
+  <user>
+    <Id>23</Id>
+    <Name>ahmed</Name>
+    <Email>a@gmail.com</Email>
+    <Password>12345678</Password>
+    <Role>Student</Role>
+    <Attendance />
+    <SClass>OS</SClass>
+  </user>
 </users>

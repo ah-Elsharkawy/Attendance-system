@@ -63,17 +63,18 @@ namespace attendanceSystem
 
         public static void addUser(XmlDocument user)
         {
-            // add logic
             try
             {
-                /*XmlElement element = new XmlElement("");
-                element.InnerXml = "<user><name>name</name><email>email</email><password>password</password><class>class</class></user>";*/
-                DataDocument.DocumentElement.AppendChild(user.DocumentElement);
-                //ValidateData();
+                XmlElement element = DataDocument.CreateElement("user");
+                element.InnerXml = user.DocumentElement.InnerXml;
+                DataDocument.DocumentElement.AppendChild(element);
+
+                ValidateData();
                 SaveData();
+
             }catch(Exception ex)
             {
-                Console.WriteLine("couldn't add the user");
+                Console.WriteLine($"couldn't add the user, Exception: {ex}");
             }
             
         }
