@@ -16,7 +16,7 @@ namespace attendanceSystem
 {
     public partial class UserControlAddUser : UserControl
     {
-        public string UID;
+        public string UID="2";
         private string ID = "";
         private const string XmlFilePath = "../../../Data/data.xml";
 
@@ -169,42 +169,72 @@ namespace attendanceSystem
             //string newUserId = GenerateUniqueId();
 
             // Create a new XmlDocument instance
-            XmlDocument xmlDoc = new XmlDocument();
 
             try
             {
-                // Load the XML file
-                xmlDoc.Load(XmlFilePath);
 
-                Student newUser = new (textBoxName.Text, textBoxEmail.Text, textBoxPassword.Text, "Student", comboBoxClass.SelectedItem.ToString());
-               // FormatsConverter.Serialize<Student>(newUser);
-                textBox1.Text = FormatsConverter.Serialize(newUser);
+                Student newStudent = new Student(textBoxName.Text, textBoxEmail.Text, textBoxPassword.Text, "Student", comboBoxClass.SelectedItem.ToString());
 
-                // Create a new "user" element
+                XmlDocument newStudenXml = FormatsConverter.Serialize<Student>(newStudent);
+                textBox1.Text = newStudenXml.OuterXml;
+                DataManager.addUser(newStudenXml);
+
+                // Load the XML document
+                /*XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(newStudenXml);
+
+                
+
+                // Create a new user element
                 XmlElement newUserElement = xmlDoc.CreateElement("user");
 
-                // Create and append child elements for the new student
-                //AddXmlElement(xmlDoc, newUserElement, "Id", newUserId);
-                AddXmlElement(xmlDoc, newUserElement, "Name", textBoxName.Text.Trim());
-                AddXmlElement(xmlDoc, newUserElement, "Email", textBoxEmail.Text.Trim());
-                AddXmlElement(xmlDoc, newUserElement, "Password", textBoxPassword.Text.Trim());
-                AddXmlElement(xmlDoc, newUserElement, "Role", "Student");
+                // Add child elements for the new student
+                AddXmlElement(xmlDoc, newUserElement, "Id", newStudent.Id.ToString());
+                AddXmlElement(xmlDoc, newUserElement, "Name", newStudent.Name);
+                AddXmlElement(xmlDoc, newUserElement, "Email", newStudent.Email);
+                AddXmlElement(xmlDoc, newUserElement, "Password", newStudent.Password);
+                AddXmlElement(xmlDoc, newUserElement, "Role", newStudent.Role);
+                AddXmlElement(xmlDoc, newUserElement, "SClass", newStudent.SClass);
 
-                // If a class is selected, add it as a child element
-                if (comboBoxClass.SelectedIndex != -1)
-                {
-                    string selectedClass = comboBoxClass.SelectedItem.ToString();
-                    AddXmlElement(xmlDoc, newUserElement, "SClass", selectedClass);
-                }
-
-                // Append the new user element to the root "users" element
+                // Append the new user element to the root element
                 xmlDoc.DocumentElement.AppendChild(newUserElement);
 
                 // Save the changes back to the XML file
-                xmlDoc.Save(XmlFilePath);
+                xmlDoc.Save(XmlFilePath);*/
+
+                // Load the XML file
+                //XmlDocument xmlDoc = new XmlDocument();
+                //xmlDoc.Load(XmlFilePath);
+
+                //Student newStudent = new Student(textBoxName.Text, textBoxEmail.Text, textBoxPassword.Text, "Student", comboBoxClass.SelectedItem.ToString());
+                //// FormatsConverter.Serialize<Student>(newUser);
+                //string serializedStudent = FormatsConverter.Serialize(newStudent);
+                //File.AppendAllText(XmlFilePath, serializedStudent + Environment.NewLine);
+                // Create a new "user" element
+                //XmlElement newUserElement = xmlDoc.CreateElement("user");
+
+                // Create and append child elements for the new student
+                //AddXmlElement(xmlDoc, newUserElement, "Id", newUserId);
+                //AddXmlElement(xmlDoc, newUserElement, "Name", textBoxName.Text.Trim());
+                //AddXmlElement(xmlDoc, newUserElement, "Email", textBoxEmail.Text.Trim());
+                //AddXmlElement(xmlDoc, newUserElement, "Password", textBoxPassword.Text.Trim());
+                //AddXmlElement(xmlDoc, newUserElement, "Role", "Student");
+
+                // If a class is selected, add it as a child element
+                //if (comboBoxClass.SelectedIndex != -1)
+                //{
+                //    string selectedClass = comboBoxClass.SelectedItem.ToString();
+                //    AddXmlElement(xmlDoc, newUserElement, "SClass", selectedClass);
+                //}
+
+                //// Append the new user element to the root "users" element
+                //xmlDoc.DocumentElement.AppendChild(newUserElement);
+
+                //// Save the changes back to the XML file
+                //xmlDoc.Save(XmlFilePath);
 
                 // Clear text boxes after successful addition
-                ClearTextStudentBox();
+                //ClearTextStudentBox();
 
                 // Show success message
                 MessageBox.Show("Student added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -224,8 +254,130 @@ namespace attendanceSystem
                 return;
             }
 
-            // Complete update code here
-            ClearTextStudentBoxUpdate();
+            // Update user data in the XML file
+            UpdateUserData(UID);
+        }
+        private void PopulateUserData(string userId)
+        {
+            // Load the XML file
+            
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(XmlFilePath);
+
+            // Find the user node with the specified ID
+            XmlNode userNode = xmlDoc.SelectSingleNode($"//user[Id='{userId}']");
+
+            if (userNode != null)
+            {
+                if (userNode.SelectSingleNode("Role").InnerText == "Student")
+                {
+                    //tabPageUpdate.Show();
+                    // Populate text boxes with user data
+                    textBoxNameU.Text = userNode.SelectSingleNode("Name").InnerText;
+                    textBoxEmailU.Text = userNode.SelectSingleNode("Email").InnerText;
+                    textBoxEmailU.ForeColor = Color.Black;
+                    textBoxPasswordU.Text = userNode.SelectSingleNode("Password").InnerText;
+                    comboBoxClassU.SelectedItem = userNode.SelectSingleNode("SClass").InnerText;
+                    // Additional code for populating other fields if needed
+                }
+                else
+                {
+                    //tabPageUpdateTeacher.Show();
+                    // Populate text boxes with user data
+                    textBoxTeacherNameU.Text = userNode.SelectSingleNode("Name").InnerText;
+                    textBoxTeacherEmailU.Text = userNode.SelectSingleNode("Email").InnerText;
+                    textBoxTeacherEmailU.ForeColor = Color.Black;
+                    textBoxTeacherPasswordU.Text = userNode.SelectSingleNode("Password").InnerText;
+                    XmlNode classesNode = userNode.SelectSingleNode("Classes");
+                    if (classesNode != null)
+                    {
+                        foreach (XmlNode classNode in classesNode.ChildNodes)
+                        {
+                            string className = classNode.InnerText;
+                            if (className == "AI")
+                                checkBoxAIU.Checked = true;
+                            else if (className == "OS")
+                                checkBoxOSU.Checked = true;
+                            else if (className == "PD")
+                                checkBoxPDU.Checked = true;
+                        }
+                    }
+                    // Additional code for populating other fields if needed
+                }
+                // Populate text boxes with user data
+                // Additional code for populating other fields if needed
+            }
+            else
+            {
+                MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Method to update user data in the XML file
+        private void UpdateUserData(string userId)
+        {
+            // Load the XML file
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(XmlFilePath);
+
+            // Find the user node with the specified ID
+            XmlNode userNode = xmlDoc.SelectSingleNode($"//user[Id='{userId}']");
+
+            if (userNode != null)
+            {
+                // Update user data
+
+                if (userNode.SelectSingleNode("Role").InnerText == "Student")
+                {
+                    userNode.SelectSingleNode("Name").InnerText = textBoxNameU.Text;
+                    userNode.SelectSingleNode("Email").InnerText = textBoxEmailU.Text;
+                    userNode.SelectSingleNode("Password").InnerText = textBoxPasswordU.Text;
+                    userNode.SelectSingleNode("SClass").InnerText = comboBoxClassU.SelectedItem.ToString();
+
+                }
+                else
+                {
+                    userNode.SelectSingleNode("Name").InnerText = textBoxTeacherNameU.Text;
+                    userNode.SelectSingleNode("Email").InnerText = textBoxTeacherEmailU.Text;
+                    userNode.SelectSingleNode("Password").InnerText = textBoxTeacherPasswordU.Text;
+
+                    // Remove the existing "Classes" element
+                    XmlNode classesNode = userNode.SelectSingleNode("Classes");
+                    if (classesNode != null)
+                        userNode.RemoveChild(classesNode);
+
+                    // Create a new "Classes" element if any class checkbox is checked
+                    if (checkBoxAIU.Checked || checkBoxOSU.Checked || checkBoxPDU.Checked)
+                    {
+                        XmlElement newClassesElement = xmlDoc.CreateElement("Classes");
+
+                        if (checkBoxAIU.Checked)
+                            AddXmlElement(xmlDoc, newClassesElement, "class", "AI");
+                        if (checkBoxOSU.Checked)
+                            AddXmlElement(xmlDoc, newClassesElement, "class", "OS");
+                        if (checkBoxPDU.Checked)
+                            AddXmlElement(xmlDoc, newClassesElement, "class", "PD");
+
+                        userNode.AppendChild(newClassesElement);
+                    }
+                }
+                //userNode.SelectSingleNode("Name").InnerText = textBoxNameU.Text;
+                //userNode.SelectSingleNode("Email").InnerText = textBoxEmailU.Text;
+                //userNode.SelectSingleNode("Password").InnerText = textBoxPasswordU.Text;
+                // Additional code for updating other fields if needed
+
+                // Save the changes back to the XML file
+                xmlDoc.Save(XmlFilePath);
+
+                // Clear text boxes after successful update
+                ClearTextStudentBoxUpdate();
+
+                MessageBox.Show("User updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("User not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void textBoxTeacherEmail_Enter(object sender, EventArgs e)
@@ -460,6 +612,7 @@ namespace attendanceSystem
 
             ClearTextStudentBoxUpdate();
             pictureBoxStudentEmailU.Visible = false;
+            PopulateUserData(UID);
         }
 
         private void tabPageUpdateTeacher_Enter(object sender, EventArgs e)
@@ -467,6 +620,8 @@ namespace attendanceSystem
 
             ClearTextTeacherBoxUpdate();
             pictureBoxTeacherEmailU.Visible = false;
+            PopulateUserData(UID);
+
         }
 
         private void buttonTeacherUpdate_Click(object sender, EventArgs e)
@@ -482,16 +637,10 @@ namespace attendanceSystem
                 MessageBox.Show("First fill out all fields", "Required all fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            ClearTextTeacherBoxUpdate();
+
             //compelete add code here
+            UpdateUserData(UID);
         }
-
-
-
-
-
-
-
 
         // Helper method to add a new XML element
         private void AddXmlElement(XmlDocument xmlDoc, XmlElement parentElement, string elementName, string elementValue)
@@ -502,9 +651,6 @@ namespace attendanceSystem
         }
 
         // Generate a unique ID for the new user (you can implement your own logic here)
-        
-
-
 
         private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
