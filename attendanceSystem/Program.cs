@@ -1,3 +1,5 @@
+using attendanceSystem.userControls;
+
 namespace attendanceSystem
 {
     internal static class Program
