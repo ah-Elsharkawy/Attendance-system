@@ -135,6 +135,18 @@ namespace attendanceSystem
             return GetXmlDocumentFromXslt(xslt, xsltArgs);
         }
 
+        public static XmlDocument getUserXmlByClass(int Id)
+        {
+            XslCompiledTransform xslt = new();
+            xslt.Load($@"{dataFolderPath}\filterByClass.xslt");
+
+            XsltArgumentList xsltArgs = new XsltArgumentList();
+            xsltArgs.AddParam("userId", "", Id);
+
+            return GetXmlDocumentFromXslt(xslt, xsltArgs);
+
+        }
+
         public static void addUser()
         {
             // add logic

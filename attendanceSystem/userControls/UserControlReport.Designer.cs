@@ -31,23 +31,23 @@
             components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
             tabPageMarkAttendance = new TabPage();
+            panel1 = new Panel();
             panel6 = new Panel();
+            panel2 = new Panel();
             comboBox3 = new ComboBox();
+            panel3 = new Panel();
+            panel4 = new Panel();
             pictureBoxPrinter = new PictureBox();
+            panel5 = new Panel();
             label1 = new Label();
+            panel12 = new Panel();
             dataGridViewClassReport = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
-            panel5 = new Panel();
-            panel3 = new Panel();
-            panel12 = new Panel();
-            panel4 = new Panel();
-            panel1 = new Panel();
-            panel2 = new Panel();
-            label14 = new Label();
+            label2 = new Label();
             label15 = new Label();
             dateTimePicker1 = new DateTimePicker();
             tabPage2 = new TabPage();
@@ -97,18 +97,18 @@
             // 
             // tabPageMarkAttendance
             // 
-            tabPageMarkAttendance.Controls.Add(panel6);
-            tabPageMarkAttendance.Controls.Add(comboBox3);
-            tabPageMarkAttendance.Controls.Add(pictureBoxPrinter);
-            tabPageMarkAttendance.Controls.Add(label1);
-            tabPageMarkAttendance.Controls.Add(dataGridViewClassReport);
-            tabPageMarkAttendance.Controls.Add(panel5);
-            tabPageMarkAttendance.Controls.Add(panel3);
-            tabPageMarkAttendance.Controls.Add(panel12);
-            tabPageMarkAttendance.Controls.Add(panel4);
             tabPageMarkAttendance.Controls.Add(panel1);
+            tabPageMarkAttendance.Controls.Add(panel6);
             tabPageMarkAttendance.Controls.Add(panel2);
-            tabPageMarkAttendance.Controls.Add(label14);
+            tabPageMarkAttendance.Controls.Add(comboBox3);
+            tabPageMarkAttendance.Controls.Add(panel3);
+            tabPageMarkAttendance.Controls.Add(panel4);
+            tabPageMarkAttendance.Controls.Add(pictureBoxPrinter);
+            tabPageMarkAttendance.Controls.Add(panel5);
+            tabPageMarkAttendance.Controls.Add(label1);
+            tabPageMarkAttendance.Controls.Add(panel12);
+            tabPageMarkAttendance.Controls.Add(dataGridViewClassReport);
+            tabPageMarkAttendance.Controls.Add(label2);
             tabPageMarkAttendance.Controls.Add(label15);
             tabPageMarkAttendance.Controls.Add(dateTimePicker1);
             tabPageMarkAttendance.Location = new Point(4, 4);
@@ -120,6 +120,14 @@
             tabPageMarkAttendance.UseVisualStyleBackColor = true;
             tabPageMarkAttendance.Click += tabPage1_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.LightGray;
+            panel1.Location = new Point(59, 89);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(270, 2);
+            panel1.TabIndex = 47;
+            // 
             // panel6
             // 
             panel6.BackColor = Color.LightGray;
@@ -127,6 +135,15 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(270, 2);
             panel6.TabIndex = 53;
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.None;
+            panel2.BackColor = Color.Transparent;
+            panel2.Location = new Point(279, 65);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(10, 23);
+            panel2.TabIndex = 46;
             // 
             // comboBox3
             // 
@@ -137,6 +154,24 @@
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(270, 29);
             comboBox3.TabIndex = 54;
+            // 
+            // panel3
+            // 
+            panel3.Anchor = AnchorStyles.None;
+            panel3.BackColor = Color.Transparent;
+            panel3.Location = new Point(56, 56);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(270, 10);
+            panel3.TabIndex = 42;
+            // 
+            // panel4
+            // 
+            panel4.Anchor = AnchorStyles.None;
+            panel4.BackColor = Color.Transparent;
+            panel4.Location = new Point(325, 65);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(10, 23);
+            panel4.TabIndex = 45;
             // 
             // pictureBoxPrinter
             // 
@@ -149,6 +184,15 @@
             pictureBoxPrinter.TabIndex = 32;
             pictureBoxPrinter.TabStop = false;
             // 
+            // panel5
+            // 
+            panel5.Anchor = AnchorStyles.None;
+            panel5.BackColor = Color.Transparent;
+            panel5.Location = new Point(56, 87);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(270, 10);
+            panel5.TabIndex = 44;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -158,6 +202,15 @@
             label1.Size = new Size(58, 19);
             label1.TabIndex = 52;
             label1.Text = "Class:";
+            // 
+            // panel12
+            // 
+            panel12.Anchor = AnchorStyles.None;
+            panel12.BackColor = Color.Transparent;
+            panel12.Location = new Point(47, 65);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(10, 23);
+            panel12.TabIndex = 43;
             // 
             // dataGridViewClassReport
             // 
@@ -175,6 +228,7 @@
             dataGridViewClassReport.RowHeadersWidth = 51;
             dataGridViewClassReport.Size = new Size(872, 318);
             dataGridViewClassReport.TabIndex = 31;
+            dataGridViewClassReport.CellContentClick += dataGridViewClassReport_CellContentClick;
             // 
             // Column1
             // 
@@ -216,69 +270,15 @@
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
             // 
-            // panel5
+            // label2
             // 
-            panel5.BackColor = Color.LightGray;
-            panel5.Location = new Point(95, 99);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(270, 2);
-            panel5.TabIndex = 25;
-            // 
-            // panel3
-            // 
-            panel3.Anchor = AnchorStyles.None;
-            panel3.BackColor = Color.Transparent;
-            panel3.Location = new Point(315, 77);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(10, 23);
-            panel3.TabIndex = 24;
-            // 
-            // panel12
-            // 
-            panel12.Anchor = AnchorStyles.None;
-            panel12.BackColor = Color.Transparent;
-            panel12.Location = new Point(92, 68);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(270, 10);
-            panel12.TabIndex = 17;
-            // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.None;
-            panel4.BackColor = Color.Transparent;
-            panel4.Location = new Point(361, 77);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(10, 23);
-            panel4.TabIndex = 23;
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = Color.Transparent;
-            panel1.Location = new Point(92, 99);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(270, 10);
-            panel1.TabIndex = 22;
-            // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.None;
-            panel2.BackColor = Color.Transparent;
-            panel2.Location = new Point(83, 77);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(10, 23);
-            panel2.TabIndex = 19;
-            panel2.Paint += panel2_Paint;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label14.Location = new Point(92, 46);
-            label14.Name = "label14";
-            label14.Size = new Size(52, 19);
-            label14.TabIndex = 16;
-            label14.Text = "Date:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            label2.Location = new Point(56, 36);
+            label2.Name = "label2";
+            label2.Size = new Size(52, 19);
+            label2.TabIndex = 41;
+            label2.Text = "Date:";
             // 
             // label15
             // 
@@ -293,12 +293,12 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.CustomFormat = "yyyy/MM/dd";
+            dateTimePicker1.CustomFormat = "yyyy/MM";
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(93, 73);
+            dateTimePicker1.Location = new Point(57, 63);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(270, 27);
-            dateTimePicker1.TabIndex = 27;
+            dateTimePicker1.TabIndex = 48;
             // 
             // tabPage2
             // 
@@ -453,7 +453,7 @@
             // 
             panel9.Anchor = AnchorStyles.None;
             panel9.BackColor = Color.Transparent;
-            panel9.Location = new Point(266, 83);
+            panel9.Location = new Point(266, 81);
             panel9.Name = "panel9";
             panel9.Size = new Size(10, 23);
             panel9.TabIndex = 38;
@@ -462,7 +462,7 @@
             // 
             panel10.Anchor = AnchorStyles.None;
             panel10.BackColor = Color.Transparent;
-            panel10.Location = new Point(43, 74);
+            panel10.Location = new Point(43, 72);
             panel10.Name = "panel10";
             panel10.Size = new Size(270, 10);
             panel10.TabIndex = 34;
@@ -471,7 +471,7 @@
             // 
             panel11.Anchor = AnchorStyles.None;
             panel11.BackColor = Color.Transparent;
-            panel11.Location = new Point(312, 83);
+            panel11.Location = new Point(312, 81);
             panel11.Name = "panel11";
             panel11.Size = new Size(10, 23);
             panel11.TabIndex = 37;
@@ -480,7 +480,7 @@
             // 
             panel13.Anchor = AnchorStyles.None;
             panel13.BackColor = Color.Transparent;
-            panel13.Location = new Point(43, 105);
+            panel13.Location = new Point(43, 103);
             panel13.Name = "panel13";
             panel13.Size = new Size(270, 10);
             panel13.TabIndex = 36;
@@ -489,7 +489,7 @@
             // 
             panel14.Anchor = AnchorStyles.None;
             panel14.BackColor = Color.Transparent;
-            panel14.Location = new Point(34, 83);
+            panel14.Location = new Point(34, 81);
             panel14.Name = "panel14";
             panel14.Size = new Size(10, 23);
             panel14.TabIndex = 35;
@@ -561,14 +561,6 @@
         private TabControl tabControl1;
         private TabPage tabPageMarkAttendance;
         private Label label15;
-        private Label label14;
-        private Panel panel12;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel4;
-        private Panel panel1;
-        private Panel panel5;
-        private DateTimePicker dateTimePicker1;
         private DataGridView dataGridViewClassReport;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
@@ -603,5 +595,13 @@
         private ComboBox comboBox3;
         private Label label1;
         private PictureBox pictureBox1;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel12;
+        private Label label2;
+        private DateTimePicker dateTimePicker1;
     }
 }
