@@ -9,7 +9,7 @@ namespace attendanceSystem.userControls
 {
     public partial class UserControlReport : UserControl
     {
-        private UserControlReport dataGridView1; // Declare custom DataGridView control
+        //private UserControlReport dataGridView1; // Declare custom DataGridView control
 
         public UserControlReport()
         {
@@ -24,7 +24,7 @@ namespace attendanceSystem.userControls
         {
             // Assuming you have already designed DataGridView in your UserControl
             // Get the custom DataGridView instance
-            dataGridView1 = this.dataGridView1;
+            //dataGridViewClassReport = this.dataGridViewClassReport;
 
             // Set DataGridView properties if necessary
             // Example:
@@ -51,16 +51,13 @@ namespace attendanceSystem.userControls
 
         public void LoadData()
         {
-            // Load the XML data
-            XmlDocument xmlDocument = new XmlDocument();
-            xmlDocument.Load("data.xml"); // Replace "data.xml" with the path to your transformed XML file
+            DataManager.getUserXmlByClass("PD");
 
-            // Parse the transformed XML and populate custom DataGridView
-            ParseAndPopulateDataGridView(xmlDocument);
         }
 
-        private void ParseAndPopulateDataGridView(XmlDocument xmlDocument)
+        private void ParseAndPopulateDataGridView()
         {
+            XmlDocument xmlDocument = DataManager.getUserXmlByClass("PD");
             // Clear existing rows
             //dataGridView1.Rows.Clear();
 
@@ -71,11 +68,9 @@ namespace attendanceSystem.userControls
                 string studentId = trNode.SelectSingleNode("td[1]").InnerText;
                 string studentName = trNode.SelectSingleNode("td[2]").InnerText;
                 string studentClass = trNode.SelectSingleNode("td[3]").InnerText;
-                string date = trNode.SelectSingleNode("td[4]").InnerText;
-                string status = trNode.SelectSingleNode("td[5]").InnerText;
 
                 // Add a new row to custom DataGridView with extracted data
-                dataGridView1.rows.Add(studentId, studentName, studentClass, date, status);
+                dataGridViewClassReport.Rows.Add(studentId, studentName, studentClass);
             }
         }
 
@@ -106,7 +101,7 @@ namespace attendanceSystem.userControls
 
         private void dataGridViewClassReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            ParseAndPopulateDataGridView();
         }
     }
 }

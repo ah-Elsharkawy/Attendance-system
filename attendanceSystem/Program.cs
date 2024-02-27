@@ -14,7 +14,7 @@ namespace attendanceSystem
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new UserControlReport());
+            Application.Run(new mainForm());
             //Application.Run(new tet());
         }
     }
