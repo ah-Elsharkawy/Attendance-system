@@ -150,6 +150,7 @@
             comboBox3.FlatStyle = FlatStyle.Flat;
             comboBox3.ForeColor = SystemColors.Menu;
             comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "dwqdq" });
             comboBox3.Location = new Point(550, 72);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(270, 29);
@@ -229,6 +230,7 @@
             dataGridViewClassReport.Size = new Size(872, 318);
             dataGridViewClassReport.TabIndex = 31;
             dataGridViewClassReport.CellContentClick += dataGridViewClassReport_CellContentClick;
+            //dataGridViewClassReport.Click += this.ParseAndPopulateDataGridView;
             // 
             // Column1
             // 
@@ -453,7 +455,7 @@
             // 
             panel9.Anchor = AnchorStyles.None;
             panel9.BackColor = Color.Transparent;
-            panel9.Location = new Point(266, 81);
+            panel9.Location = new Point(266, 80);
             panel9.Name = "panel9";
             panel9.Size = new Size(10, 23);
             panel9.TabIndex = 38;
@@ -462,7 +464,7 @@
             // 
             panel10.Anchor = AnchorStyles.None;
             panel10.BackColor = Color.Transparent;
-            panel10.Location = new Point(43, 72);
+            panel10.Location = new Point(43, 71);
             panel10.Name = "panel10";
             panel10.Size = new Size(270, 10);
             panel10.TabIndex = 34;
@@ -471,7 +473,7 @@
             // 
             panel11.Anchor = AnchorStyles.None;
             panel11.BackColor = Color.Transparent;
-            panel11.Location = new Point(312, 81);
+            panel11.Location = new Point(312, 80);
             panel11.Name = "panel11";
             panel11.Size = new Size(10, 23);
             panel11.TabIndex = 37;
@@ -480,7 +482,7 @@
             // 
             panel13.Anchor = AnchorStyles.None;
             panel13.BackColor = Color.Transparent;
-            panel13.Location = new Point(43, 103);
+            panel13.Location = new Point(43, 102);
             panel13.Name = "panel13";
             panel13.Size = new Size(270, 10);
             panel13.TabIndex = 36;
@@ -489,7 +491,7 @@
             // 
             panel14.Anchor = AnchorStyles.None;
             panel14.BackColor = Color.Transparent;
-            panel14.Location = new Point(34, 81);
+            panel14.Location = new Point(34, 80);
             panel14.Name = "panel14";
             panel14.Size = new Size(10, 23);
             panel14.TabIndex = 35;

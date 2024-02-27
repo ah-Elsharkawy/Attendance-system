@@ -20,7 +20,8 @@ namespace attendanceSystem
 
 
         private static string dataFolderPath = @"..\..\..\Data";
-        static DataManager() {
+        static DataManager()
+        {
             DataDocument = new XmlDocument();
             BackupDocument = new XmlDocument();
             LoadData();
@@ -72,11 +73,12 @@ namespace attendanceSystem
                 ValidateData();
                 SaveData();
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine($"couldn't add the user, Exception: {ex}");
             }
-            
+
         }
 
         public static string getUsers()
@@ -84,7 +86,7 @@ namespace attendanceSystem
             return DataDocument.DocumentElement.OuterXml;
         }
 
-        
+
 
         public static string getUsersByClass(string className)
         {
@@ -135,7 +137,7 @@ namespace attendanceSystem
             xsltArgs.AddParam("userId", "", Id);
 
             return GetHtmlDocumentFromXslt(xslt, xsltArgs);
-            
+
         }
 
         public static XmlDocument getUserXmlById(int Id)
@@ -176,10 +178,23 @@ namespace attendanceSystem
         {
             // add logic
         }
+        public static XmlDocument getUserXmlByClass(string Sclass)
+        {
+            XslCompiledTransform xslt = new();
+            xslt.Load($@"{dataFolderPath}\filterByClass.xslt");
+
+            XsltArgumentList xsltArgs = new XsltArgumentList();
+            xsltArgs.AddParam("classFilter", "", Sclass);
+
+            return GetXmlDocumentFromXslt(xslt, xsltArgs);
+
+        }
 
     }
 
-
 }
+
+
+
 
 
