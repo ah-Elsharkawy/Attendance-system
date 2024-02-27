@@ -15,14 +15,14 @@ namespace attendanceSystem
     public static class DataManager
     {
         private static XmlDocument DataDocument;
-        private static XmlDocument TestDocument;
+        private static XmlDocument BackupDocument;
         public static User currentUser = new Admin("AdminName", "admin@example.com", "adminPassword", "Admin");
 
 
         private static string dataFolderPath = @"..\..\..\Data";
         static DataManager() {
             DataDocument = new XmlDocument();
-            TestDocument = new XmlDocument();
+            BackupDocument = new XmlDocument();
             LoadData();
         }
 
@@ -31,6 +31,7 @@ namespace attendanceSystem
             try
             {
                 DataDocument.Load($@"{dataFolderPath}\data.xml");
+                BackupDocument = DataDocument;
             }
             catch (Exception ex)
             {
@@ -49,17 +50,41 @@ namespace attendanceSystem
             catch (Exception ex)
             {
                 Console.WriteLine("invalidData");
+                DataDocument = BackupDocument;
             }
         }
         private static void SaveData()
         {
             //saving here
+
+            DataDocument.Save($@"{dataFolderPath}\data.xml");
+            BackupDocument = DataDocument;
+        }
+
+        public static void addUser(XmlDocument user)
+        {
+            try
+            {
+                XmlElement element = DataDocument.CreateElement("user");
+                element.InnerXml = user.DocumentElement.InnerXml;
+                DataDocument.DocumentElement.AppendChild(element);
+
+                ValidateData();
+                SaveData();
+
+            }catch(Exception ex)
+            {
+                Console.WriteLine($"couldn't add the user, Exception: {ex}");
+            }
+            
         }
 
         public static string getUsers()
         {
             return DataDocument.DocumentElement.OuterXml;
         }
+
+        
 
         public static string getUsersByClass(string className)
         {

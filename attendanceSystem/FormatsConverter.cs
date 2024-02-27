@@ -40,7 +40,7 @@ namespace attendanceSystem
                 return result;
             }
         }
-        public static string Serialize<T>(T obj)
+        public static XmlDocument Serialize<T>(T obj)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
             XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
@@ -66,7 +66,10 @@ namespace attendanceSystem
                 xmlString = xmlString.Replace("</" + typeof(T).Name + ">", "</user>");
                 xmlString = xmlString.Replace("string>", "class>");
 
-                return xmlString;
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xmlString);
+
+                return doc;
             }
         }
 
