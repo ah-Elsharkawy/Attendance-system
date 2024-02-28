@@ -33,7 +33,7 @@
   </user>
   <user>
     <Id>4</Id>
-    <Name>ahmed</Name>
+    <Name>Fatma</Name>
     <Email>b@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
@@ -47,7 +47,7 @@
   </user>
   <user>
     <Id>5</Id>
-    <Name>ahmed</Name>
+    <Name>Abdullah</Name>
     <Email>c@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
@@ -75,7 +75,7 @@
   </user>
   <user>
     <Id>7</Id>
-    <Name>ahmed</Name>
+    <Name>Maryam</Name>
     <Email>e@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
@@ -89,7 +89,7 @@
   </user>
   <user>
     <Id>8</Id>
-    <Name>ahmed</Name>
+    <Name>aaaa</Name>
     <Email>f@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
