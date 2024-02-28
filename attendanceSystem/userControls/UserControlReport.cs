@@ -16,18 +16,16 @@ namespace attendanceSystem.userControls
         {
             InitializeComponent();
             LoadAndDisplayTransformedData();
-            //InitializeDataGridView(); // Initialize custom DataGridView control
         }
         private void LoadAndDisplayTransformedData()
         {
             try
             {
-                comboBox1.Items.Add("AI");
-                comboBox1.Items.Add("PD");
-                comboBox1.Items.Add("OS");
+                comboBox3.Items.Add("AI");
+                comboBox3.Items.Add("PD");
+                comboBox3.Items.Add("OS");
 
                 List<StudentAttendance> studentsAttendance = GetStudentsAttendance(@"D:\iti\11-C#\Trial\Trial\data.xml");
-                // Create a DataGridView
 
                 // Add columns to DataGridView
                 dataGridViewClassReport.Columns.Add("StudentID", "Student ID");

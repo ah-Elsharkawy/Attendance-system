@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
             tabPageMarkAttendance = new TabPage();
+            panel1 = new Panel();
             panel6 = new Panel();
             panel2 = new Panel();
             comboBox3 = new ComboBox();
@@ -40,6 +41,7 @@
             panel5 = new Panel();
             label1 = new Label();
             panel12 = new Panel();
+            dataGridViewClassReport = new DataGridView();
             label2 = new Label();
             label15 = new Label();
             dateTimePicker1 = new DateTimePicker();
@@ -67,15 +69,13 @@
             dateTimePickerDate1 = new DateTimePicker();
             comboBox2 = new ComboBox();
             toolTip1 = new ToolTip(components);
-            panel1 = new Panel();
-            dataGridViewClassReport = new DataGridView();
             tabControl1.SuspendLayout();
             tabPageMarkAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrinter).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClassReport).BeginInit();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudentReport).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewClassReport).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -114,6 +114,14 @@
             tabPageMarkAttendance.Text = "Class Report";
             tabPageMarkAttendance.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.LightGray;
+            panel1.Location = new Point(59, 89);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(270, 2);
+            panel1.TabIndex = 47;
+            // 
             // panel6
             // 
             panel6.BackColor = Color.LightGray;
@@ -134,9 +142,8 @@
             // comboBox3
             // 
             comboBox3.FlatStyle = FlatStyle.Flat;
-            comboBox3.ForeColor = SystemColors.Menu;
+            comboBox3.ForeColor = SystemColors.InfoText;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "dwqdq" });
             comboBox3.Location = new Point(550, 72);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(270, 29);
@@ -198,6 +205,22 @@
             panel12.Name = "panel12";
             panel12.Size = new Size(10, 23);
             panel12.TabIndex = 43;
+            // 
+            // dataGridViewClassReport
+            // 
+            dataGridViewClassReport.AllowUserToAddRows = false;
+            dataGridViewClassReport.AllowUserToDeleteRows = false;
+            dataGridViewClassReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewClassReport.BackgroundColor = Color.White;
+            dataGridViewClassReport.BorderStyle = BorderStyle.None;
+            dataGridViewClassReport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewClassReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewClassReport.Location = new Point(31, 131);
+            dataGridViewClassReport.Name = "dataGridViewClassReport";
+            dataGridViewClassReport.ReadOnly = true;
+            dataGridViewClassReport.RowHeadersWidth = 51;
+            dataGridViewClassReport.Size = new Size(872, 318);
+            dataGridViewClassReport.TabIndex = 31;
             // 
             // label2
             // 
@@ -462,30 +485,6 @@
             comboBox2.Size = new Size(270, 29);
             comboBox2.TabIndex = 50;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.LightGray;
-            panel1.Location = new Point(59, 89);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(270, 2);
-            panel1.TabIndex = 47;
-            // 
-            // dataGridViewClassReport
-            // 
-            dataGridViewClassReport.AllowUserToAddRows = false;
-            dataGridViewClassReport.AllowUserToDeleteRows = false;
-            dataGridViewClassReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewClassReport.BackgroundColor = Color.White;
-            dataGridViewClassReport.BorderStyle = BorderStyle.None;
-            dataGridViewClassReport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewClassReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewClassReport.Location = new Point(31, 131);
-            dataGridViewClassReport.Name = "dataGridViewClassReport";
-            dataGridViewClassReport.ReadOnly = true;
-            dataGridViewClassReport.RowHeadersWidth = 51;
-            dataGridViewClassReport.Size = new Size(872, 318);
-            dataGridViewClassReport.TabIndex = 31;
-            // 
             // UserControlReport
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -500,11 +499,11 @@
             tabPageMarkAttendance.ResumeLayout(false);
             tabPageMarkAttendance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrinter).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewClassReport).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudentReport).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewClassReport).EndInit();
             ResumeLayout(false);
         }
 
