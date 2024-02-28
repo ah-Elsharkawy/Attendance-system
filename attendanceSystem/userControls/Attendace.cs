@@ -31,6 +31,7 @@ namespace attendanceSystem.userControls
 
             // Subscribe to CellEndEdit event of dataGridViewStudentAtt
             dataGridViewStudentAtt.CellEndEdit += dataGridViewStudentAtt_CellEndEdit;
+
         }
 
         private void PopulateComboBox()
@@ -51,10 +52,7 @@ namespace attendanceSystem.userControls
             PopulateDataGridView();
         }
 
-        private void comboBoxAttendanceClass_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            PopulateDataGridView();
-        }
+     
 
         private void PopulateDataGridView()
         {
@@ -62,7 +60,13 @@ namespace attendanceSystem.userControls
             dataGridViewStudentAtt.Rows.Clear();
 
             // Get selected class
-            string selectedClass = comboBoxAttendanceClass.SelectedItem?.ToString() ?? "PD";
+
+            string selectedClass = comboBoxAttendanceClass.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(selectedClass))
+            {
+                comboBoxAttendanceClass.SelectedItem="PD";
+                selectedClass = "PD";
+            }
 
             // Get selected date
             string selectedDate = dateTimePickerAttendance.Value.ToString("yyyy-MM-dd");
@@ -70,7 +74,8 @@ namespace attendanceSystem.userControls
             // If no date is selected, set default date to "2024-02-01"
             if (string.IsNullOrEmpty(selectedDate))
             {
-                selectedDate = "2024-02-01";
+                dateTimePickerAttendance.Value = DateTime.Now;
+                selectedDate = dateTimePickerAttendance.Value.ToString("yyyy-MM-dd");
             }
 
             // Filter users based on the selected class using XPath
@@ -202,6 +207,17 @@ namespace attendanceSystem.userControls
                 // Save the changes to the XML file
                 xmlDoc.Save(@"..\..\..\Data\data.xml");
             }
+        }
+
+        private void comboBoxAttendanceClass_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxAttendanceClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PopulateDataGridView();
+
         }
     }
 }

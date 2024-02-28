@@ -34,6 +34,11 @@
             comboBoxAttendanceClass = new ComboBox();
             label1 = new Label();
             dataGridViewStudentAtt = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            RegNo = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewComboBoxColumn();
             panel5 = new Panel();
             panel3 = new Panel();
             panel12 = new Panel();
@@ -43,11 +48,6 @@
             label14 = new Label();
             label15 = new Label();
             dateTimePickerAttendance = new DateTimePicker();
-            Column1 = new DataGridViewTextBoxColumn();
-            RegNo = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewComboBoxColumn();
             tabControl1.SuspendLayout();
             tabPageMarkAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudentAtt).BeginInit();
@@ -97,14 +97,17 @@
             // 
             // comboBoxAttendanceClass
             // 
+            comboBoxAttendanceClass.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxAttendanceClass.FlatStyle = FlatStyle.Flat;
-            comboBoxAttendanceClass.ForeColor = Color.DarkGray;
+            comboBoxAttendanceClass.Font = new Font("Century Gothic", 9.75F);
+            comboBoxAttendanceClass.ForeColor = Color.Black;
             comboBoxAttendanceClass.FormattingEnabled = true;
             comboBoxAttendanceClass.Items.AddRange(new object[] { "PD", "OS", "AI" });
             comboBoxAttendanceClass.Location = new Point(550, 72);
             comboBoxAttendanceClass.Name = "comboBoxAttendanceClass";
-            comboBoxAttendanceClass.Size = new Size(270, 28);
+            comboBoxAttendanceClass.Size = new Size(270, 29);
             comboBoxAttendanceClass.TabIndex = 54;
+            comboBoxAttendanceClass.SelectedIndexChanged += comboBoxAttendanceClass_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -120,6 +123,8 @@
             // 
             dataGridViewStudentAtt.AllowUserToAddRows = false;
             dataGridViewStudentAtt.AllowUserToDeleteRows = false;
+            dataGridViewStudentAtt.AllowUserToResizeColumns = false;
+            dataGridViewStudentAtt.AllowUserToResizeRows = false;
             dataGridViewStudentAtt.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewStudentAtt.BackgroundColor = Color.White;
             dataGridViewStudentAtt.BorderStyle = BorderStyle.None;
@@ -131,6 +136,46 @@
             dataGridViewStudentAtt.RowHeadersWidth = 51;
             dataGridViewStudentAtt.Size = new Size(872, 318);
             dataGridViewStudentAtt.TabIndex = 31;
+            // 
+            // Column1
+            // 
+            Column1.DataPropertyName = "Student_Name";
+            Column1.HeaderText = "Student Name";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // RegNo
+            // 
+            RegNo.DataPropertyName = "Student_Reg No";
+            RegNo.HeaderText = "RegNo";
+            RegNo.MinimumWidth = 6;
+            RegNo.Name = "RegNo";
+            RegNo.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.DataPropertyName = "Class_Name";
+            Column3.HeaderText = "Class";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.DataPropertyName = "Attendance_Date";
+            Column4.HeaderText = "Date";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Status
+            // 
+            Status.HeaderText = "Status";
+            Status.Items.AddRange(new object[] { "Absent", "Present" });
+            Status.MinimumWidth = 6;
+            Status.Name = "Status";
+            Status.ReadOnly = true;
             // 
             // panel5
             // 
@@ -215,41 +260,6 @@
             dateTimePickerAttendance.Size = new Size(270, 27);
             dateTimePickerAttendance.TabIndex = 27;
             dateTimePickerAttendance.ValueChanged += dateTimePickerAttendance_ValueChanged;
-            // 
-            // Column1
-            // 
-            Column1.DataPropertyName = "Student_Name";
-            Column1.HeaderText = "Student Name";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            // 
-            // RegNo
-            // 
-            RegNo.DataPropertyName = "Student_Reg No";
-            RegNo.HeaderText = "RegNo";
-            RegNo.MinimumWidth = 6;
-            RegNo.Name = "RegNo";
-            // 
-            // Column3
-            // 
-            Column3.DataPropertyName = "Class_Name";
-            Column3.HeaderText = "Class";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.DataPropertyName = "Attendance_Date";
-            Column4.HeaderText = "Date";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            // 
-            // Status
-            // 
-            Status.HeaderText = "Status";
-            Status.Items.AddRange(new object[] { "Absent", "Present" });
-            Status.MinimumWidth = 6;
-            Status.Name = "Status";
             // 
             // Attendace
             // 
