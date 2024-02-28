@@ -86,7 +86,6 @@
             tabPageMarkAttendance.TabIndex = 0;
             tabPageMarkAttendance.Text = "Class Report";
             tabPageMarkAttendance.UseVisualStyleBackColor = true;
-            tabPageMarkAttendance.Click += tabPageMarkAttendance_Click;
             // 
             // panel6
             // 
@@ -247,7 +246,7 @@
             // Status
             // 
             Status.HeaderText = "Status";
-            Status.Items.AddRange(new object[] { "absent", "present" });
+            Status.Items.AddRange(new object[] { "Absent", "Present" });
             Status.MinimumWidth = 6;
             Status.Name = "Status";
             // 
