@@ -3,105 +3,103 @@ using System.Data;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Xsl;
+
 
 
 namespace attendanceSystem.userControls
 {
     public partial class UserControlReport : UserControl
     {
-        //private UserControlReport dataGridView1; // Declare custom DataGridView control
 
         public UserControlReport()
         {
             InitializeComponent();
-            InitializeDataGridView(); // Initialize custom DataGridView control
-
-            // Attach event handler for when the UserControl becomes visible
-            this.VisibleChanged += UserControlReport_VisibleChanged;
+            LoadAndDisplayTransformedData();
+            //InitializeDataGridView(); // Initialize custom DataGridView control
         }
-
-        private void InitializeDataGridView()
+        private void LoadAndDisplayTransformedData()
         {
-            // Assuming you have already designed DataGridView in your UserControl
-            // Get the custom DataGridView instance
-            //dataGridViewClassReport = this.dataGridViewClassReport;
-
-            // Set DataGridView properties if necessary
-            // Example:
-            // dataGridView1.AllowUserToAddRows = false;
-            // dataGridView1.AutoGenerateColumns = false;
-
-            // You may need to create columns in code if not done in the designer
-            // Example:
-            // dataGridView1.Columns.Add("ID", "Student ID");
-            // dataGridView1.Columns.Add("Name", "Name");
-            // dataGridView1.Columns.Add("Class", "Class");
-            // dataGridView1.Columns.Add("Date", "Date");
-            // dataGridView1.Columns.Add("Status", "Status");
-        }
-
-        private void UserControlReport_VisibleChanged(object sender, EventArgs e)
-        {
-            // When the UserControl becomes visible, load the data
-            if (this.Visible)
+            try
             {
-                LoadData();
+                comboBox1.Items.Add("AI");
+                comboBox1.Items.Add("PD");
+                comboBox1.Items.Add("OS");
+
+                List<StudentAttendance> studentsAttendance = GetStudentsAttendance(@"D:\iti\11-C#\Trial\Trial\data.xml");
+                // Create a DataGridView
+
+                // Add columns to DataGridView
+                dataGridViewClassReport.Columns.Add("StudentID", "Student ID");
+                dataGridViewClassReport.Columns.Add("Name", "Name");
+                dataGridViewClassReport.Columns.Add("Date", "Date");
+                dataGridViewClassReport.Columns.Add("AttendanceStatus", "Attendance Status");
+                // Add rows to DataGridView
+                foreach (var studentAttendance in studentsAttendance)
+                {
+                    Console.WriteLine(studentAttendance.StudentID);
+                    dataGridViewClassReport.Rows.Add(
+                        studentAttendance.StudentID,
+                        studentAttendance.Name,
+                        studentAttendance.Date,
+                        studentAttendance.AttendanceStatus);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        public void LoadData()
+        public class StudentAttendance
         {
-            DataManager.getUserXmlByClass("PD");
-
+            public string StudentID { get; set; }
+            public string Name { get; set; }
+            public string Date { get; set; }
+            public string AttendanceStatus { get; set; }
         }
-
-        private void ParseAndPopulateDataGridView()
+        static List<StudentAttendance> GetStudentsAttendance(string xmlFilePath)
         {
-            XmlDocument xmlDocument = DataManager.getUserXmlByClass("PD");
-            // Clear existing rows
-            //dataGridView1.Rows.Clear();
+            List<StudentAttendance> studentsAttendance = new List<StudentAttendance>();
 
-            // Loop through each <tr> element in the transformed XML
-            foreach (XmlNode trNode in xmlDocument.SelectNodes("//tr"))
+            // Load the XML document
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(xmlFilePath);
+
+            // Select all user nodes
+            XmlNodeList userNodes = xmlDoc.SelectNodes("/users/user");
+
+            // Iterate through each user
+            foreach (XmlNode userNode in userNodes)
             {
-                // Extract data from <td> elements within <tr>
-                string studentId = trNode.SelectSingleNode("td[1]").InnerText;
-                string studentName = trNode.SelectSingleNode("td[2]").InnerText;
-                string studentClass = trNode.SelectSingleNode("td[3]").InnerText;
+                string role = userNode.SelectSingleNode("Role").InnerText;
 
-                // Add a new row to custom DataGridView with extracted data
-                dataGridViewClassReport.Rows.Add(studentId, studentName, studentClass);
+                // Check if the user is a student
+                if (role == "Student")
+                {
+                    string userId = userNode.SelectSingleNode("Id").InnerText;
+                    string name = userNode.SelectSingleNode("Name").InnerText;
+                    XmlNodeList attendanceRecords = userNode.SelectNodes("Attendance/Record");
+
+                    // Check and retrieve attendance records
+                    foreach (XmlNode recordNode in attendanceRecords)
+                    {
+                        string date = recordNode.SelectSingleNode("Date").InnerText;
+                        string status = recordNode.SelectSingleNode("Status").InnerText;
+
+                        // Add student details to the list
+                        studentsAttendance.Add(new StudentAttendance
+                        {
+                            StudentID = userId,
+                            Name = name,
+                            Date = date,
+                            AttendanceStatus = status
+                        });
+                    }
+                }
             }
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel12_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewClassReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            ParseAndPopulateDataGridView();
+            return studentsAttendance;
         }
     }
 }
+
