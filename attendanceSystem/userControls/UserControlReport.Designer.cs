@@ -37,7 +37,7 @@
             label1 = new Label();
             dataGridViewClassReport = new DataGridView();
             label15 = new Label();
-            tabPage = new TabPage();
+            tabPageIdAttendance = new TabPage();
             pictureBox1 = new PictureBox();
             dataGridViewStudentReport = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
@@ -48,13 +48,13 @@
             panel7 = new Panel();
             comboBoxRegNo = new Label();
             tabPageStudentReport = new Label();
-            comboBox2 = new ComboBox();
             toolTip1 = new ToolTip(components);
+            comboBox1 = new ComboBox();
             tabControl1.SuspendLayout();
             tabPageClassAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrinter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClassReport).BeginInit();
-            tabPage.SuspendLayout();
+            tabPageIdAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudentReport).BeginInit();
             SuspendLayout();
@@ -64,7 +64,7 @@
             tabControl1.Alignment = TabAlignment.Bottom;
             tabControl1.Anchor = AnchorStyles.None;
             tabControl1.Controls.Add(tabPageClassAttendance);
-            tabControl1.Controls.Add(tabPage);
+            tabControl1.Controls.Add(tabPageIdAttendance);
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -86,7 +86,6 @@
             tabPageClassAttendance.TabIndex = 0;
             tabPageClassAttendance.Text = "Class Report";
             tabPageClassAttendance.UseVisualStyleBackColor = true;
-            //tabPageClassAttendance.Click += tabPageClassAttendance_Click;
             // 
             // panel6
             // 
@@ -155,21 +154,21 @@
             label15.TabIndex = 15;
             label15.Text = "Class Report:";
             // 
-            // tabPage
+            // tabPageIdAttendance
             // 
-            tabPage.Controls.Add(pictureBox1);
-            tabPage.Controls.Add(dataGridViewStudentReport);
-            tabPage.Controls.Add(panel7);
-            tabPage.Controls.Add(comboBoxRegNo);
-            tabPage.Controls.Add(tabPageStudentReport);
-            tabPage.Controls.Add(comboBox2);
-            tabPage.Location = new Point(4, 4);
-            tabPage.Name = "tabPage";
-            tabPage.Padding = new Padding(3);
-            tabPage.Size = new Size(934, 468);
-            tabPage.TabIndex = 1;
-            tabPage.Text = "Student Report";
-            tabPage.UseVisualStyleBackColor = true;
+            tabPageIdAttendance.Controls.Add(comboBox1);
+            tabPageIdAttendance.Controls.Add(pictureBox1);
+            tabPageIdAttendance.Controls.Add(dataGridViewStudentReport);
+            tabPageIdAttendance.Controls.Add(panel7);
+            tabPageIdAttendance.Controls.Add(comboBoxRegNo);
+            tabPageIdAttendance.Controls.Add(tabPageStudentReport);
+            tabPageIdAttendance.Location = new Point(4, 4);
+            tabPageIdAttendance.Name = "tabPageIdAttendance";
+            tabPageIdAttendance.Padding = new Padding(3);
+            tabPageIdAttendance.Size = new Size(934, 467);
+            tabPageIdAttendance.TabIndex = 1;
+            tabPageIdAttendance.Text = "Student Report";
+            tabPageIdAttendance.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -268,14 +267,14 @@
             tabPageStudentReport.TabIndex = 32;
             tabPageStudentReport.Text = "Student Report:";
             // 
-            // comboBox2
+            // comboBox1
             // 
-            comboBox2.FlatStyle = FlatStyle.Flat;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(335, 70);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(270, 29);
-            comboBox2.TabIndex = 50;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30" });
+            comboBox1.Location = new Point(335, 67);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(270, 29);
+            comboBox1.TabIndex = 53;
             // 
             // UserControlReport
             // 
@@ -292,8 +291,8 @@
             tabPageClassAttendance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrinter).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClassReport).EndInit();
-            tabPage.ResumeLayout(false);
-            tabPage.PerformLayout();
+            tabPageIdAttendance.ResumeLayout(false);
+            tabPageIdAttendance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudentReport).EndInit();
             ResumeLayout(false);
@@ -304,7 +303,7 @@
         private TabControl tabControl1;
         private TabPage tabPageClassAttendance;
         private Label label15;
-        private TabPage tabPage;
+        private TabPage tabPageIdAttendance;
         private DataGridView dataGridViewStudentReport;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -314,7 +313,6 @@
         private Panel panel7;
         private Label comboBoxRegNo;
         private Label tabPageStudentReport;
-        private ComboBox comboBox2;
         private PictureBox pictureBoxPrinter;
         private ToolTip toolTip1;
         private Panel panel6;
@@ -322,5 +320,7 @@
         private Label label1;
         private PictureBox pictureBox1;
         private DataGridView dataGridViewClassReport;
+        private ComboBox comboBox1;
+        //private ComboBox comboBox1;
     }
 }
