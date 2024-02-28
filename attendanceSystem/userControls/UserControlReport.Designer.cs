@@ -274,7 +274,7 @@
             tabPage2.Location = new Point(4, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(934, 468);
+            tabPage2.Size = new Size(934, 467);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Student Report";
             tabPage2.UseVisualStyleBackColor = true;
@@ -405,7 +405,7 @@
             // 
             panel9.Anchor = AnchorStyles.None;
             panel9.BackColor = Color.Transparent;
-            panel9.Location = new Point(266, 80);
+            panel9.Location = new Point(266, 79);
             panel9.Name = "panel9";
             panel9.Size = new Size(10, 23);
             panel9.TabIndex = 38;
@@ -414,7 +414,7 @@
             // 
             panel10.Anchor = AnchorStyles.None;
             panel10.BackColor = Color.Transparent;
-            panel10.Location = new Point(43, 71);
+            panel10.Location = new Point(43, 70);
             panel10.Name = "panel10";
             panel10.Size = new Size(270, 10);
             panel10.TabIndex = 34;
@@ -423,7 +423,7 @@
             // 
             panel11.Anchor = AnchorStyles.None;
             panel11.BackColor = Color.Transparent;
-            panel11.Location = new Point(312, 80);
+            panel11.Location = new Point(312, 79);
             panel11.Name = "panel11";
             panel11.Size = new Size(10, 23);
             panel11.TabIndex = 37;
@@ -432,7 +432,7 @@
             // 
             panel13.Anchor = AnchorStyles.None;
             panel13.BackColor = Color.Transparent;
-            panel13.Location = new Point(43, 102);
+            panel13.Location = new Point(43, 101);
             panel13.Name = "panel13";
             panel13.Size = new Size(270, 10);
             panel13.TabIndex = 36;
@@ -441,7 +441,7 @@
             // 
             panel14.Anchor = AnchorStyles.None;
             panel14.BackColor = Color.Transparent;
-            panel14.Location = new Point(34, 80);
+            panel14.Location = new Point(34, 79);
             panel14.Name = "panel14";
             panel14.Size = new Size(10, 23);
             panel14.TabIndex = 35;
