@@ -202,7 +202,12 @@
     <Email>add@student.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+	  <Attendance>
+		  <Record>
+			  <Date>2024-02-03</Date>
+			  <Status>present</Status>
+		  </Record>
+	  </Attendance>
     <SClass>OS</SClass>
   </user>
   <user>
@@ -222,7 +227,12 @@
     <Email>add@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+	  <Attendance>
+		  <Record>
+			  <Date>2024-02-03</Date>
+			  <Status>absent</Status>
+		  </Record>
+	  </Attendance>
     <SClass>PD</SClass>
   </user>
   <user>
@@ -231,7 +241,12 @@
     <Email>abdo@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+	  <Attendance>
+		  <Record>
+			  <Date>2024-02-08</Date>
+			  <Status>absent</Status>
+		  </Record>
+	  </Attendance>
     <SClass>PD</SClass>
   </user>
   <user>
@@ -240,7 +255,12 @@
     <Email>dsvz@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+	  <Attendance>
+		  <Record>
+			  <Date>2024-02-03</Date>
+			  <Status>present</Status>
+		  </Record>
+	  </Attendance>
     <SClass>PD</SClass>
   </user>
   <user>
@@ -249,7 +269,12 @@
     <Email>dsvz@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+	  <Attendance>
+		  <Record>
+			  <Date>2024-02-03</Date>
+			  <Status>present</Status>
+		  </Record>
+	  </Attendance>
     <SClass>PD</SClass>
   </user>
   <user>
@@ -258,7 +283,12 @@
     <Email>zvc@dfb.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+	  <Attendance>
+		  <Record>
+			  <Date>2024-02-03</Date>
+			  <Status>present</Status>
+		  </Record>
+	  </Attendance>
     <SClass>OS</SClass>
   </user>
   <user>
@@ -267,7 +297,12 @@
     <Email>sbdvsc@fgbd.eg</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+	  <Attendance>
+		  <Record>
+			  <Date>2024-02-03</Date>
+			  <Status>present</Status>
+		  </Record>
+	  </Attendance>
     <SClass>AI</SClass>
   </user>
   <user>
@@ -276,7 +311,12 @@
     <Email>a@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+	  <Attendance>
+		  <Record>
+			  <Date>2024-02-03</Date>
+			  <Status>present</Status>
+		  </Record>
+	  </Attendance>
     <SClass>OS</SClass>
   </user>
 </users>

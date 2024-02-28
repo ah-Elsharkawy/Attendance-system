@@ -30,26 +30,15 @@
         {
             components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
-            tabPageMarkAttendance = new TabPage();
-            panel1 = new Panel();
+            tabPageClassAttendance = new TabPage();
             panel6 = new Panel();
-            panel2 = new Panel();
             comboBox3 = new ComboBox();
-            panel3 = new Panel();
-            panel4 = new Panel();
             pictureBoxPrinter = new PictureBox();
-            panel5 = new Panel();
             label1 = new Label();
-            panel12 = new Panel();
             dataGridViewClassReport = new DataGridView();
-            label2 = new Label();
             label15 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            tabPage2 = new TabPage();
+            tabPage = new TabPage();
             pictureBox1 = new PictureBox();
-            panel15 = new Panel();
-            comboBox1 = new ComboBox();
-            label4 = new Label();
             dataGridViewStudentReport = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
@@ -58,22 +47,14 @@
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             panel7 = new Panel();
             comboBoxRegNo = new Label();
-            panel8 = new Panel();
-            panel9 = new Panel();
-            panel10 = new Panel();
-            panel11 = new Panel();
-            panel13 = new Panel();
-            panel14 = new Panel();
-            label3 = new Label();
             tabPageStudentReport = new Label();
-            dateTimePickerDate1 = new DateTimePicker();
             comboBox2 = new ComboBox();
             toolTip1 = new ToolTip(components);
             tabControl1.SuspendLayout();
-            tabPageMarkAttendance.SuspendLayout();
+            tabPageClassAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrinter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClassReport).BeginInit();
-            tabPage2.SuspendLayout();
+            tabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudentReport).BeginInit();
             SuspendLayout();
@@ -82,90 +63,49 @@
             // 
             tabControl1.Alignment = TabAlignment.Bottom;
             tabControl1.Anchor = AnchorStyles.None;
-            tabControl1.Controls.Add(tabPageMarkAttendance);
-            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPageClassAttendance);
+            tabControl1.Controls.Add(tabPage);
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(942, 501);
             tabControl1.TabIndex = 2;
             // 
-            // tabPageMarkAttendance
+            // tabPageClassAttendance
             // 
-            tabPageMarkAttendance.Controls.Add(panel1);
-            tabPageMarkAttendance.Controls.Add(panel6);
-            tabPageMarkAttendance.Controls.Add(panel2);
-            tabPageMarkAttendance.Controls.Add(comboBox3);
-            tabPageMarkAttendance.Controls.Add(panel3);
-            tabPageMarkAttendance.Controls.Add(panel4);
-            tabPageMarkAttendance.Controls.Add(pictureBoxPrinter);
-            tabPageMarkAttendance.Controls.Add(panel5);
-            tabPageMarkAttendance.Controls.Add(label1);
-            tabPageMarkAttendance.Controls.Add(panel12);
-            tabPageMarkAttendance.Controls.Add(dataGridViewClassReport);
-            tabPageMarkAttendance.Controls.Add(label2);
-            tabPageMarkAttendance.Controls.Add(label15);
-            tabPageMarkAttendance.Controls.Add(dateTimePicker1);
-            tabPageMarkAttendance.Location = new Point(4, 4);
-            tabPageMarkAttendance.Name = "tabPageMarkAttendance";
-            tabPageMarkAttendance.Padding = new Padding(3);
-            tabPageMarkAttendance.Size = new Size(934, 467);
-            tabPageMarkAttendance.TabIndex = 0;
-            tabPageMarkAttendance.Text = "Class Report";
-            tabPageMarkAttendance.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.LightGray;
-            panel1.Location = new Point(59, 89);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(270, 2);
-            panel1.TabIndex = 47;
+            tabPageClassAttendance.Controls.Add(panel6);
+            tabPageClassAttendance.Controls.Add(comboBox3);
+            tabPageClassAttendance.Controls.Add(pictureBoxPrinter);
+            tabPageClassAttendance.Controls.Add(label1);
+            tabPageClassAttendance.Controls.Add(dataGridViewClassReport);
+            tabPageClassAttendance.Controls.Add(label15);
+            tabPageClassAttendance.Location = new Point(4, 4);
+            tabPageClassAttendance.Name = "tabPageClassAttendance";
+            tabPageClassAttendance.Padding = new Padding(3);
+            tabPageClassAttendance.Size = new Size(934, 467);
+            tabPageClassAttendance.TabIndex = 0;
+            tabPageClassAttendance.Text = "Class Report";
+            tabPageClassAttendance.UseVisualStyleBackColor = true;
+            //tabPageClassAttendance.Click += tabPageClassAttendance_Click;
             // 
             // panel6
             // 
             panel6.BackColor = Color.LightGray;
-            panel6.Location = new Point(549, 100);
+            panel6.Location = new Point(306, 104);
             panel6.Name = "panel6";
             panel6.Size = new Size(270, 2);
             panel6.TabIndex = 53;
-            // 
-            // panel2
-            // 
-            panel2.Anchor = AnchorStyles.None;
-            panel2.BackColor = Color.Transparent;
-            panel2.Location = new Point(279, 65);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(10, 23);
-            panel2.TabIndex = 46;
             // 
             // comboBox3
             // 
             comboBox3.FlatStyle = FlatStyle.Flat;
             comboBox3.ForeColor = SystemColors.InfoText;
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(550, 72);
+            comboBox3.Items.AddRange(new object[] { "PD", "OS", "AI" });
+            comboBox3.Location = new Point(307, 76);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(270, 29);
             comboBox3.TabIndex = 54;
-            // 
-            // panel3
-            // 
-            panel3.Anchor = AnchorStyles.None;
-            panel3.BackColor = Color.Transparent;
-            panel3.Location = new Point(56, 56);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(270, 10);
-            panel3.TabIndex = 42;
-            // 
-            // panel4
-            // 
-            panel4.Anchor = AnchorStyles.None;
-            panel4.BackColor = Color.Transparent;
-            panel4.Location = new Point(325, 65);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(10, 23);
-            panel4.TabIndex = 45;
             // 
             // pictureBoxPrinter
             // 
@@ -178,33 +118,15 @@
             pictureBoxPrinter.TabIndex = 32;
             pictureBoxPrinter.TabStop = false;
             // 
-            // panel5
-            // 
-            panel5.Anchor = AnchorStyles.None;
-            panel5.BackColor = Color.Transparent;
-            panel5.Location = new Point(56, 87);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(270, 10);
-            panel5.TabIndex = 44;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label1.Location = new Point(546, 47);
+            label1.Location = new Point(303, 51);
             label1.Name = "label1";
             label1.Size = new Size(58, 19);
             label1.TabIndex = 52;
             label1.Text = "Class:";
-            // 
-            // panel12
-            // 
-            panel12.Anchor = AnchorStyles.None;
-            panel12.BackColor = Color.Transparent;
-            panel12.Location = new Point(47, 65);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(10, 23);
-            panel12.TabIndex = 43;
             // 
             // dataGridViewClassReport
             // 
@@ -222,62 +144,32 @@
             dataGridViewClassReport.Size = new Size(872, 318);
             dataGridViewClassReport.TabIndex = 31;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label2.Location = new Point(56, 36);
-            label2.Name = "label2";
-            label2.Size = new Size(52, 19);
-            label2.TabIndex = 41;
-            label2.Text = "Date:";
-            // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
             label15.ForeColor = Color.FromArgb(67, 31, 125);
-            label15.Location = new Point(6, 3);
+            label15.Location = new Point(17, 9);
             label15.Name = "label15";
             label15.Size = new Size(137, 23);
             label15.TabIndex = 15;
             label15.Text = "Class Report:";
             // 
-            // dateTimePicker1
+            // tabPage
             // 
-            dateTimePicker1.CustomFormat = "yyyy/MM";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(57, 63);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(270, 27);
-            dateTimePicker1.TabIndex = 48;
-            // 
-            // tabPage2
-            // 
-            tabPage2.Controls.Add(pictureBox1);
-            tabPage2.Controls.Add(panel15);
-            tabPage2.Controls.Add(comboBox1);
-            tabPage2.Controls.Add(label4);
-            tabPage2.Controls.Add(dataGridViewStudentReport);
-            tabPage2.Controls.Add(panel7);
-            tabPage2.Controls.Add(comboBoxRegNo);
-            tabPage2.Controls.Add(panel8);
-            tabPage2.Controls.Add(panel9);
-            tabPage2.Controls.Add(panel10);
-            tabPage2.Controls.Add(panel11);
-            tabPage2.Controls.Add(panel13);
-            tabPage2.Controls.Add(panel14);
-            tabPage2.Controls.Add(label3);
-            tabPage2.Controls.Add(tabPageStudentReport);
-            tabPage2.Controls.Add(dateTimePickerDate1);
-            tabPage2.Controls.Add(comboBox2);
-            tabPage2.Location = new Point(4, 4);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(934, 467);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Student Report";
-            tabPage2.UseVisualStyleBackColor = true;
+            tabPage.Controls.Add(pictureBox1);
+            tabPage.Controls.Add(dataGridViewStudentReport);
+            tabPage.Controls.Add(panel7);
+            tabPage.Controls.Add(comboBoxRegNo);
+            tabPage.Controls.Add(tabPageStudentReport);
+            tabPage.Controls.Add(comboBox2);
+            tabPage.Location = new Point(4, 4);
+            tabPage.Name = "tabPage";
+            tabPage.Padding = new Padding(3);
+            tabPage.Size = new Size(934, 468);
+            tabPage.TabIndex = 1;
+            tabPage.Text = "Student Report";
+            tabPage.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -289,34 +181,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 52;
             pictureBox1.TabStop = false;
-            // 
-            // panel15
-            // 
-            panel15.BackColor = Color.LightGray;
-            panel15.Location = new Point(353, 105);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(270, 2);
-            panel15.TabIndex = 47;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.ForeColor = SystemColors.Menu;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(353, 77);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(270, 29);
-            comboBox1.TabIndex = 51;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label4.Location = new Point(350, 52);
-            label4.Name = "label4";
-            label4.Size = new Size(58, 19);
-            label4.TabIndex = 45;
-            label4.Text = "Class:";
             // 
             // dataGridViewStudentReport
             // 
@@ -378,7 +242,7 @@
             // panel7
             // 
             panel7.BackColor = Color.LightGray;
-            panel7.Location = new Point(646, 105);
+            panel7.Location = new Point(335, 98);
             panel7.Name = "panel7";
             panel7.Size = new Size(270, 2);
             panel7.TabIndex = 43;
@@ -387,74 +251,11 @@
             // 
             comboBoxRegNo.AutoSize = true;
             comboBoxRegNo.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            comboBoxRegNo.Location = new Point(643, 52);
+            comboBoxRegNo.Location = new Point(332, 45);
             comboBoxRegNo.Name = "comboBoxRegNo";
-            comboBoxRegNo.Size = new Size(80, 19);
+            comboBoxRegNo.Size = new Size(65, 19);
             comboBoxRegNo.TabIndex = 41;
-            comboBoxRegNo.Text = "Reg No.:";
-            // 
-            // panel8
-            // 
-            panel8.BackColor = Color.LightGray;
-            panel8.Location = new Point(46, 106);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(270, 2);
-            panel8.TabIndex = 39;
-            // 
-            // panel9
-            // 
-            panel9.Anchor = AnchorStyles.None;
-            panel9.BackColor = Color.Transparent;
-            panel9.Location = new Point(266, 79);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(10, 23);
-            panel9.TabIndex = 38;
-            // 
-            // panel10
-            // 
-            panel10.Anchor = AnchorStyles.None;
-            panel10.BackColor = Color.Transparent;
-            panel10.Location = new Point(43, 70);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(270, 10);
-            panel10.TabIndex = 34;
-            // 
-            // panel11
-            // 
-            panel11.Anchor = AnchorStyles.None;
-            panel11.BackColor = Color.Transparent;
-            panel11.Location = new Point(312, 79);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(10, 23);
-            panel11.TabIndex = 37;
-            // 
-            // panel13
-            // 
-            panel13.Anchor = AnchorStyles.None;
-            panel13.BackColor = Color.Transparent;
-            panel13.Location = new Point(43, 101);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(270, 10);
-            panel13.TabIndex = 36;
-            // 
-            // panel14
-            // 
-            panel14.Anchor = AnchorStyles.None;
-            panel14.BackColor = Color.Transparent;
-            panel14.Location = new Point(34, 79);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(10, 23);
-            panel14.TabIndex = 35;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label3.Location = new Point(43, 53);
-            label3.Name = "label3";
-            label3.Size = new Size(52, 19);
-            label3.TabIndex = 33;
-            label3.Text = "Date:";
+            comboBoxRegNo.Text = "ID No.:";
             // 
             // tabPageStudentReport
             // 
@@ -467,20 +268,11 @@
             tabPageStudentReport.TabIndex = 32;
             tabPageStudentReport.Text = "Student Report:";
             // 
-            // dateTimePickerDate1
-            // 
-            dateTimePickerDate1.CustomFormat = "yyyy/MM";
-            dateTimePickerDate1.Format = DateTimePickerFormat.Custom;
-            dateTimePickerDate1.Location = new Point(44, 80);
-            dateTimePickerDate1.Name = "dateTimePickerDate1";
-            dateTimePickerDate1.Size = new Size(270, 27);
-            dateTimePickerDate1.TabIndex = 40;
-            // 
             // comboBox2
             // 
             comboBox2.FlatStyle = FlatStyle.Flat;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(646, 77);
+            comboBox2.Location = new Point(335, 70);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(270, 29);
             comboBox2.TabIndex = 50;
@@ -496,12 +288,12 @@
             Name = "UserControlReport";
             Size = new Size(942, 501);
             tabControl1.ResumeLayout(false);
-            tabPageMarkAttendance.ResumeLayout(false);
-            tabPageMarkAttendance.PerformLayout();
+            tabPageClassAttendance.ResumeLayout(false);
+            tabPageClassAttendance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrinter).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClassReport).EndInit();
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
+            tabPage.ResumeLayout(false);
+            tabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudentReport).EndInit();
             ResumeLayout(false);
@@ -510,9 +302,9 @@
         #endregion
 
         private TabControl tabControl1;
-        private TabPage tabPageMarkAttendance;
+        private TabPage tabPageClassAttendance;
         private Label label15;
-        private TabPage tabPage2;
+        private TabPage tabPage;
         private DataGridView dataGridViewStudentReport;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -521,33 +313,14 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private Panel panel7;
         private Label comboBoxRegNo;
-        private Panel panel8;
-        private Panel panel9;
-        private Panel panel10;
-        private Panel panel11;
-        private Panel panel13;
-        private Panel panel14;
-        private Label label3;
         private Label tabPageStudentReport;
-        private DateTimePicker dateTimePickerDate1;
-        private Panel panel15;
-        private Label label4;
         private ComboBox comboBox2;
-        private ComboBox comboBox1;
         private PictureBox pictureBoxPrinter;
         private ToolTip toolTip1;
         private Panel panel6;
         private ComboBox comboBox3;
         private Label label1;
         private PictureBox pictureBox1;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
-        private Panel panel12;
-        private Label label2;
-        private DateTimePicker dateTimePicker1;
-        private Panel panel1;
         private DataGridView dataGridViewClassReport;
     }
 }

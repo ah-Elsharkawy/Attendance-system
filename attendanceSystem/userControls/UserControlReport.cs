@@ -9,16 +9,16 @@ namespace attendanceSystem.userControls
     {
         public UserControlReport()
         {
+
             InitializeComponent();
             LoadAndDisplayTransformedData();
+            comboBox3.SelectedIndexChanged += ComboBox3_SelectedIndexChanged; // Attach event handler
         }
 
         private void LoadAndDisplayTransformedData()
         {
             try
             {
-                List<StudentAttendance> studentsAttendance = GetStudentsAttendance(@"..\..\..\Data\data.xml");
-
                 // Clear existing columns and rows in DataGridView
                 dataGridViewClassReport.Columns.Clear();
                 dataGridViewClassReport.Rows.Clear();
@@ -28,21 +28,19 @@ namespace attendanceSystem.userControls
                 dataGridViewClassReport.Columns.Add("Name", "Name");
                 dataGridViewClassReport.Columns.Add("Date", "Date");
                 dataGridViewClassReport.Columns.Add("AttendanceStatus", "Attendance Status");
-                dataGridViewClassReport.Columns.Add("SClass", "Class"); // Add SClass column
+
+                // Filter students based on selected class
+                string selectedClass = comboBox3.SelectedItem as string;
+                List<StudentAttendance> studentsAttendance = GetStudentsAttendance(@"..\..\..\Data\data.xml", selectedClass);
 
                 // Add rows to DataGridView
                 foreach (var studentAttendance in studentsAttendance)
                 {
-                    // Loop through all SClass values for the student
-                    foreach (var sClass in studentAttendance.SClasses)
-                    {
-                        dataGridViewClassReport.Rows.Add(
-                            studentAttendance.StudentID,
-                            studentAttendance.Name,
-                            studentAttendance.Date,
-                            studentAttendance.AttendanceStatus,
-                            sClass); // Add SClass value
-                    }
+                    dataGridViewClassReport.Rows.Add(
+                        studentAttendance.StudentID,
+                        studentAttendance.Name,
+                        studentAttendance.Date,
+                        studentAttendance.AttendanceStatus);
                 }
             }
             catch (Exception ex)
@@ -51,21 +49,20 @@ namespace attendanceSystem.userControls
             }
         }
 
+        private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadAndDisplayTransformedData(); // Reload data based on selected class
+        }
+
         public class StudentAttendance
         {
             public string StudentID { get; set; }
             public string Name { get; set; }
             public string Date { get; set; }
             public string AttendanceStatus { get; set; }
-            public List<string> SClasses { get; set; } // Change SClass to List<string>
-
-            public StudentAttendance()
-            {
-                SClasses = new List<string>(); // Initialize SClasses list
-            }
         }
 
-        static List<StudentAttendance> GetStudentsAttendance(string xmlFilePath)
+        static List<StudentAttendance> GetStudentsAttendance(string xmlFilePath, string selectedClass)
         {
             List<StudentAttendance> studentsAttendance = new List<StudentAttendance>();
 
@@ -87,35 +84,32 @@ namespace attendanceSystem.userControls
                     string userId = userNode.SelectSingleNode("Id").InnerText;
                     string name = userNode.SelectSingleNode("Name").InnerText;
                     XmlNodeList attendanceRecords = userNode.SelectNodes("Attendance/Record");
+                    string sClass = userNode.SelectSingleNode("SClass")?.InnerText ?? ""; // Get SClass or set to empty string if not found
 
-                    // Create a new StudentAttendance object
-                    StudentAttendance studentAttendance = new StudentAttendance();
-                    studentAttendance.StudentID = userId;
-                    studentAttendance.Name = name;
-
-                    // Check and retrieve attendance records
-                    foreach (XmlNode recordNode in attendanceRecords)
+                    // Check if the selected class matches the student's class
+                    if (selectedClass == null || sClass == selectedClass)
                     {
-                        string date = recordNode.SelectSingleNode("Date").InnerText;
-                        string status = recordNode.SelectSingleNode("Status").InnerText;
+                        // Check and retrieve attendance records
+                        foreach (XmlNode recordNode in attendanceRecords)
+                        {
+                            string date = recordNode.SelectSingleNode("Date").InnerText;
+                            string status = recordNode.SelectSingleNode("Status").InnerText;
 
-                        // Add attendance details to the StudentAttendance object
-                        studentAttendance.Date = date;
-                        studentAttendance.AttendanceStatus = status;
+                            // Add student details to the list
+                            studentsAttendance.Add(new StudentAttendance
+                            {
+                                StudentID = userId,
+                                Name = name,
+                                Date = date,
+                                AttendanceStatus = status
+                            });
+                        }
                     }
-
-                    XmlNodeList sClasses = userNode.SelectNodes("SClass");
-                    // Add all SClass values to the StudentAttendance object
-                    foreach (XmlNode sClassNode in sClasses)
-                    {
-                        studentAttendance.SClasses.Add(sClassNode.InnerText);
-                    }
-
-                    // Add the StudentAttendance object to the list
-                    studentsAttendance.Add(studentAttendance);
                 }
             }
             return studentsAttendance;
         }
+
+
     }
 }
