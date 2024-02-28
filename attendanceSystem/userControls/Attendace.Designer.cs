@@ -44,7 +44,7 @@
             label15 = new Label();
             dateTimePickerAttendance = new DateTimePicker();
             Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
+            RegNo = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Status = new DataGridViewComboBoxColumn();
@@ -118,13 +118,14 @@
             // 
             // dataGridViewStudentAtt
             // 
-            dataGridViewStudentAtt.AllowUserToOrderColumns = true;
+            dataGridViewStudentAtt.AllowUserToAddRows = false;
+            dataGridViewStudentAtt.AllowUserToDeleteRows = false;
             dataGridViewStudentAtt.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewStudentAtt.BackgroundColor = Color.White;
             dataGridViewStudentAtt.BorderStyle = BorderStyle.None;
             dataGridViewStudentAtt.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewStudentAtt.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewStudentAtt.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Status });
+            dataGridViewStudentAtt.Columns.AddRange(new DataGridViewColumn[] { Column1, RegNo, Column3, Column4, Status });
             dataGridViewStudentAtt.Location = new Point(31, 131);
             dataGridViewStudentAtt.Name = "dataGridViewStudentAtt";
             dataGridViewStudentAtt.RowHeadersWidth = 51;
@@ -222,12 +223,12 @@
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
             // 
-            // Column2
+            // RegNo
             // 
-            Column2.DataPropertyName = "Student_Reg No";
-            Column2.HeaderText = "Reg No.";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
+            RegNo.DataPropertyName = "Student_Reg No";
+            RegNo.HeaderText = "RegNo";
+            RegNo.MinimumWidth = 6;
+            RegNo.Name = "RegNo";
             // 
             // Column3
             // 
@@ -282,7 +283,7 @@
         private Label label15;
         private DateTimePicker dateTimePickerAttendance;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn RegNo;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewComboBoxColumn Status;
