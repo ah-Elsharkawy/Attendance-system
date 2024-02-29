@@ -67,6 +67,7 @@ namespace attendanceSystem
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            textBoxPassword.UseSystemPasswordChar = true;
             pictureBoxHide.Hide();
             pictureBoxError.Hide();
             labelError.Hide();
@@ -91,8 +92,8 @@ namespace attendanceSystem
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            var inputEmail = textBoxEmail.Text.Trim();
-            //Console.WriteLine(inputEmail);
+            var inputEmail = textBoxEmail.Text.Trim().ToLower();
+            Console.WriteLine(inputEmail);
             var inputPassword = textBoxPassword.Text;
             try
             {
@@ -115,7 +116,7 @@ namespace attendanceSystem
                         var rightEmail = emailNode.InnerText;
                         Console.WriteLine(rightEmail);
 
-                        if (rightEmail == inputEmail)
+                        if (rightEmail == inputEmail.ToLower())
                         {
                             // Email matches, proceed to check password
                             var passwordNode = loggedUser.SelectSingleNode("//Password");
@@ -147,7 +148,6 @@ namespace attendanceSystem
                                     DataManager.currentUser = loggedUserObj;
                                     Console.WriteLine(DataManager.currentUser);
                                     // Password matches, login successful
-                                    MessageBox.Show("Successful Login.");
                                     mainForm mainForm = new mainForm();
                                     mainForm.Show();
                                     this.Hide();
@@ -155,25 +155,39 @@ namespace attendanceSystem
                                 else
                                 {
                                     // Incorrect password
-                                    MessageBox.Show("Incorrect Password.");
+                                    pictureBoxError.Show();
+                                    labelError.Show();
+                                    labelError.Text = "Incorrect Email or Password.";
+                                    
                                 }
                             }
                             else
                             {
                                 // Password node not found, handle accordingly
-                                MessageBox.Show("Incorrect Password.");
+                                pictureBoxError.Show();
+                                labelError.Show();
+                                labelError.Text = "Incorrect Email or Password.";
+                                
+
                             }
                         }
                         else
                         {
                             // Email does not match
-                            MessageBox.Show("Incorrect Email.");
+                            pictureBoxError.Show();
+                            labelError.Show();
+                            labelError.Text = "Incorrect Email or Password.";
+                           
+                            
+
                         }
                     }
                     else
                     {
                         // Email node not found, handle accordingly
-                        MessageBox.Show("This Email doesn't exist.");
+                        MessageBox.Show("This user doesn't exist.");
+                        labelError.Show();
+
                     }
                 }
                 else
@@ -187,14 +201,6 @@ namespace attendanceSystem
                 Console.WriteLine("Error" + error.Message);
                 MessageBox.Show("email doesn't exist.");
             }
-        }
-
-
-
-
-        private void textBoxPassword_TextChanged(object sender, EventArgs e)
-        {
-
         }
         private void textBoxPassword_Leave(object sender, EventArgs e)
         {

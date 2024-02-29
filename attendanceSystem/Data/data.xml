@@ -64,7 +64,7 @@
       </Record>
       <Record>
         <Date>2024-02-17</Date>
-        <Status>Absent</Status>
+        <Status>Present</Status>
       </Record>
     </Attendance>
     <SClass>AI</SClass>
@@ -662,7 +662,7 @@
   <user>
     <Id>23</Id>
     <Name>ahmed</Name>
-    <Email>a@gmail.com</Email>
+    <Email>abs@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
     <Attendance>

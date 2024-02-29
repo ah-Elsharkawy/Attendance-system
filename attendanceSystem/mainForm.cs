@@ -27,6 +27,15 @@ namespace attendanceSystem
 
         private void mainForm_Load(object sender, EventArgs e)
         {
+            Admin admin = new Admin("AdminName", "admin@example.com", "adminPassword", "Admin");
+
+            // Creating an instance of Teacher
+            Teacher teacher = new Teacher("TeacherName", "teacher@example.com", "teacherPassword", "Teacher", new List<string> { "ClassA", "ClassB" });
+
+            // Creating an instance of Student
+            Student student = new Student("StudentName", "student@example.com", "studentPassword", "Student", "ClassA");
+
+            
             currentUserNameLabel.Text = DataManager.currentUser.Name;
             var role = DataManager.currentUser.Role;
             if (role == "Admin")
@@ -149,5 +158,10 @@ namespace attendanceSystem
             pagesPanel.Controls.Clear();
             pagesPanel.Controls.Add(userControl);
         }
+
+        //private void userControlReport2_Load(object sender, EventArgs e)
+        //{
+
+        //}
     }
 }
