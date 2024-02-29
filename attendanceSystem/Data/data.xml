@@ -32,20 +32,6 @@
     </Classes>
   </user>
   <user>
-    <Id>4</Id>
-    <Name>ahmed</Name>
-    <Email>b@gmail.com</Email>
-    <Password>12345678</Password>
-    <Role>Student</Role>
-    <Attendance>
-      <Record>
-        <Date>2024-02-02</Date>
-        <Status>absent</Status>
-      </Record>
-    </Attendance>
-    <SClass>PD</SClass>
-  </user>
-  <user>
     <Id>5</Id>
     <Name>ahmed</Name>
     <Email>c@gmail.com</Email>
@@ -163,20 +149,6 @@
   </user>
   <user>
     <Id>13</Id>
-    <Name>ahmed</Name>
-    <Email>j@gmail.com</Email>
-    <Password>12345678</Password>
-    <Role>Student</Role>
-    <Attendance>
-      <Record>
-        <Date>2024-02-03</Date>
-        <Status>present</Status>
-      </Record>
-    </Attendance>
-    <SClass>PD</SClass>
-  </user>
-  <user>
-    <Id>13</Id>
     <Name>addTeacher</Name>
     <Email>test@add.com</Email>
     <Password>12345678</Password>
@@ -195,15 +167,6 @@
     <Classes>
       <class>AI</class>
     </Classes>
-  </user>
-  <user>
-    <Id>15</Id>
-    <Name>addStudent</Name>
-    <Email>add@student.com</Email>
-    <Password>12345678</Password>
-    <Role>Student</Role>
-    <Attendance />
-    <SClass>OS</SClass>
   </user>
   <user>
     <Id>16</Id>

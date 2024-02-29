@@ -17,7 +17,6 @@ namespace attendanceSystem.userControls
     public partial class adminPanel : UserControl
     {
         int usersPerPage = 7;
-        int numOfPages;
         int currentPage = 0;
         List<User> users = new List<User>();
         public adminPanel()
@@ -41,8 +40,17 @@ namespace attendanceSystem.userControls
                     DialogResult d = MessageBox.Show($"delete user: {clickedUserName} with id: {clickedUserId}", "delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (d == DialogResult.Yes)
                     {
-                        usersGridView.Rows.RemoveAt(e.RowIndex);
-                        MessageBox.Show("Removed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        try
+                        {
+                            DataManager.deleteUserById(clickedUserId);
+                            usersGridView.Rows.RemoveAt(e.RowIndex);
+                            MessageBox.Show("Removed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex);
+                        }
+                        
                     }
                 }
 
@@ -64,29 +72,6 @@ namespace attendanceSystem.userControls
         {
             currentPage = 0;
             displayUsersInCurrentPage();
-            //TextBox textBox = (TextBox)sender;
-            //string newText = textBox.Text;
-            //Console.WriteLine("Text changed: " + newText);
-            //string searchResultUsers = DataManager.getUsersByName(newText);
-            ////Console.WriteLine((searchResultUsers));
-            //Console.WriteLine("============= deserialized users =============");
-            //foreach (User u in deserilizaedUsers(searchResultUsers))
-            //{
-            //    Console.WriteLine(u);
-            //}
-            //int startIndex = currentPage * usersPerPage;
-            //users = deserilizaedUsers(searchResultUsers);
-            //int itemsCount = users.Count;
-
-            //int remainingItems = itemsCount - startIndex;
-
-            //if (remainingItems == 0)
-            //    return;
-
-            //int count = Math.Min(usersPerPage, remainingItems);
-
-            //displayUsersInTheGrid(deserilizaedUsers(searchResultUsers).GetRange(startIndex, count));
-            //displayUsersInTheGrid(deserilizaedUsers(searchResultUsers).GetRange(currentPage * 10, 10));
         }
 
         private List<User> deserilizaedUsers(string usersXml)
@@ -110,9 +95,7 @@ namespace attendanceSystem.userControls
                     Teacher teachert = FormatsConverter.Deserialize<Teacher>(u.InnerXml, "Teacher");
                     users.Add(teachert);
                 }
-
             }
-
             return users;
         }
 

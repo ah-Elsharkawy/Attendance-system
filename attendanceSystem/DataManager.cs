@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Schema;
 using System.Xml.Xsl;
 using attendanceSystem;
@@ -33,10 +34,11 @@ namespace attendanceSystem
             {
                 DataDocument.Load($@"{dataFolderPath}\data.xml");
                 BackupDocument = DataDocument;
+                Console.WriteLine("saved");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("couldn't read the data file");
+                Console.WriteLine("couldn't save the data file");
             }
         }
 
@@ -57,9 +59,15 @@ namespace attendanceSystem
         private static void SaveData()
         {
             //saving here
-
-            DataDocument.Save($@"{dataFolderPath}\data.xml");
-            BackupDocument = DataDocument;
+            try
+            {
+                DataDocument.Save($@"{dataFolderPath}\data.xml");
+                BackupDocument = DataDocument;
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
         }
 
         public static void addUser(XmlDocument user)
@@ -204,6 +212,27 @@ namespace attendanceSystem
 
             return GetXmlDocumentFromXslt(xslt, xsltArgs);
 
+        }
+
+        public static void deleteUserById(string Id)
+        {
+            try
+            {
+                XmlNode userToRemove = DataDocument.SelectSingleNode($"//user[Id='{Id}']");
+                if (userToRemove != null)
+                {
+                    userToRemove.ParentNode.RemoveChild(userToRemove);
+                    SaveData();
+                }
+
+
+                Console.WriteLine("removed successfully");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
         }
 
     }
