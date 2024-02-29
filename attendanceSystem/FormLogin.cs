@@ -156,6 +156,7 @@ namespace attendanceSystem
                     {
                         // Get the email value from the XML
                         var rightEmail = emailNode.InnerText;
+                        Console.WriteLine(rightEmail);
 
                         if (rightEmail == inputEmail)
                         {

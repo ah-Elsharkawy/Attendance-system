@@ -81,30 +81,7 @@ namespace attendanceSystem.userControls
             //if(e.RowIndex == -1)
             //    MessageBox.Show($"header: {testDataGridView1.Columns[e.ColumnIndex].Name}");
 
-            if(e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                var columnNmae = testDataGridView1.Columns[e.ColumnIndex].Name;
-                var clickedUserId = testDataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                var clickedUserName = testDataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-
-                if (columnNmae == "deleteUser")
-                {
-                    DialogResult d = MessageBox.Show($"delete user: {clickedUserName} with id: {clickedUserId}","delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if(d == DialogResult.Yes)
-                    {
-                        // delete user from the db
-                        userBindingSource.RemoveCurrent();
-                        MessageBox.Show("Removed successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    }
-
-                }
-
-                else if(columnNmae == "editUser")
-                {
-                    // edit user
-                }
-            }
+            
 
             //if (testDataGridView1.Columns[e.ColumnIndex].Name == "deleteUser")
             //{

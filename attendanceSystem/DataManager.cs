@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Schema;
 using System.Xml.Xsl;
 using attendanceSystem;
@@ -20,7 +21,8 @@ namespace attendanceSystem
 
 
         private static string dataFolderPath = @"..\..\..\Data";
-        static DataManager() {
+        static DataManager()
+        {
             DataDocument = new XmlDocument();
             BackupDocument = new XmlDocument();
             LoadData();
@@ -32,10 +34,11 @@ namespace attendanceSystem
             {
                 DataDocument.Load($@"{dataFolderPath}\data.xml");
                 BackupDocument = DataDocument;
+                Console.WriteLine("saved");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("couldn't read the data file");
+                Console.WriteLine("couldn't save the data file");
             }
         }
 
@@ -56,9 +59,15 @@ namespace attendanceSystem
         private static void SaveData()
         {
             //saving here
-
-            DataDocument.Save($@"{dataFolderPath}\data.xml");
-            BackupDocument = DataDocument;
+            try
+            {
+                DataDocument.Save($@"{dataFolderPath}\data.xml");
+                BackupDocument = DataDocument;
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
         }
 
         public static void addUser(XmlDocument user)
@@ -72,19 +81,48 @@ namespace attendanceSystem
                 ValidateData();
                 SaveData();
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine($"couldn't add the user, Exception: {ex}");
             }
-            
+
         }
 
         public static string getUsers()
         {
-            return DataDocument.DocumentElement.OuterXml;
+            try
+            {
+                return DataDocument.DocumentElement.OuterXml;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return "";
+            }
+            
         }
 
-        
+        public static string getUsersByName(string subName)
+        {
+            try
+            {
+                XslCompiledTransform usersFilterByName = new();
+                usersFilterByName.Load($@"{dataFolderPath}\searchByNameFilter.xslt");
+
+                XsltArgumentList xsltArgs = new XsltArgumentList();
+                xsltArgs.AddParam("substring", "", subName);
+
+                return GetXmlDocumentFromXslt(usersFilterByName, xsltArgs).DocumentElement.OuterXml;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return "";
+            }
+        }
+
+
 
         public static string getUsersByClass(string className)
         {
@@ -135,7 +173,7 @@ namespace attendanceSystem
             xsltArgs.AddParam("userId", "", Id);
 
             return GetHtmlDocumentFromXslt(xslt, xsltArgs);
-            
+
         }
 
         public static XmlDocument getUserXmlById(int Id)
@@ -164,10 +202,44 @@ namespace attendanceSystem
         {
             // add logic
         }
+        public static XmlDocument getUserXmlByClass(string Sclass)
+        {
+            XslCompiledTransform xslt = new();
+            xslt.Load($@"{dataFolderPath}\filterByClass.xslt");
+
+            XsltArgumentList xsltArgs = new XsltArgumentList();
+            xsltArgs.AddParam("classFilter", "", Sclass);
+
+            return GetXmlDocumentFromXslt(xslt, xsltArgs);
+
+        }
+
+        public static void deleteUserById(string Id)
+        {
+            try
+            {
+                XmlNode userToRemove = DataDocument.SelectSingleNode($"//user[Id='{Id}']");
+                if (userToRemove != null)
+                {
+                    userToRemove.ParentNode.RemoveChild(userToRemove);
+                    SaveData();
+                }
+
+
+                Console.WriteLine("removed successfully");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
+        }
 
     }
 
-
 }
+
+
+
 
 
