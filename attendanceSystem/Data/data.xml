@@ -32,15 +32,77 @@
     </Classes>
   </user>
   <user>
+    <Id>4</Id>
+    <Name>Fatma</Name>
+    <Email>b@gmail.com</Email>
+    <Password>12345678</Password>
+    <Role>Student</Role>
+    <Attendance>
+      <Record>
+        <Date>2024-02-02</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
+      </Record>
+    </Attendance>
+    <SClass>PD</SClass>
+  </user>
+  <user>
     <Id>5</Id>
-    <Name>ahmed</Name>
+    <Name>Abdullah</Name>
     <Email>c@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
     <Attendance>
       <Record>
         <Date>2024-02-02</Date>
-        <Status>absent</Status>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
       </Record>
     </Attendance>
     <SClass>PD</SClass>
@@ -54,35 +116,107 @@
     <Attendance>
       <Record>
         <Date>2024-02-02</Date>
-        <Status>absent</Status>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
       </Record>
     </Attendance>
     <SClass>PD</SClass>
   </user>
   <user>
     <Id>7</Id>
-    <Name>ahmed</Name>
+    <Name>Maryam</Name>
     <Email>e@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
     <Attendance>
       <Record>
         <Date>2024-02-02</Date>
-        <Status>absent</Status>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
       </Record>
     </Attendance>
     <SClass>PD</SClass>
   </user>
   <user>
     <Id>8</Id>
-    <Name>ahmed</Name>
+    <Name>aaaa</Name>
     <Email>f@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
     <Attendance>
       <Record>
         <Date>2024-02-02</Date>
-        <Status>absent</Status>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
       </Record>
     </Attendance>
     <SClass>PD</SClass>
@@ -96,7 +230,31 @@
     <Attendance>
       <Record>
         <Date>2024-02-02</Date>
-        <Status>absent</Status>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
       </Record>
     </Attendance>
     <SClass>PD</SClass>
@@ -110,7 +268,31 @@
     <Attendance>
       <Record>
         <Date>2024-02-02</Date>
-        <Status>absent</Status>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
       </Record>
     </Attendance>
     <SClass>PD</SClass>
@@ -124,7 +306,31 @@
     <Attendance>
       <Record>
         <Date>2024-02-02</Date>
-        <Status>absent</Status>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
       </Record>
     </Attendance>
     <SClass>PD</SClass>
@@ -138,11 +344,69 @@
     <Attendance>
       <Record>
         <Date>2024-02-02</Date>
-        <Status>present</Status>
+        <Status>Present</Status>
       </Record>
       <Record>
         <Date>2024-02-03</Date>
-        <Status>present</Status>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
+      </Record>
+    </Attendance>
+    <SClass>PD</SClass>
+  </user>
+  <user>
+    <Id>13</Id>
+    <Name>ahmed</Name>
+    <Email>j@gmail.com</Email>
+    <Password>12345678</Password>
+    <Role>Student</Role>
+    <Attendance>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-02</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
       </Record>
     </Attendance>
     <SClass>PD</SClass>
@@ -169,6 +433,36 @@
     </Classes>
   </user>
   <user>
+    <Id>15</Id>
+    <Name>addStudent</Name>
+    <Email>add@student.com</Email>
+    <Password>12345678</Password>
+    <Role>Student</Role>
+    <Attendance>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-02</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-16</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-27</Date>
+        <Status>Absent</Status>
+      </Record>
+    </Attendance>
+    <SClass>OS</SClass>
+  </user>
+  <user>
     <Id>16</Id>
     <Name>fsafsad</Name>
     <Email>gsdgsd@vgsdg.das</Email>
@@ -185,7 +479,36 @@
     <Email>add@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+    <Attendance>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-02</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
+      </Record>
+    </Attendance>
     <SClass>PD</SClass>
   </user>
   <user>
@@ -194,7 +517,40 @@
     <Email>abdo@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+    <Attendance>
+      <Record>
+        <Date>2024-02-08</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-02</Date>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
+      </Record>
+    </Attendance>
     <SClass>PD</SClass>
   </user>
   <user>
@@ -203,7 +559,36 @@
     <Email>dsvz@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+    <Attendance>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-02</Date>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
+      </Record>
+    </Attendance>
     <SClass>PD</SClass>
   </user>
   <user>
@@ -212,7 +597,36 @@
     <Email>dsvz@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+    <Attendance>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-02</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-29</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-10</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-01</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
+      </Record>
+    </Attendance>
     <SClass>PD</SClass>
   </user>
   <user>
@@ -221,7 +635,28 @@
     <Email>zvc@dfb.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+    <Attendance>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-02</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-16</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-27</Date>
+        <Status>Absent</Status>
+      </Record>
+    </Attendance>
     <SClass>OS</SClass>
   </user>
   <user>
@@ -230,7 +665,28 @@
     <Email>sbdvsc@fgbd.eg</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+    <Attendance>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-09</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-17</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-16</Date>
+        <Status>Absent</Status>
+      </Record>
+    </Attendance>
     <SClass>AI</SClass>
   </user>
   <user>
@@ -239,7 +695,28 @@
     <Email>a@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
-    <Attendance />
+    <Attendance>
+      <Record>
+        <Date>2024-02-03</Date>
+        <Status>Present</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-02</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-28</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-16</Date>
+        <Status>Absent</Status>
+      </Record>
+      <Record>
+        <Date>2024-02-27</Date>
+        <Status>Absent</Status>
+      </Record>
+    </Attendance>
     <SClass>OS</SClass>
   </user>
 </users>

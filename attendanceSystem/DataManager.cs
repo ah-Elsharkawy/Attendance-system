@@ -28,7 +28,7 @@ namespace attendanceSystem
             LoadData();
         }
 
-        private static void LoadData()
+        public static void LoadData()
         {
             try
             {
