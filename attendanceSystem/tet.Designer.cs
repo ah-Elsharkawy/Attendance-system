@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            attendace1 = new userControls.Attendace();
+            userControlAddUser1 = new UserControlAddUser();
             SuspendLayout();
             // 
-            // attendace1
+            // userControlAddUser1
             // 
-            attendace1.Location = new Point(55, -49);
-            attendace1.Name = "attendace1";
-            attendace1.Size = new Size(1178, 626);
-            attendace1.TabIndex = 0;
+            userControlAddUser1.BackColor = Color.White;
+            userControlAddUser1.Font = new Font("Century Gothic", 9.75F);
+            userControlAddUser1.Location = new Point(46, -3);
+            userControlAddUser1.Margin = new Padding(4);
+            userControlAddUser1.Name = "userControlAddUser1";
+            userControlAddUser1.Size = new Size(1178, 626);
+            userControlAddUser1.TabIndex = 0;
             // 
             // tet
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1282, 623);
-            Controls.Add(attendace1);
+            Controls.Add(userControlAddUser1);
             Name = "tet";
             Text = "tet";
             ResumeLayout(false);
@@ -52,5 +55,6 @@
         #endregion
 
         private userControls.Attendace attendace1;
+        private UserControlAddUser userControlAddUser1;
     }
 }

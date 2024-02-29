@@ -32,6 +32,9 @@
             toolTip = new ToolTip(components);
             tabControlAddUser = new TabControl();
             tabPageAddTeacher = new TabPage();
+            pictureBoxTeacherClasses = new PictureBox();
+            pictureBoxTeacherPassword = new PictureBox();
+            pictureBoxTeacherName = new PictureBox();
             pictureBoxTeacherEmail = new PictureBox();
             checkBoxAI = new CheckBox();
             checkBoxOS = new CheckBox();
@@ -48,7 +51,29 @@
             textBoxTeacherName = new TextBox();
             label14 = new Label();
             label15 = new Label();
+            tabPageAddStudent = new TabPage();
+            pictureBoxStudentClass = new PictureBox();
+            pictureBoxStudentPassword = new PictureBox();
+            pictureBoxStudentName = new PictureBox();
+            pictureBoxStudentEmail = new PictureBox();
+            comboBoxClass = new ComboBox();
+            buttonAdd = new Button();
+            panel4 = new Panel();
+            label5 = new Label();
+            panel3 = new Panel();
+            textBoxPassword = new TextBox();
+            label4 = new Label();
+            panel2 = new Panel();
+            textBoxEmail = new TextBox();
+            label3 = new Label();
+            panel1 = new Panel();
+            textBoxName = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
             tabPageUpdate = new TabPage();
+            pictureBoxStudentClassU = new PictureBox();
+            pictureBoxStudentPasswordU = new PictureBox();
+            pictureBoxStudentNameU = new PictureBox();
             pictureBoxStudentEmailU = new PictureBox();
             comboBoxClassU = new ComboBox();
             panel5 = new Panel();
@@ -65,6 +90,9 @@
             label9 = new Label();
             label10 = new Label();
             tabPageUpdateTeacher = new TabPage();
+            pictureBoxTeacherClassesU = new PictureBox();
+            pictureBoxTeacherPasswordU = new PictureBox();
+            pictureBoxTeacherNameU = new PictureBox();
             pictureBoxTeacherEmailU = new PictureBox();
             checkBoxAIU = new CheckBox();
             checkBoxOSU = new CheckBox();
@@ -82,32 +110,27 @@
             label19 = new Label();
             label20 = new Label();
             toolTip1 = new ToolTip(components);
-            label1 = new Label();
-            label2 = new Label();
-            textBoxName = new TextBox();
-            panel1 = new Panel();
-            label3 = new Label();
-            textBoxEmail = new TextBox();
-            panel2 = new Panel();
-            label4 = new Label();
-            textBoxPassword = new TextBox();
-            panel3 = new Panel();
-            label5 = new Label();
-            panel4 = new Panel();
-            buttonAdd = new Button();
-            comboBoxClass = new ComboBox();
-            pictureBoxStudentEmail = new PictureBox();
-            tabPageAddStudent = new TabPage();
-            textBox1 = new TextBox();
             tabControlAddUser.SuspendLayout();
             tabPageAddTeacher.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherClasses).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherPassword).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmail).BeginInit();
+            tabPageAddStudent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentClass).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentPassword).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentName).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).BeginInit();
             tabPageUpdate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentClassU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentPasswordU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentNameU).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmailU).BeginInit();
             tabPageUpdateTeacher.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherClassesU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherPasswordU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherNameU).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmailU).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).BeginInit();
-            tabPageAddStudent.SuspendLayout();
             SuspendLayout();
             // 
             // tabControlAddUser
@@ -127,6 +150,9 @@
             // 
             // tabPageAddTeacher
             // 
+            tabPageAddTeacher.Controls.Add(pictureBoxTeacherClasses);
+            tabPageAddTeacher.Controls.Add(pictureBoxTeacherPassword);
+            tabPageAddTeacher.Controls.Add(pictureBoxTeacherName);
             tabPageAddTeacher.Controls.Add(pictureBoxTeacherEmail);
             tabPageAddTeacher.Controls.Add(checkBoxAI);
             tabPageAddTeacher.Controls.Add(checkBoxOS);
@@ -152,6 +178,45 @@
             tabPageAddTeacher.UseVisualStyleBackColor = true;
             tabPageAddTeacher.Enter += tabPageAddTeacher_Enter_1;
             tabPageAddTeacher.Leave += tabPageAddTeacher_Leave_1;
+            // 
+            // pictureBoxTeacherClasses
+            // 
+            pictureBoxTeacherClasses.Anchor = AnchorStyles.None;
+            pictureBoxTeacherClasses.Image = Properties.Resources.TEST;
+            pictureBoxTeacherClasses.Location = new Point(745, 232);
+            pictureBoxTeacherClasses.Name = "pictureBoxTeacherClasses";
+            pictureBoxTeacherClasses.Size = new Size(31, 37);
+            pictureBoxTeacherClasses.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxTeacherClasses.TabIndex = 34;
+            pictureBoxTeacherClasses.TabStop = false;
+            pictureBoxTeacherClasses.Visible = false;
+            pictureBoxTeacherClasses.MouseHover += pictureBoxTeacherClasses_MouseHover;
+            // 
+            // pictureBoxTeacherPassword
+            // 
+            pictureBoxTeacherPassword.Anchor = AnchorStyles.None;
+            pictureBoxTeacherPassword.Image = Properties.Resources.TEST;
+            pictureBoxTeacherPassword.Location = new Point(391, 226);
+            pictureBoxTeacherPassword.Name = "pictureBoxTeacherPassword";
+            pictureBoxTeacherPassword.Size = new Size(19, 17);
+            pictureBoxTeacherPassword.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxTeacherPassword.TabIndex = 33;
+            pictureBoxTeacherPassword.TabStop = false;
+            pictureBoxTeacherPassword.Visible = false;
+            pictureBoxTeacherPassword.MouseHover += pictureBoxTeacherPassword_MouseHover;
+            // 
+            // pictureBoxTeacherName
+            // 
+            pictureBoxTeacherName.Anchor = AnchorStyles.None;
+            pictureBoxTeacherName.Image = Properties.Resources.TEST;
+            pictureBoxTeacherName.Location = new Point(391, 155);
+            pictureBoxTeacherName.Name = "pictureBoxTeacherName";
+            pictureBoxTeacherName.Size = new Size(19, 17);
+            pictureBoxTeacherName.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxTeacherName.TabIndex = 32;
+            pictureBoxTeacherName.TabStop = false;
+            pictureBoxTeacherName.Visible = false;
+            pictureBoxTeacherName.MouseHover += pictureBoxTeacherName_MouseHover;
             // 
             // pictureBoxTeacherEmail
             // 
@@ -236,6 +301,7 @@
             textBoxTeacherPassword.Name = "textBoxTeacherPassword";
             textBoxTeacherPassword.Size = new Size(270, 21);
             textBoxTeacherPassword.TabIndex = 22;
+            textBoxTeacherPassword.Leave += textBoxTeacherPassword_Leave;
             // 
             // label12
             // 
@@ -294,6 +360,7 @@
             textBoxTeacherName.Name = "textBoxTeacherName";
             textBoxTeacherName.Size = new Size(270, 21);
             textBoxTeacherName.TabIndex = 16;
+            textBoxTeacherName.Leave += textBoxTeacherName_Leave;
             // 
             // label14
             // 
@@ -316,8 +383,235 @@
             label15.TabIndex = 14;
             label15.Text = "Add Teacher:";
             // 
+            // tabPageAddStudent
+            // 
+            tabPageAddStudent.Controls.Add(pictureBoxStudentClass);
+            tabPageAddStudent.Controls.Add(pictureBoxStudentPassword);
+            tabPageAddStudent.Controls.Add(pictureBoxStudentName);
+            tabPageAddStudent.Controls.Add(pictureBoxStudentEmail);
+            tabPageAddStudent.Controls.Add(comboBoxClass);
+            tabPageAddStudent.Controls.Add(buttonAdd);
+            tabPageAddStudent.Controls.Add(panel4);
+            tabPageAddStudent.Controls.Add(label5);
+            tabPageAddStudent.Controls.Add(panel3);
+            tabPageAddStudent.Controls.Add(textBoxPassword);
+            tabPageAddStudent.Controls.Add(label4);
+            tabPageAddStudent.Controls.Add(panel2);
+            tabPageAddStudent.Controls.Add(textBoxEmail);
+            tabPageAddStudent.Controls.Add(label3);
+            tabPageAddStudent.Controls.Add(panel1);
+            tabPageAddStudent.Controls.Add(textBoxName);
+            tabPageAddStudent.Controls.Add(label2);
+            tabPageAddStudent.Controls.Add(label1);
+            tabPageAddStudent.Location = new Point(4, 4);
+            tabPageAddStudent.Name = "tabPageAddStudent";
+            tabPageAddStudent.Padding = new Padding(3);
+            tabPageAddStudent.Size = new Size(934, 464);
+            tabPageAddStudent.TabIndex = 0;
+            tabPageAddStudent.Text = "Add Student";
+            tabPageAddStudent.UseVisualStyleBackColor = true;
+            tabPageAddStudent.Enter += tabPageAddStudent_Enter;
+            tabPageAddStudent.Leave += tabPageAddStudent_Leave;
+            // 
+            // pictureBoxStudentClass
+            // 
+            pictureBoxStudentClass.Anchor = AnchorStyles.None;
+            pictureBoxStudentClass.Image = Properties.Resources.TEST;
+            pictureBoxStudentClass.Location = new Point(829, 222);
+            pictureBoxStudentClass.Name = "pictureBoxStudentClass";
+            pictureBoxStudentClass.Size = new Size(19, 17);
+            pictureBoxStudentClass.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentClass.TabIndex = 35;
+            pictureBoxStudentClass.TabStop = false;
+            pictureBoxStudentClass.Visible = false;
+            pictureBoxStudentClass.MouseHover += pictureBoxStudentClass_MouseHover;
+            // 
+            // pictureBoxStudentPassword
+            // 
+            pictureBoxStudentPassword.Anchor = AnchorStyles.None;
+            pictureBoxStudentPassword.Image = Properties.Resources.TEST;
+            pictureBoxStudentPassword.Location = new Point(401, 226);
+            pictureBoxStudentPassword.Name = "pictureBoxStudentPassword";
+            pictureBoxStudentPassword.Size = new Size(19, 17);
+            pictureBoxStudentPassword.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentPassword.TabIndex = 34;
+            pictureBoxStudentPassword.TabStop = false;
+            pictureBoxStudentPassword.Visible = false;
+            pictureBoxStudentPassword.MouseHover += pictureBoxStudentPassword_MouseHover;
+            // 
+            // pictureBoxStudentName
+            // 
+            pictureBoxStudentName.Anchor = AnchorStyles.None;
+            pictureBoxStudentName.Image = Properties.Resources.TEST;
+            pictureBoxStudentName.Location = new Point(401, 155);
+            pictureBoxStudentName.Name = "pictureBoxStudentName";
+            pictureBoxStudentName.Size = new Size(19, 17);
+            pictureBoxStudentName.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentName.TabIndex = 33;
+            pictureBoxStudentName.TabStop = false;
+            pictureBoxStudentName.Visible = false;
+            pictureBoxStudentName.MouseHover += pictureBoxStudentName_MouseHover;
+            // 
+            // pictureBoxStudentEmail
+            // 
+            pictureBoxStudentEmail.Anchor = AnchorStyles.None;
+            pictureBoxStudentEmail.Image = Properties.Resources.TEST;
+            pictureBoxStudentEmail.Location = new Point(829, 160);
+            pictureBoxStudentEmail.Name = "pictureBoxStudentEmail";
+            pictureBoxStudentEmail.Size = new Size(19, 17);
+            pictureBoxStudentEmail.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentEmail.TabIndex = 32;
+            pictureBoxStudentEmail.TabStop = false;
+            pictureBoxStudentEmail.Visible = false;
+            pictureBoxStudentEmail.MouseHover += pictureBoxStudentEmail_MouseHover;
+            // 
+            // comboBoxClass
+            // 
+            comboBoxClass.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxClass.FlatStyle = FlatStyle.Flat;
+            comboBoxClass.FormattingEnabled = true;
+            comboBoxClass.Items.AddRange(new object[] { "PD", "OS", "AI" });
+            comboBoxClass.Location = new Point(553, 212);
+            comboBoxClass.Name = "comboBoxClass";
+            comboBoxClass.Size = new Size(270, 29);
+            comboBoxClass.TabIndex = 28;
+            comboBoxClass.Leave += comboBoxClass_Leave;
+            // 
+            // buttonAdd
+            // 
+            buttonAdd.BackColor = Color.FromArgb(76, 3, 125);
+            buttonAdd.FlatAppearance.BorderSize = 0;
+            buttonAdd.FlatStyle = FlatStyle.Flat;
+            buttonAdd.ForeColor = Color.White;
+            buttonAdd.Location = new Point(112, 291);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(114, 37);
+            buttonAdd.TabIndex = 4;
+            buttonAdd.Text = "Add";
+            buttonAdd.UseVisualStyleBackColor = false;
+            buttonAdd.Click += buttonAdd_Click;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.LightGray;
+            panel4.Location = new Point(553, 246);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(270, 2);
+            panel4.TabIndex = 0;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            label5.Location = new Point(553, 190);
+            label5.Name = "label5";
+            label5.Size = new Size(51, 19);
+            label5.TabIndex = 10;
+            label5.Text = "class";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.LightGray;
+            panel3.Location = new Point(112, 246);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(270, 2);
+            panel3.TabIndex = 0;
+            // 
+            // textBoxPassword
+            // 
+            textBoxPassword.BorderStyle = BorderStyle.None;
+            textBoxPassword.Font = new Font("Century Gothic", 10F);
+            textBoxPassword.Location = new Point(112, 222);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(270, 21);
+            textBoxPassword.TabIndex = 1;
+            textBoxPassword.Leave += textBoxPassword_Leave;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            label4.Location = new Point(112, 190);
+            label4.Name = "label4";
+            label4.Size = new Size(88, 19);
+            label4.TabIndex = 7;
+            label4.Text = "password";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.LightGray;
+            panel2.Location = new Point(553, 180);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(270, 2);
+            panel2.TabIndex = 0;
+            // 
+            // textBoxEmail
+            // 
+            textBoxEmail.BorderStyle = BorderStyle.None;
+            textBoxEmail.Font = new Font("Century Gothic", 10F);
+            textBoxEmail.ForeColor = Color.DarkGray;
+            textBoxEmail.Location = new Point(553, 156);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(270, 21);
+            textBoxEmail.TabIndex = 2;
+            textBoxEmail.Text = "abdullah@gmail.com";
+            textBoxEmail.Enter += textBoxEmail_Enter;
+            textBoxEmail.Leave += textBoxEmail_Leave;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            label3.Location = new Point(553, 122);
+            label3.Name = "label3";
+            label3.Size = new Size(58, 19);
+            label3.TabIndex = 4;
+            label3.Text = "Email:";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.LightGray;
+            panel1.Location = new Point(115, 175);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(270, 2);
+            panel1.TabIndex = 0;
+            // 
+            // textBoxName
+            // 
+            textBoxName.BorderStyle = BorderStyle.None;
+            textBoxName.Font = new Font("Century Gothic", 10F);
+            textBoxName.Location = new Point(115, 151);
+            textBoxName.Name = "textBoxName";
+            textBoxName.Size = new Size(270, 21);
+            textBoxName.TabIndex = 0;
+            textBoxName.Leave += textBoxName_Leave;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
+            label2.Location = new Point(112, 122);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 19);
+            label2.TabIndex = 1;
+            label2.Text = "Name:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(67, 31, 125);
+            label1.Location = new Point(6, 3);
+            label1.Name = "label1";
+            label1.Size = new Size(135, 23);
+            label1.TabIndex = 0;
+            label1.Text = "Add Student:";
+            // 
             // tabPageUpdate
             // 
+            tabPageUpdate.Controls.Add(pictureBoxStudentClassU);
+            tabPageUpdate.Controls.Add(pictureBoxStudentPasswordU);
+            tabPageUpdate.Controls.Add(pictureBoxStudentNameU);
             tabPageUpdate.Controls.Add(pictureBoxStudentEmailU);
             tabPageUpdate.Controls.Add(comboBoxClassU);
             tabPageUpdate.Controls.Add(panel5);
@@ -343,6 +637,45 @@
             tabPageUpdate.Enter += tabPageUpdate_Enter;
             tabPageUpdate.Leave += tabPageUpdate_Leave;
             // 
+            // pictureBoxStudentClassU
+            // 
+            pictureBoxStudentClassU.Anchor = AnchorStyles.None;
+            pictureBoxStudentClassU.Image = Properties.Resources.TEST;
+            pictureBoxStudentClassU.Location = new Point(829, 224);
+            pictureBoxStudentClassU.Name = "pictureBoxStudentClassU";
+            pictureBoxStudentClassU.Size = new Size(19, 17);
+            pictureBoxStudentClassU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentClassU.TabIndex = 35;
+            pictureBoxStudentClassU.TabStop = false;
+            pictureBoxStudentClassU.Visible = false;
+            pictureBoxStudentClassU.MouseHover += pictureBoxStudentClassU_MouseHover;
+            // 
+            // pictureBoxStudentPasswordU
+            // 
+            pictureBoxStudentPasswordU.Anchor = AnchorStyles.None;
+            pictureBoxStudentPasswordU.Image = Properties.Resources.TEST;
+            pictureBoxStudentPasswordU.Location = new Point(391, 226);
+            pictureBoxStudentPasswordU.Name = "pictureBoxStudentPasswordU";
+            pictureBoxStudentPasswordU.Size = new Size(19, 17);
+            pictureBoxStudentPasswordU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentPasswordU.TabIndex = 34;
+            pictureBoxStudentPasswordU.TabStop = false;
+            pictureBoxStudentPasswordU.Visible = false;
+            pictureBoxStudentPasswordU.MouseHover += pictureBoxStudentPasswordU_MouseHover;
+            // 
+            // pictureBoxStudentNameU
+            // 
+            pictureBoxStudentNameU.Anchor = AnchorStyles.None;
+            pictureBoxStudentNameU.Image = Properties.Resources.TEST;
+            pictureBoxStudentNameU.Location = new Point(391, 156);
+            pictureBoxStudentNameU.Name = "pictureBoxStudentNameU";
+            pictureBoxStudentNameU.Size = new Size(19, 17);
+            pictureBoxStudentNameU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentNameU.TabIndex = 33;
+            pictureBoxStudentNameU.TabStop = false;
+            pictureBoxStudentNameU.Visible = false;
+            pictureBoxStudentNameU.MouseHover += pictureBoxStudentNameU_MouseHover;
+            // 
             // pictureBoxStudentEmailU
             // 
             pictureBoxStudentEmailU.Anchor = AnchorStyles.None;
@@ -366,6 +699,7 @@
             comboBoxClassU.Name = "comboBoxClassU";
             comboBoxClassU.Size = new Size(270, 29);
             comboBoxClassU.TabIndex = 28;
+            comboBoxClassU.Leave += comboBoxClassU_Leave;
             // 
             // panel5
             // 
@@ -415,6 +749,7 @@
             textBoxPasswordU.Name = "textBoxPasswordU";
             textBoxPasswordU.Size = new Size(270, 21);
             textBoxPasswordU.TabIndex = 22;
+            textBoxPasswordU.Leave += textBoxPasswordU_Leave;
             // 
             // label7
             // 
@@ -473,6 +808,7 @@
             textBoxNameU.Name = "textBoxNameU";
             textBoxNameU.Size = new Size(270, 21);
             textBoxNameU.TabIndex = 16;
+            textBoxNameU.Leave += textBoxNameU_Leave;
             // 
             // label9
             // 
@@ -497,6 +833,9 @@
             // 
             // tabPageUpdateTeacher
             // 
+            tabPageUpdateTeacher.Controls.Add(pictureBoxTeacherClassesU);
+            tabPageUpdateTeacher.Controls.Add(pictureBoxTeacherPasswordU);
+            tabPageUpdateTeacher.Controls.Add(pictureBoxTeacherNameU);
             tabPageUpdateTeacher.Controls.Add(pictureBoxTeacherEmailU);
             tabPageUpdateTeacher.Controls.Add(checkBoxAIU);
             tabPageUpdateTeacher.Controls.Add(checkBoxOSU);
@@ -522,6 +861,45 @@
             tabPageUpdateTeacher.UseVisualStyleBackColor = true;
             tabPageUpdateTeacher.Enter += tabPageUpdateTeacher_Enter;
             tabPageUpdateTeacher.Leave += tabPageUpdateTeacher_Leave;
+            // 
+            // pictureBoxTeacherClassesU
+            // 
+            pictureBoxTeacherClassesU.Anchor = AnchorStyles.None;
+            pictureBoxTeacherClassesU.Image = Properties.Resources.TEST;
+            pictureBoxTeacherClassesU.Location = new Point(739, 232);
+            pictureBoxTeacherClassesU.Name = "pictureBoxTeacherClassesU";
+            pictureBoxTeacherClassesU.Size = new Size(31, 37);
+            pictureBoxTeacherClassesU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxTeacherClassesU.TabIndex = 50;
+            pictureBoxTeacherClassesU.TabStop = false;
+            pictureBoxTeacherClassesU.Visible = false;
+            pictureBoxTeacherClassesU.MouseHover += pictureBoxTeacherClassesU_MouseHover;
+            // 
+            // pictureBoxTeacherPasswordU
+            // 
+            pictureBoxTeacherPasswordU.Anchor = AnchorStyles.None;
+            pictureBoxTeacherPasswordU.Image = Properties.Resources.TEST;
+            pictureBoxTeacherPasswordU.Location = new Point(391, 226);
+            pictureBoxTeacherPasswordU.Name = "pictureBoxTeacherPasswordU";
+            pictureBoxTeacherPasswordU.Size = new Size(19, 17);
+            pictureBoxTeacherPasswordU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxTeacherPasswordU.TabIndex = 49;
+            pictureBoxTeacherPasswordU.TabStop = false;
+            pictureBoxTeacherPasswordU.Visible = false;
+            pictureBoxTeacherPasswordU.MouseHover += pictureBoxTeacherPasswordU_MouseHover;
+            // 
+            // pictureBoxTeacherNameU
+            // 
+            pictureBoxTeacherNameU.Anchor = AnchorStyles.None;
+            pictureBoxTeacherNameU.Image = Properties.Resources.TEST;
+            pictureBoxTeacherNameU.Location = new Point(391, 156);
+            pictureBoxTeacherNameU.Name = "pictureBoxTeacherNameU";
+            pictureBoxTeacherNameU.Size = new Size(19, 17);
+            pictureBoxTeacherNameU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxTeacherNameU.TabIndex = 48;
+            pictureBoxTeacherNameU.TabStop = false;
+            pictureBoxTeacherNameU.Visible = false;
+            pictureBoxTeacherNameU.MouseHover += pictureBoxTeacherNameU_MouseHover;
             // 
             // pictureBoxTeacherEmailU
             // 
@@ -606,6 +984,7 @@
             textBoxTeacherPasswordU.Name = "textBoxTeacherPasswordU";
             textBoxTeacherPasswordU.Size = new Size(270, 21);
             textBoxTeacherPasswordU.TabIndex = 41;
+            textBoxTeacherPasswordU.Leave += textBoxTeacherPasswordU_Leave;
             // 
             // label17
             // 
@@ -664,6 +1043,7 @@
             textBoxTeacherNameU.Name = "textBoxTeacherNameU";
             textBoxTeacherNameU.Size = new Size(270, 21);
             textBoxTeacherNameU.TabIndex = 37;
+            textBoxTeacherNameU.Leave += textBoxTeacherNameU_Leave;
             // 
             // label19
             // 
@@ -686,194 +1066,6 @@
             label20.TabIndex = 35;
             label20.Text = "Update Teacher:";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(67, 31, 125);
-            label1.Location = new Point(6, 3);
-            label1.Name = "label1";
-            label1.Size = new Size(135, 23);
-            label1.TabIndex = 0;
-            label1.Text = "Add Student:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label2.Location = new Point(112, 122);
-            label2.Name = "label2";
-            label2.Size = new Size(65, 19);
-            label2.TabIndex = 1;
-            label2.Text = "Name:";
-            // 
-            // textBoxName
-            // 
-            textBoxName.BorderStyle = BorderStyle.None;
-            textBoxName.Font = new Font("Century Gothic", 10F);
-            textBoxName.Location = new Point(115, 151);
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(270, 21);
-            textBoxName.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.LightGray;
-            panel1.Location = new Point(115, 175);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(270, 2);
-            panel1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label3.Location = new Point(553, 122);
-            label3.Name = "label3";
-            label3.Size = new Size(58, 19);
-            label3.TabIndex = 4;
-            label3.Text = "Email:";
-            // 
-            // textBoxEmail
-            // 
-            textBoxEmail.BorderStyle = BorderStyle.None;
-            textBoxEmail.Font = new Font("Century Gothic", 10F);
-            textBoxEmail.ForeColor = Color.DarkGray;
-            textBoxEmail.Location = new Point(553, 156);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(270, 21);
-            textBoxEmail.TabIndex = 2;
-            textBoxEmail.Text = "abdullah@gmail.com";
-            textBoxEmail.Enter += textBoxEmail_Enter;
-            textBoxEmail.Leave += textBoxEmail_Leave;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.LightGray;
-            panel2.Location = new Point(553, 180);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(270, 2);
-            panel2.TabIndex = 0;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label4.Location = new Point(112, 190);
-            label4.Name = "label4";
-            label4.Size = new Size(88, 19);
-            label4.TabIndex = 7;
-            label4.Text = "password";
-            // 
-            // textBoxPassword
-            // 
-            textBoxPassword.BorderStyle = BorderStyle.None;
-            textBoxPassword.Font = new Font("Century Gothic", 10F);
-            textBoxPassword.Location = new Point(112, 222);
-            textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(270, 21);
-            textBoxPassword.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.LightGray;
-            panel3.Location = new Point(112, 246);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(270, 2);
-            panel3.TabIndex = 0;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold);
-            label5.Location = new Point(553, 190);
-            label5.Name = "label5";
-            label5.Size = new Size(51, 19);
-            label5.TabIndex = 10;
-            label5.Text = "class";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.LightGray;
-            panel4.Location = new Point(553, 246);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(270, 2);
-            panel4.TabIndex = 0;
-            // 
-            // buttonAdd
-            // 
-            buttonAdd.BackColor = Color.FromArgb(76, 3, 125);
-            buttonAdd.FlatAppearance.BorderSize = 0;
-            buttonAdd.FlatStyle = FlatStyle.Flat;
-            buttonAdd.ForeColor = Color.White;
-            buttonAdd.Location = new Point(112, 291);
-            buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(114, 37);
-            buttonAdd.TabIndex = 4;
-            buttonAdd.Text = "Add";
-            buttonAdd.UseVisualStyleBackColor = false;
-            buttonAdd.Click += buttonAdd_Click;
-            // 
-            // comboBoxClass
-            // 
-            comboBoxClass.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxClass.FlatStyle = FlatStyle.Flat;
-            comboBoxClass.FormattingEnabled = true;
-            comboBoxClass.Items.AddRange(new object[] { "PD", "OS", "AI" });
-            comboBoxClass.Location = new Point(553, 212);
-            comboBoxClass.Name = "comboBoxClass";
-            comboBoxClass.Size = new Size(270, 29);
-            comboBoxClass.TabIndex = 28;
-            // 
-            // pictureBoxStudentEmail
-            // 
-            pictureBoxStudentEmail.Anchor = AnchorStyles.None;
-            pictureBoxStudentEmail.Image = Properties.Resources.TEST;
-            pictureBoxStudentEmail.Location = new Point(829, 160);
-            pictureBoxStudentEmail.Name = "pictureBoxStudentEmail";
-            pictureBoxStudentEmail.Size = new Size(19, 17);
-            pictureBoxStudentEmail.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxStudentEmail.TabIndex = 32;
-            pictureBoxStudentEmail.TabStop = false;
-            pictureBoxStudentEmail.Visible = false;
-            pictureBoxStudentEmail.MouseHover += pictureBoxStudentEmail_MouseHover;
-            // 
-            // tabPageAddStudent
-            // 
-            tabPageAddStudent.Controls.Add(textBox1);
-            tabPageAddStudent.Controls.Add(pictureBoxStudentEmail);
-            tabPageAddStudent.Controls.Add(comboBoxClass);
-            tabPageAddStudent.Controls.Add(buttonAdd);
-            tabPageAddStudent.Controls.Add(panel4);
-            tabPageAddStudent.Controls.Add(label5);
-            tabPageAddStudent.Controls.Add(panel3);
-            tabPageAddStudent.Controls.Add(textBoxPassword);
-            tabPageAddStudent.Controls.Add(label4);
-            tabPageAddStudent.Controls.Add(panel2);
-            tabPageAddStudent.Controls.Add(textBoxEmail);
-            tabPageAddStudent.Controls.Add(label3);
-            tabPageAddStudent.Controls.Add(panel1);
-            tabPageAddStudent.Controls.Add(textBoxName);
-            tabPageAddStudent.Controls.Add(label2);
-            tabPageAddStudent.Controls.Add(label1);
-            tabPageAddStudent.Location = new Point(4, 4);
-            tabPageAddStudent.Name = "tabPageAddStudent";
-            tabPageAddStudent.Padding = new Padding(3);
-            tabPageAddStudent.Size = new Size(934, 464);
-            tabPageAddStudent.TabIndex = 0;
-            tabPageAddStudent.Text = "Add Student";
-            tabPageAddStudent.UseVisualStyleBackColor = true;
-            tabPageAddStudent.Enter += tabPageAddStudent_Enter;
-            tabPageAddStudent.Leave += tabPageAddStudent_Leave;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(369, 353);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(342, 88);
-            textBox1.TabIndex = 33;
-            // 
             // UserControlAddUser
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -887,16 +1079,28 @@
             tabControlAddUser.ResumeLayout(false);
             tabPageAddTeacher.ResumeLayout(false);
             tabPageAddTeacher.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherClasses).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherPassword).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherName).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmail).EndInit();
+            tabPageAddStudent.ResumeLayout(false);
+            tabPageAddStudent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentClass).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentPassword).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentName).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).EndInit();
             tabPageUpdate.ResumeLayout(false);
             tabPageUpdate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentClassU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentPasswordU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentNameU).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmailU).EndInit();
             tabPageUpdateTeacher.ResumeLayout(false);
             tabPageUpdateTeacher.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherClassesU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherPasswordU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherNameU).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmailU).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).EndInit();
-            tabPageAddStudent.ResumeLayout(false);
-            tabPageAddStudent.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -956,7 +1160,6 @@
         private Label label20;
         private PictureBox pictureBoxStudentEmailU;
         private TabPage tabPageAddStudent;
-        private TextBox textBox1;
         private PictureBox pictureBoxStudentEmail;
         private ComboBox comboBoxClass;
         private Button buttonAdd;
@@ -972,5 +1175,17 @@
         private TextBox textBoxName;
         private Label label2;
         private Label label1;
+        private PictureBox pictureBoxTeacherClasses;
+        private PictureBox pictureBoxTeacherPassword;
+        private PictureBox pictureBoxTeacherName;
+        private PictureBox pictureBoxStudentClass;
+        private PictureBox pictureBoxStudentPassword;
+        private PictureBox pictureBoxStudentName;
+        private PictureBox pictureBoxStudentClassU;
+        private PictureBox pictureBoxStudentPasswordU;
+        private PictureBox pictureBoxStudentNameU;
+        private PictureBox pictureBoxTeacherClassesU;
+        private PictureBox pictureBoxTeacherPasswordU;
+        private PictureBox pictureBoxTeacherNameU;
     }
 }
