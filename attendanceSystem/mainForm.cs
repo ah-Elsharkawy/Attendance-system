@@ -114,6 +114,8 @@ namespace attendanceSystem
 
         private void attendanceBtn_Click(object sender, EventArgs e)
         {
+            Attendace attendance = new Attendace();
+            displayUserControl(attendance);
             MoveSidePanel(attendanceBtn);
         }
 
