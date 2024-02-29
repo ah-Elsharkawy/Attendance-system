@@ -141,10 +141,11 @@ namespace attendanceSystem
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBoxName.Text)
+
+            if (textBoxName.Text.Trim().Length < 3
                 || string.IsNullOrWhiteSpace(textBoxEmail.Text)
                 || !IsValidEmail(textBoxEmail.Text)
-                || string.IsNullOrWhiteSpace(textBoxPassword.Text)
+                || textBoxPassword.Text.Trim().Length < 8
                 || comboBoxClass.SelectedIndex == -1)
             {
                 MessageBox.Show("Please fill out all fields correctly.", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -162,7 +163,7 @@ namespace attendanceSystem
                 Student newStudent = new Student(textBoxName.Text, textBoxEmail.Text, textBoxPassword.Text, "Student", comboBoxClass.SelectedItem.ToString());
 
                 XmlDocument newStudenXml = FormatsConverter.Serialize<Student>(newStudent);
-                textBox1.Text = newStudenXml.OuterXml;
+                //textBox1.Text = newStudenXml.OuterXml;
                 DataManager.addUser(newStudenXml);
 
                 // Load the XML document
@@ -713,6 +714,63 @@ namespace attendanceSystem
             else
             {
                 pictureBoxTeacherPassword.Visible = false;
+            }
+        }
+
+        private void pictureBoxStudentName_MouseHover(object sender, EventArgs e)
+        {
+
+            toolTip.Show("Name must be longer than 3 char", pictureBoxStudentName);
+        }
+
+        private void pictureBoxStudentPassword_MouseHover(object sender, EventArgs e)
+        {
+
+            toolTip.Show("Password must be longer than 8 char", pictureBoxStudentPassword);
+        }
+
+        private void pictureBoxStudentClass_MouseHover(object sender, EventArgs e)
+        {
+
+            toolTip.Show("Please chose class", pictureBoxStudentClass);
+        }
+
+        private void textBoxName_Leave(object sender, EventArgs e)
+        {
+
+            if (textBoxName.Text.Trim().Length < 3)
+            {
+                pictureBoxStudentName.Visible = true;
+            }
+            else
+            {
+                pictureBoxStudentName.Visible = false;
+            }
+        }
+
+        private void textBoxPassword_Leave(object sender, EventArgs e)
+        {
+
+            if (textBoxPassword.Text.Trim().Length < 8)
+            {
+                pictureBoxStudentPassword.Visible = true;
+            }
+            else
+            {
+                pictureBoxStudentPassword.Visible = false;
+            }
+        }
+
+        private void comboBoxClass_Leave(object sender, EventArgs e)
+        {
+
+            if (comboBoxClass.SelectedIndex == -1)
+            {
+                pictureBoxStudentClass.Visible = true;
+            }
+            else
+            {
+                pictureBoxStudentClass.Visible = false;
             }
         }
     }

@@ -52,7 +52,9 @@
             label14 = new Label();
             label15 = new Label();
             tabPageAddStudent = new TabPage();
-            textBox1 = new TextBox();
+            pictureBoxStudentClass = new PictureBox();
+            pictureBoxStudentPassword = new PictureBox();
+            pictureBoxStudentName = new PictureBox();
             pictureBoxStudentEmail = new PictureBox();
             comboBoxClass = new ComboBox();
             buttonAdd = new Button();
@@ -109,6 +111,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmail).BeginInit();
             tabPageAddStudent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentClass).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentPassword).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).BeginInit();
             tabPageUpdate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmailU).BeginInit();
@@ -368,7 +373,9 @@
             // 
             // tabPageAddStudent
             // 
-            tabPageAddStudent.Controls.Add(textBox1);
+            tabPageAddStudent.Controls.Add(pictureBoxStudentClass);
+            tabPageAddStudent.Controls.Add(pictureBoxStudentPassword);
+            tabPageAddStudent.Controls.Add(pictureBoxStudentName);
             tabPageAddStudent.Controls.Add(pictureBoxStudentEmail);
             tabPageAddStudent.Controls.Add(comboBoxClass);
             tabPageAddStudent.Controls.Add(buttonAdd);
@@ -394,13 +401,44 @@
             tabPageAddStudent.Enter += tabPageAddStudent_Enter;
             tabPageAddStudent.Leave += tabPageAddStudent_Leave;
             // 
-            // textBox1
+            // pictureBoxStudentClass
             // 
-            textBox1.Location = new Point(369, 353);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(342, 88);
-            textBox1.TabIndex = 33;
+            pictureBoxStudentClass.Anchor = AnchorStyles.None;
+            pictureBoxStudentClass.Image = Properties.Resources.TEST;
+            pictureBoxStudentClass.Location = new Point(829, 222);
+            pictureBoxStudentClass.Name = "pictureBoxStudentClass";
+            pictureBoxStudentClass.Size = new Size(19, 17);
+            pictureBoxStudentClass.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentClass.TabIndex = 35;
+            pictureBoxStudentClass.TabStop = false;
+            pictureBoxStudentClass.Visible = false;
+            pictureBoxStudentClass.MouseHover += pictureBoxStudentClass_MouseHover;
+            // 
+            // pictureBoxStudentPassword
+            // 
+            pictureBoxStudentPassword.Anchor = AnchorStyles.None;
+            pictureBoxStudentPassword.Image = Properties.Resources.TEST;
+            pictureBoxStudentPassword.Location = new Point(401, 226);
+            pictureBoxStudentPassword.Name = "pictureBoxStudentPassword";
+            pictureBoxStudentPassword.Size = new Size(19, 17);
+            pictureBoxStudentPassword.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentPassword.TabIndex = 34;
+            pictureBoxStudentPassword.TabStop = false;
+            pictureBoxStudentPassword.Visible = false;
+            pictureBoxStudentPassword.MouseHover += pictureBoxStudentPassword_MouseHover;
+            // 
+            // pictureBoxStudentName
+            // 
+            pictureBoxStudentName.Anchor = AnchorStyles.None;
+            pictureBoxStudentName.Image = Properties.Resources.TEST;
+            pictureBoxStudentName.Location = new Point(401, 155);
+            pictureBoxStudentName.Name = "pictureBoxStudentName";
+            pictureBoxStudentName.Size = new Size(19, 17);
+            pictureBoxStudentName.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentName.TabIndex = 33;
+            pictureBoxStudentName.TabStop = false;
+            pictureBoxStudentName.Visible = false;
+            pictureBoxStudentName.MouseHover += pictureBoxStudentName_MouseHover;
             // 
             // pictureBoxStudentEmail
             // 
@@ -425,6 +463,7 @@
             comboBoxClass.Name = "comboBoxClass";
             comboBoxClass.Size = new Size(270, 29);
             comboBoxClass.TabIndex = 28;
+            comboBoxClass.Leave += comboBoxClass_Leave;
             // 
             // buttonAdd
             // 
@@ -474,6 +513,7 @@
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(270, 21);
             textBoxPassword.TabIndex = 1;
+            textBoxPassword.Leave += textBoxPassword_Leave;
             // 
             // label4
             // 
@@ -532,6 +572,7 @@
             textBoxName.Name = "textBoxName";
             textBoxName.Size = new Size(270, 21);
             textBoxName.TabIndex = 0;
+            textBoxName.Leave += textBoxName_Leave;
             // 
             // label2
             // 
@@ -943,6 +984,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmail).EndInit();
             tabPageAddStudent.ResumeLayout(false);
             tabPageAddStudent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentClass).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentPassword).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentName).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).EndInit();
             tabPageUpdate.ResumeLayout(false);
             tabPageUpdate.PerformLayout();
@@ -1009,7 +1053,6 @@
         private Label label20;
         private PictureBox pictureBoxStudentEmailU;
         private TabPage tabPageAddStudent;
-        private TextBox textBox1;
         private PictureBox pictureBoxStudentEmail;
         private ComboBox comboBoxClass;
         private Button buttonAdd;
@@ -1028,5 +1071,8 @@
         private PictureBox pictureBoxTeacherClasses;
         private PictureBox pictureBoxTeacherPassword;
         private PictureBox pictureBoxTeacherName;
+        private PictureBox pictureBoxStudentClass;
+        private PictureBox pictureBoxStudentPassword;
+        private PictureBox pictureBoxStudentName;
     }
 }
