@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,14 +16,14 @@ namespace attendanceSystem.userControls
 {
     public partial class adminPanel : UserControl
     {
-        int usersPerPage = 10;
+        int usersPerPage = 7;
         int numOfPages;
         int currentPage = 0;
         List<User> users = new List<User>();
         public adminPanel()
         {
             InitializeComponent();
-            
+
         }
 
         private void usersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -56,33 +57,35 @@ namespace attendanceSystem.userControls
         {
 
             string usersXml = DataManager.getUsers();
-            displayUsersInTheGrid(deserilizaedUsers(usersXml).GetRange(currentPage*10, 10));
+            displayUsersInTheGrid(deserilizaedUsers(usersXml).GetRange(currentPage * usersPerPage, usersPerPage));
         }
 
         private void searchByNameBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            string newText = textBox.Text;
-            Console.WriteLine("Text changed: " + newText);
-            string searchResultUsers = DataManager.getUsersByName(newText);
-            //Console.WriteLine((searchResultUsers));
-            Console.WriteLine("============= deserialized users =============");
-            foreach (User u in deserilizaedUsers(searchResultUsers))
-            {
-                Console.WriteLine(u);
-            }
-            int startIndex = currentPage * 10;
-            List<User> users = deserilizaedUsers(searchResultUsers);
-            int itemsCount = users.Count;
+            currentPage = 0;
+            displayUsersInCurrentPage();
+            //TextBox textBox = (TextBox)sender;
+            //string newText = textBox.Text;
+            //Console.WriteLine("Text changed: " + newText);
+            //string searchResultUsers = DataManager.getUsersByName(newText);
+            ////Console.WriteLine((searchResultUsers));
+            //Console.WriteLine("============= deserialized users =============");
+            //foreach (User u in deserilizaedUsers(searchResultUsers))
+            //{
+            //    Console.WriteLine(u);
+            //}
+            //int startIndex = currentPage * usersPerPage;
+            //users = deserilizaedUsers(searchResultUsers);
+            //int itemsCount = users.Count;
 
-            int remainingItems = itemsCount - startIndex;
+            //int remainingItems = itemsCount - startIndex;
 
-            if (remainingItems == 0)
-                return;
+            //if (remainingItems == 0)
+            //    return;
 
-            int count = Math.Min(10, remainingItems);
+            //int count = Math.Min(usersPerPage, remainingItems);
 
-            displayUsersInTheGrid(deserilizaedUsers(searchResultUsers).GetRange(startIndex, count));
+            //displayUsersInTheGrid(deserilizaedUsers(searchResultUsers).GetRange(startIndex, count));
             //displayUsersInTheGrid(deserilizaedUsers(searchResultUsers).GetRange(currentPage * 10, 10));
         }
 
@@ -122,9 +125,63 @@ namespace attendanceSystem.userControls
                 if (user.Role != "Admin")
                     usersGridView.Rows.Add(user.Id, user.Name, user.Email, user.Role);
             }
-            usersGridView.AutoResizeColumns();
+            //usersGridView.AutoResizeColumns();
         }
 
-        
+        private void nxtPgaeBtn_Click(object sender, EventArgs e)
+        {
+            if(currentPage+1 >= getPagesCount())
+                return;
+
+            currentPage++;
+            displayUsersInCurrentPage();
+        }
+
+        private void prvPageBtn_Click(object sender, EventArgs e)
+        {
+            if (currentPage - 1 == -1)
+                return;
+            currentPage--;
+            displayUsersInCurrentPage();
+        }
+
+        private int getPagesCount()
+        {
+            int pagesCount = users.Count / usersPerPage;
+            pagesCount += (users.Count % usersPerPage == 0 ? 0 : 1);
+
+            return pagesCount;
+        }
+
+        private void displayUsersInCurrentPage()
+        {
+      
+            string newText = searchByNameBox.Text;
+            //Console.WriteLine("Text changed: " + newText);
+            string searchResultUsers = DataManager.getUsersByName(newText);
+            Console.WriteLine((searchResultUsers));
+            Console.WriteLine("============= deserialized users =============");
+            foreach (User u in deserilizaedUsers(searchResultUsers))
+            {
+                Console.WriteLine(u);
+            }
+            int startIndex = currentPage * usersPerPage;
+            users = deserilizaedUsers(searchResultUsers);
+            //Console.WriteLine(users.Count);
+            int itemsCount = users.Count;
+
+            int remainingItems = itemsCount - startIndex;
+
+            if (remainingItems == 0)
+            {
+                usersGridView.Rows.Clear();
+                return;
+            }
+                
+
+            int count = Math.Min(usersPerPage, remainingItems);
+
+            displayUsersInTheGrid(deserilizaedUsers(searchResultUsers).GetRange(startIndex, count));
+        }
     }
 }

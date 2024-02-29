@@ -126,6 +126,7 @@
             nxtPgaeBtn.TabIndex = 2;
             nxtPgaeBtn.Text = "nextPage";
             nxtPgaeBtn.UseVisualStyleBackColor = true;
+            nxtPgaeBtn.Click += nxtPgaeBtn_Click;
             // 
             // prvPageBtn
             // 
@@ -135,6 +136,7 @@
             prvPageBtn.TabIndex = 3;
             prvPageBtn.Text = "prevPage";
             prvPageBtn.UseVisualStyleBackColor = true;
+            prvPageBtn.Click += prvPageBtn_Click;
             // 
             // adminPanel
             // 
