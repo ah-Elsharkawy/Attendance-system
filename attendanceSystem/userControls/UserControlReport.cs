@@ -12,11 +12,13 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Kernel.Pdf;
 using iText.Layout;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace attendanceSystem.userControls
 {
     public partial class UserControlReport : UserControl
     {
+        private List<string> studentsIds = new List<string>();
         public UserControlReport()
         {
             InitializeComponent();
@@ -251,8 +253,11 @@ namespace attendanceSystem.userControls
                 // Close the document
                 doc.Close();
 
+                // Open the PDF file after successful export
+                //System.Diagnostics.Process.Start(filePath);
+
                 // Show a message indicating successful export
-                MessageBox.Show("Data exported to PDF successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Data exported to PDF successfully and file opened!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -260,11 +265,94 @@ namespace attendanceSystem.userControls
             }
         }
 
+
         private void pictureBoxPrinter_Click_1(object sender, EventArgs e)
         {
             ExportDataToPdf();
         }
 
+        private void tabControl1_Enter(object sender, EventArgs e)
+        {
+            LoadStudentsIds();
+            //studentRecords(DataManager.getUserXmlById(4).InnerXml);
+            //Console.WriteLine(DataManager.getUserXmlById(4).InnerXml);
+        }
+
+        private void LoadStudentsIds()
+        {
+            XmlDocument userDoc = new XmlDocument();
+            userDoc.LoadXml(DataManager.getUsers());
+
+            foreach (XmlNode u in userDoc.SelectNodes("//user"))
+            {
+                var uId = u.SelectSingleNode("Id").InnerText;
+                var uRole = u.SelectSingleNode("Role").InnerText;
+
+                if (uRole == "Student")
+                    studentsIds.Add(uId);
+            }
+        }
+        private void studentRecords(string userXml, DateTime? startDate, DateTime? endDate)
+        {
+            Console.WriteLine(userXml);
+            XmlDocument userDoc = new XmlDocument();
+            userDoc.LoadXml(userXml);
+            var studentName = userDoc.SelectSingleNode("//Name").InnerText;
+            resultStudentName.Text = studentName;
+            dataGridViewStudentReport.Rows.Clear();
+            foreach (XmlNode r in userDoc.SelectNodes("//Record"))
+            {
+                var rDate = DateTime.Parse(r.SelectSingleNode("Date").InnerText);
+                var rStatus = r.SelectSingleNode("Status").InnerText;
+
+                if ((!startDate.HasValue || rDate.Date >= startDate.Value.Date) &&
+                    (!endDate.HasValue || rDate.Date <= endDate.Value.Date))
+
+                    dataGridViewStudentReport.Rows.Add(rDate.ToShortDateString(), rStatus);
+            }
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            /*var searchId = textBox1.Text;
+            var found = studentsIds.Find(id => id == searchId);
+
+            if (found != null)
+            {
+                //studentRecords(DataManager.getUserXmlById(int.Parse(searchId)).InnerXml);
+            }
+            else
+            {
+
+            }*/
+        }
+
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPageIdAttendance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var searchId = textBox1.Text;
+            var found = studentsIds.Find(id => id == searchId);
+            var startDate = dateTimePicker1.Value;
+            var endDate = dateTimePicker2.Value;
+
+            if (found != null)
+            {
+                studentRecords(DataManager.getUserXmlById(int.Parse(searchId)).InnerXml, startDate, endDate);
+            }
+            else
+            {
+                dataGridViewStudentReport.Rows.Clear();
+            }
+        }
     }
 }
 

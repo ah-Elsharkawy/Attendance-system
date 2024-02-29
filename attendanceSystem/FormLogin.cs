@@ -148,7 +148,6 @@ namespace attendanceSystem
                                     DataManager.currentUser = loggedUserObj;
                                     Console.WriteLine(DataManager.currentUser);
                                     // Password matches, login successful
-                                    MessageBox.Show("Successful Login.");
                                     mainForm mainForm = new mainForm();
                                     mainForm.Show();
                                     this.Hide();
@@ -159,7 +158,7 @@ namespace attendanceSystem
                                     pictureBoxError.Show();
                                     labelError.Show();
                                     labelError.Text = "Incorrect Email or Password.";
-                                    MessageBox.Show("Incorrect Email or Password.");
+                                    
                                 }
                             }
                             else
@@ -168,7 +167,7 @@ namespace attendanceSystem
                                 pictureBoxError.Show();
                                 labelError.Show();
                                 labelError.Text = "Incorrect Email or Password.";
-                                MessageBox.Show("Incorrect Email or Password.");
+                                
 
                             }
                         }
@@ -178,7 +177,7 @@ namespace attendanceSystem
                             pictureBoxError.Show();
                             labelError.Show();
                             labelError.Text = "Incorrect Email or Password.";
-                            MessageBox.Show("Incorrect Email or Password.");
+                           
                             
 
                         }
