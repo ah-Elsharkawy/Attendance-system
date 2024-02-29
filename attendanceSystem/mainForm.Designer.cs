@@ -34,7 +34,6 @@
             reportsBtn = new Button();
             attendanceBtn = new Button();
             usersBtn = new Button();
-            button2 = new Button();
             panel4 = new Panel();
             sidePanel = new Panel();
             panel2 = new Panel();
@@ -45,7 +44,7 @@
             panel5 = new Panel();
             currentUserNameLabel = new Label();
             label3 = new Label();
-            userControlReport2 = new userControls.UserControlReport();
+            pagesPanel = new Panel();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
@@ -62,13 +61,12 @@
             panel1.Controls.Add(reportsBtn);
             panel1.Controls.Add(attendanceBtn);
             panel1.Controls.Add(usersBtn);
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(252, 673);
+            panel1.Size = new Size(252, 521);
             panel1.TabIndex = 0;
             // 
             // LogoutBtn
@@ -80,7 +78,7 @@
             LogoutBtn.ForeColor = Color.White;
             LogoutBtn.Image = Properties.Resources.logout;
             LogoutBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            LogoutBtn.Location = new Point(8, 414);
+            LogoutBtn.Location = new Point(8, 364);
             LogoutBtn.Name = "LogoutBtn";
             LogoutBtn.Size = new Size(244, 50);
             LogoutBtn.TabIndex = 15;
@@ -97,7 +95,7 @@
             addUserBtn.ForeColor = Color.White;
             addUserBtn.Image = Properties.Resources.add_user;
             addUserBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addUserBtn.Location = new Point(8, 364);
+            addUserBtn.Location = new Point(8, 314);
             addUserBtn.Name = "addUserBtn";
             addUserBtn.Size = new Size(244, 50);
             addUserBtn.TabIndex = 14;
@@ -114,7 +112,7 @@
             reportsBtn.ForeColor = Color.White;
             reportsBtn.Image = Properties.Resources.report__1_;
             reportsBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            reportsBtn.Location = new Point(8, 314);
+            reportsBtn.Location = new Point(8, 264);
             reportsBtn.Name = "reportsBtn";
             reportsBtn.Size = new Size(244, 50);
             reportsBtn.TabIndex = 12;
@@ -131,7 +129,7 @@
             attendanceBtn.ForeColor = Color.White;
             attendanceBtn.Image = Properties.Resources.calendar;
             attendanceBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            attendanceBtn.Location = new Point(8, 264);
+            attendanceBtn.Location = new Point(8, 214);
             attendanceBtn.Name = "attendanceBtn";
             attendanceBtn.Size = new Size(244, 50);
             attendanceBtn.TabIndex = 10;
@@ -148,7 +146,7 @@
             usersBtn.ForeColor = Color.White;
             usersBtn.Image = Properties.Resources.multiple_users_silhouette;
             usersBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            usersBtn.Location = new Point(8, 214);
+            usersBtn.Location = new Point(8, 164);
             usersBtn.Name = "usersBtn";
             usersBtn.Size = new Size(244, 50);
             usersBtn.TabIndex = 9;
@@ -156,30 +154,13 @@
             usersBtn.UseVisualStyleBackColor = true;
             usersBtn.Click += usersBtn_Click;
             // 
-            // button2
-            // 
-            button2.CausesValidation = false;
-            button2.Dock = DockStyle.Top;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Image = Properties.Resources.monitor;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(8, 164);
-            button2.Name = "button2";
-            button2.Size = new Size(244, 50);
-            button2.TabIndex = 8;
-            button2.Text = "Dashboard";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click_1;
-            // 
             // panel4
             // 
             panel4.Controls.Add(sidePanel);
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 164);
             panel4.Name = "panel4";
-            panel4.Size = new Size(8, 509);
+            panel4.Size = new Size(8, 357);
             panel4.TabIndex = 1;
             // 
             // sidePanel
@@ -206,7 +187,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = SystemColors.Window;
-            label1.Location = new Point(12, 122);
+            label1.Location = new Point(8, 133);
             label1.Name = "label1";
             label1.Size = new Size(238, 20);
             label1.TabIndex = 1;
@@ -273,25 +254,21 @@
             label3.TabIndex = 2;
             label3.Text = "Welcome: ";
             // 
-            // userControlReport2
+            // pagesPanel
             // 
-            userControlReport2.BackColor = Color.White;
-            userControlReport2.Dock = DockStyle.Fill;
-            userControlReport2.Font = new Font("Century Gothic", 9.75F);
-            userControlReport2.Location = new Point(252, 130);
-            userControlReport2.Margin = new Padding(3, 4, 3, 4);
-            userControlReport2.Name = "userControlReport2";
-            userControlReport2.Size = new Size(930, 543);
-            userControlReport2.TabIndex = 3;
-            userControlReport2.Load += userControlReport2_Load;
+            pagesPanel.Dock = DockStyle.Fill;
+            pagesPanel.Location = new Point(252, 130);
+            pagesPanel.Name = "pagesPanel";
+            pagesPanel.Size = new Size(930, 391);
+            pagesPanel.TabIndex = 3;
             // 
             // mainForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1182, 673);
-            Controls.Add(userControlReport2);
+            ClientSize = new Size(1182, 521);
+            Controls.Add(pagesPanel);
             Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -327,12 +304,11 @@
         private Label label3;
         private Panel sidePanel;
         private Label currentUserNameLabel;
-        private Button button2;
         private Button reportsBtn;
         private Button attendanceBtn;
         private Button usersBtn;
         private Button LogoutBtn;
         private Button addUserBtn;
-        private userControls.UserControlReport userControlReport2;
+        private Panel pagesPanel;
     }
 }

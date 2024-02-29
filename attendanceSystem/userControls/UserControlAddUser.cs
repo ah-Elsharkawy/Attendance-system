@@ -656,6 +656,14 @@ namespace attendanceSystem
         {
 
         }
+
+        public void SelectTab(int tabIndex)
+        {
+            if (tabIndex >= 0 && tabIndex < tabControlAddUser.TabCount)
+            {
+                tabControlAddUser.SelectedIndex = tabIndex;
+            }
+        }
     }
 }
 
