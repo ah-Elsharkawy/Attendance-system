@@ -37,8 +37,7 @@ namespace attendanceSystem.userControls
                 // Add columns to DataGridView
                 dataGridViewClassReport.Columns.Add("StudentID", "Student ID");
                 dataGridViewClassReport.Columns.Add("Name", "Name");
-                dataGridViewClassReport.Columns.Add("Date", "Date");
-                dataGridViewClassReport.Columns.Add("AttendanceStatus", "Attendance Status");
+                dataGridViewClassReport.Columns.Add("AbsentDays", "Number of Absence Days"); // Add new column
 
                 // Filter by class
                 string selectedClass = comboBox3.SelectedItem as string;
@@ -55,11 +54,14 @@ namespace attendanceSystem.userControls
                 // Add rows to DataGridView
                 foreach (var studentAttendance in studentsAttendance)
                 {
+                    // Count absence days
+                    int absenceCount = studentAttendance.AttendanceStatus.Split(new[] { "absent" }, StringSplitOptions.RemoveEmptyEntries).Length;
+
+                    // Add row to DataGridView
                     dataGridViewClassReport.Rows.Add(
                         studentAttendance.StudentID,
                         studentAttendance.Name,
-                        studentAttendance.Date,
-                        studentAttendance.AttendanceStatus);
+                        absenceCount);
                 }
 
             }
@@ -68,6 +70,8 @@ namespace attendanceSystem.userControls
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -283,6 +283,7 @@
             userControlReport2.Name = "userControlReport2";
             userControlReport2.Size = new Size(930, 543);
             userControlReport2.TabIndex = 3;
+            userControlReport2.Load += userControlReport2_Load;
             // 
             // mainForm
             // 

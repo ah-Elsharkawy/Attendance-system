@@ -127,7 +127,6 @@
             label1.Size = new Size(58, 19);
             label1.TabIndex = 0;
             label1.Text = "Email:";
-
             // 
             // textBoxEmail
             // 
@@ -157,7 +156,7 @@
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(222, 28);
             textBoxPassword.TabIndex = 2;
-            textBoxPassword.TextChanged += textBoxPassword_TextChanged;
+            textBoxPassword.TextChanged += pictureBoxClose_MouseHover;
             textBoxPassword.Leave += textBoxPassword_Leave;
             // 
             // labelError

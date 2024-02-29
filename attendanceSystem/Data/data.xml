@@ -308,13 +308,25 @@
   <user>
     <Id>23</Id>
     <Name>ahmed</Name>
-    <Email>a@gmail.com</Email>
+    <Email>abc@gmail.com</Email>
     <Password>12345678</Password>
     <Role>Student</Role>
 	  <Attendance>
 		  <Record>
 			  <Date>2024-02-03</Date>
 			  <Status>present</Status>
+		  </Record>
+		  <Record>
+			  <Date>2024-02-03</Date>
+			  <Status>present</Status>
+		  </Record>
+		  <Record>
+			  <Date>2024-02-04</Date>
+			  <Status>absent</Status>
+		  </Record>
+		  <Record>
+			  <Date>2024-02-05</Date>
+			  <Status>absent</Status>
 		  </Record>
 	  </Attendance>
     <SClass>OS</SClass>

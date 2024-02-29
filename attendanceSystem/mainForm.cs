@@ -29,7 +29,7 @@ namespace attendanceSystem
             // Creating an instance of Student
             Student student = new Student("StudentName", "student@example.com", "studentPassword", "Student", "ClassA");
 
-            
+
             currentUserNameLabel.Text = DataManager.currentUser.Name;
             var role = DataManager.currentUser.Role;
             if (role == "Admin")
@@ -123,6 +123,11 @@ namespace attendanceSystem
         }
 
         private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userControlReport2_Load(object sender, EventArgs e)
         {
 
         }
