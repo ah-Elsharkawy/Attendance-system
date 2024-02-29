@@ -38,6 +38,7 @@
             dataGridViewClassReport = new DataGridView();
             label15 = new Label();
             tabPageIdAttendance = new TabPage();
+            comboBox1 = new ComboBox();
             pictureBox1 = new PictureBox();
             dataGridViewStudentReport = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
@@ -49,7 +50,6 @@
             comboBoxRegNo = new Label();
             tabPageStudentReport = new Label();
             toolTip1 = new ToolTip(components);
-            comboBox1 = new ComboBox();
             tabControl1.SuspendLayout();
             tabPageClassAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrinter).BeginInit();
@@ -86,6 +86,7 @@
             tabPageClassAttendance.TabIndex = 0;
             tabPageClassAttendance.Text = "Class Report";
             tabPageClassAttendance.UseVisualStyleBackColor = true;
+            //tabPageClassAttendance.Enter += tabPageClassAttendance_Enter;
             // 
             // panel6
             // 
@@ -116,6 +117,7 @@
             pictureBoxPrinter.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxPrinter.TabIndex = 32;
             pictureBoxPrinter.TabStop = false;
+            pictureBoxPrinter.Click += pictureBoxPrinter_Click_1;
             // 
             // label1
             // 
@@ -169,6 +171,16 @@
             tabPageIdAttendance.TabIndex = 1;
             tabPageIdAttendance.Text = "Student Report";
             tabPageIdAttendance.UseVisualStyleBackColor = true;
+            tabPageIdAttendance.Enter += tabPageIdAttendance_Enter;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30" });
+            comboBox1.Location = new Point(335, 67);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(270, 29);
+            comboBox1.TabIndex = 53;
             // 
             // pictureBox1
             // 
@@ -266,15 +278,6 @@
             tabPageStudentReport.Size = new Size(157, 23);
             tabPageStudentReport.TabIndex = 32;
             tabPageStudentReport.Text = "Student Report:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30" });
-            comboBox1.Location = new Point(335, 67);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(270, 29);
-            comboBox1.TabIndex = 53;
             // 
             // UserControlReport
             // 
