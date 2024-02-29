@@ -224,6 +224,7 @@ namespace attendanceSystem
                 //ClearTextStudentBox();
 
                 // Show success message
+                ClearTextStudentBox();
                 MessageBox.Show("Student added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -673,6 +674,7 @@ namespace attendanceSystem
 
             //compelete add code here
             UpdateUserData(UID);
+            ClearTextTeacherBoxUpdate();
         }
 
         // Helper method to add a new XML element
