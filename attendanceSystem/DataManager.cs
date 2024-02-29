@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
@@ -11,6 +12,7 @@ using attendanceSystem;
 using HtmlAgilityPack;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
+
 namespace attendanceSystem
 {
     public static class DataManager
@@ -18,9 +20,11 @@ namespace attendanceSystem
         private static XmlDocument DataDocument;
         private static XmlDocument BackupDocument;
         public static User currentUser = new Admin("AdminName", "admin@example.com", "adminPassword", "Admin");
+        private static System.Timers.Timer timer;
 
 
         private static string dataFolderPath = @"..\..\..\Data";
+        private static string backupPath = $@"{dataFolderPath}\backup.xml";
         static DataManager()
         {
             DataDocument = new XmlDocument();
@@ -233,6 +237,44 @@ namespace attendanceSystem
                 Console.WriteLine(ex);
             }
             
+        }
+
+        public static void startBackup()
+        {
+            if (timer == null)
+            {
+                // Create a timer with a 10 minute interval
+                timer = new System.Timers.Timer();
+                timer.Interval = 5000; // 10 minute
+                timer.Elapsed += Timer_Tick;
+                timer.AutoReset = true;
+            }
+
+            // Start the timer
+            timer.Start();
+        }
+
+        private static void Timer_Tick(object sender, ElapsedEventArgs e)
+        {
+
+            // save the path in queue and auto delete the oldest 10nth file
+
+            try
+            {
+                DataDocument.Save(backupPath);
+                BackupDocument = DataDocument;
+                Console.WriteLine("backup created");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+        }
+
+        private static void restoreBackUp()
+        {
+            DataDocument.Load(backupPath);
         }
 
     }
