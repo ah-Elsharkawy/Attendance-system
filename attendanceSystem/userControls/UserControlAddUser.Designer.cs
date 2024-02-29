@@ -71,6 +71,9 @@
             label2 = new Label();
             label1 = new Label();
             tabPageUpdate = new TabPage();
+            pictureBoxStudentClassU = new PictureBox();
+            pictureBoxStudentPasswordU = new PictureBox();
+            pictureBoxStudentNameU = new PictureBox();
             pictureBoxStudentEmailU = new PictureBox();
             comboBoxClassU = new ComboBox();
             panel5 = new Panel();
@@ -116,6 +119,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentName).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).BeginInit();
             tabPageUpdate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentClassU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentPasswordU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentNameU).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmailU).BeginInit();
             tabPageUpdateTeacher.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmailU).BeginInit();
@@ -597,6 +603,9 @@
             // 
             // tabPageUpdate
             // 
+            tabPageUpdate.Controls.Add(pictureBoxStudentClassU);
+            tabPageUpdate.Controls.Add(pictureBoxStudentPasswordU);
+            tabPageUpdate.Controls.Add(pictureBoxStudentNameU);
             tabPageUpdate.Controls.Add(pictureBoxStudentEmailU);
             tabPageUpdate.Controls.Add(comboBoxClassU);
             tabPageUpdate.Controls.Add(panel5);
@@ -622,6 +631,45 @@
             tabPageUpdate.Enter += tabPageUpdate_Enter;
             tabPageUpdate.Leave += tabPageUpdate_Leave;
             // 
+            // pictureBoxStudentClassU
+            // 
+            pictureBoxStudentClassU.Anchor = AnchorStyles.None;
+            pictureBoxStudentClassU.Image = Properties.Resources.TEST;
+            pictureBoxStudentClassU.Location = new Point(829, 224);
+            pictureBoxStudentClassU.Name = "pictureBoxStudentClassU";
+            pictureBoxStudentClassU.Size = new Size(19, 17);
+            pictureBoxStudentClassU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentClassU.TabIndex = 35;
+            pictureBoxStudentClassU.TabStop = false;
+            pictureBoxStudentClassU.Visible = false;
+            pictureBoxStudentClassU.MouseHover += pictureBoxStudentClassU_MouseHover;
+            // 
+            // pictureBoxStudentPasswordU
+            // 
+            pictureBoxStudentPasswordU.Anchor = AnchorStyles.None;
+            pictureBoxStudentPasswordU.Image = Properties.Resources.TEST;
+            pictureBoxStudentPasswordU.Location = new Point(391, 226);
+            pictureBoxStudentPasswordU.Name = "pictureBoxStudentPasswordU";
+            pictureBoxStudentPasswordU.Size = new Size(19, 17);
+            pictureBoxStudentPasswordU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentPasswordU.TabIndex = 34;
+            pictureBoxStudentPasswordU.TabStop = false;
+            pictureBoxStudentPasswordU.Visible = false;
+            pictureBoxStudentPasswordU.MouseHover += pictureBoxStudentPasswordU_MouseHover;
+            // 
+            // pictureBoxStudentNameU
+            // 
+            pictureBoxStudentNameU.Anchor = AnchorStyles.None;
+            pictureBoxStudentNameU.Image = Properties.Resources.TEST;
+            pictureBoxStudentNameU.Location = new Point(391, 156);
+            pictureBoxStudentNameU.Name = "pictureBoxStudentNameU";
+            pictureBoxStudentNameU.Size = new Size(19, 17);
+            pictureBoxStudentNameU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxStudentNameU.TabIndex = 33;
+            pictureBoxStudentNameU.TabStop = false;
+            pictureBoxStudentNameU.Visible = false;
+            pictureBoxStudentNameU.MouseHover += pictureBoxStudentNameU_MouseHover;
+            // 
             // pictureBoxStudentEmailU
             // 
             pictureBoxStudentEmailU.Anchor = AnchorStyles.None;
@@ -645,6 +693,7 @@
             comboBoxClassU.Name = "comboBoxClassU";
             comboBoxClassU.Size = new Size(270, 29);
             comboBoxClassU.TabIndex = 28;
+            comboBoxClassU.Leave += comboBoxClassU_Leave;
             // 
             // panel5
             // 
@@ -694,6 +743,7 @@
             textBoxPasswordU.Name = "textBoxPasswordU";
             textBoxPasswordU.Size = new Size(270, 21);
             textBoxPasswordU.TabIndex = 22;
+            textBoxPasswordU.Leave += textBoxPasswordU_Leave;
             // 
             // label7
             // 
@@ -752,6 +802,7 @@
             textBoxNameU.Name = "textBoxNameU";
             textBoxNameU.Size = new Size(270, 21);
             textBoxNameU.TabIndex = 16;
+            textBoxNameU.Leave += textBoxNameU_Leave;
             // 
             // label9
             // 
@@ -990,6 +1041,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmail).EndInit();
             tabPageUpdate.ResumeLayout(false);
             tabPageUpdate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentClassU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentPasswordU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStudentNameU).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmailU).EndInit();
             tabPageUpdateTeacher.ResumeLayout(false);
             tabPageUpdateTeacher.PerformLayout();
@@ -1074,5 +1128,8 @@
         private PictureBox pictureBoxStudentClass;
         private PictureBox pictureBoxStudentPassword;
         private PictureBox pictureBoxStudentName;
+        private PictureBox pictureBoxStudentClassU;
+        private PictureBox pictureBoxStudentPasswordU;
+        private PictureBox pictureBoxStudentNameU;
     }
 }

@@ -16,7 +16,7 @@ namespace attendanceSystem
 {
     public partial class UserControlAddUser : UserControl
     {
-        public string UID = "2";
+        public string UID = "4";
         private string ID = "";
         private const string XmlFilePath = "../../../Data/data.xml";
 
@@ -348,10 +348,21 @@ namespace attendanceSystem
                         userNode.AppendChild(newClassesElement);
                     }
                 }
-                //userNode.SelectSingleNode("Name").InnerText = textBoxNameU.Text;
-                //userNode.SelectSingleNode("Email").InnerText = textBoxEmailU.Text;
-                //userNode.SelectSingleNode("Password").InnerText = textBoxPasswordU.Text;
+             
                 // Additional code for updating other fields if needed
+
+                //add validation before save the changes
+                if(
+                    textBoxNameU.Text.Trim().Length < 3
+                    || string.IsNullOrWhiteSpace(textBoxEmailU.Text)
+                    || !IsValidEmail(textBoxEmailU.Text) 
+                    || textBoxPasswordU.Text.Trim().Length < 8
+                    || comboBoxClassU.SelectedIndex == -1)
+                {
+                       MessageBox.Show("Please fill out all fields correctly.", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
 
                 // Save the changes back to the XML file
                 xmlDoc.Save(XmlFilePath);
@@ -771,6 +782,63 @@ namespace attendanceSystem
             else
             {
                 pictureBoxStudentClass.Visible = false;
+            }
+        }
+
+        private void pictureBoxStudentClassU_MouseHover(object sender, EventArgs e)
+        {
+
+            toolTip.Show("Please chose class", pictureBoxStudentClassU);
+        }
+
+        private void pictureBoxStudentNameU_MouseHover(object sender, EventArgs e)
+        {
+
+            toolTip.Show("Name must be longer than 3 char", pictureBoxStudentNameU);
+        }
+
+        private void pictureBoxStudentPasswordU_MouseHover(object sender, EventArgs e)
+        {
+
+            toolTip.Show("Password must be longer than 8 char", pictureBoxStudentPasswordU);
+        }
+
+        private void textBoxNameU_Leave(object sender, EventArgs e)
+        {
+
+            if (textBoxNameU.Text.Trim().Length < 3)
+            {
+                pictureBoxStudentNameU.Visible = true;
+            }
+            else
+            {
+                pictureBoxStudentNameU.Visible = false;
+            }
+        }
+
+        private void textBoxPasswordU_Leave(object sender, EventArgs e)
+        {
+
+            if (textBoxPasswordU.Text.Trim().Length < 8)
+            {
+                pictureBoxStudentPasswordU.Visible = true;
+            }
+            else
+            {
+                pictureBoxStudentPasswordU.Visible = false;
+            }
+        }
+
+        private void comboBoxClassU_Leave(object sender, EventArgs e)
+        {
+
+            if (comboBoxClassU.SelectedIndex == -1)
+            {
+                pictureBoxStudentClassU.Visible = true;
+            }
+            else
+            {
+                pictureBoxStudentClassU.Visible = false;
             }
         }
     }
