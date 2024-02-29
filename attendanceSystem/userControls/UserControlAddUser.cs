@@ -16,7 +16,7 @@ namespace attendanceSystem
 {
     public partial class UserControlAddUser : UserControl
     {
-        public string UID = "4";
+        public string UID = "2";
         private string ID = "";
         private const string XmlFilePath = "../../../Data/data.xml";
 
@@ -233,8 +233,11 @@ namespace attendanceSystem
         }
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBoxNameU.Text) || string.IsNullOrWhiteSpace(textBoxEmailU.Text)
-                || !IsValidEmail(textBoxEmailU.Text) || string.IsNullOrWhiteSpace(textBoxPasswordU.Text)
+            if (
+                textBoxNameU.Text.Trim().Length < 3
+                || string.IsNullOrWhiteSpace(textBoxEmailU.Text)
+                || !IsValidEmail(textBoxEmailU.Text) 
+                || textBoxPasswordU.Text.Trim().Length < 8
                 || comboBoxClassU.SelectedIndex == -1)
             {
                 MessageBox.Show("Please fill out all fields correctly.", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -348,20 +351,11 @@ namespace attendanceSystem
                         userNode.AppendChild(newClassesElement);
                     }
                 }
-             
+
                 // Additional code for updating other fields if needed
 
                 //add validation before save the changes
-                if(
-                    textBoxNameU.Text.Trim().Length < 3
-                    || string.IsNullOrWhiteSpace(textBoxEmailU.Text)
-                    || !IsValidEmail(textBoxEmailU.Text) 
-                    || textBoxPasswordU.Text.Trim().Length < 8
-                    || comboBoxClassU.SelectedIndex == -1)
-                {
-                       MessageBox.Show("Please fill out all fields correctly.", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                
 
 
                 // Save the changes back to the XML file
@@ -656,16 +650,26 @@ namespace attendanceSystem
         private void buttonTeacherUpdate_Click(object sender, EventArgs e)
         {
 
-            if (textBoxTeacherNameU.Text.Trim() == string.Empty
-                              || !IsValidEmail(textBoxTeacherEmailU.Text)
-                                             || textBoxTeacherEmailU.Text == "abdullah@gmail.com"
-                                             || textBoxTeacherPasswordU.Text.Trim() == string.Empty
-                                                                               || (!checkBoxAIU.Checked && !checkBoxOSU.Checked && !checkBoxPDU.Checked)
+            if (!checkBoxAIU.Checked && !checkBoxOSU.Checked && !checkBoxPDU.Checked)
+            {
+                pictureBoxTeacherClassesU.Visible = true;
+            }
+            else
+            {
+                pictureBoxTeacherClassesU.Visible = false;
+            }
+            if (
+                textBoxTeacherNameU.Text.Trim().Length < 3
+                || !IsValidEmail(textBoxTeacherEmailU.Text)
+                || textBoxTeacherEmailU.Text == "abdullah@gmail.com"
+                || textBoxTeacherPasswordU.Text.Trim().Length < 8
+                || (!checkBoxAIU.Checked && !checkBoxOSU.Checked && !checkBoxPDU.Checked)
                )
             {
                 MessageBox.Show("First fill out all fields", "Required all fields", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
 
             //compelete add code here
             UpdateUserData(UID);
@@ -839,6 +843,50 @@ namespace attendanceSystem
             else
             {
                 pictureBoxStudentClassU.Visible = false;
+            }
+        }
+
+        private void pictureBoxTeacherClassesU_MouseHover(object sender, EventArgs e)
+        {
+
+            toolTip.Show("Please chose class", pictureBoxTeacherClassesU);
+        }
+
+        private void pictureBoxTeacherPasswordU_MouseHover(object sender, EventArgs e)
+        {
+
+            toolTip.Show("Password must be longer than 8 char", pictureBoxTeacherPasswordU);
+        }
+
+        private void pictureBoxTeacherNameU_MouseHover(object sender, EventArgs e)
+        {
+
+            toolTip.Show("Name must be longer than 3 char", pictureBoxTeacherNameU);
+        }
+
+        private void textBoxTeacherNameU_Leave(object sender, EventArgs e)
+        {
+
+            if (textBoxTeacherNameU.Text.Trim().Length < 3)
+            {
+                pictureBoxTeacherNameU.Visible = true;
+            }
+            else
+            {
+                pictureBoxTeacherNameU.Visible = false;
+            }
+        }
+
+        private void textBoxTeacherPasswordU_Leave(object sender, EventArgs e)
+        {
+
+            if (textBoxTeacherPasswordU.Text.Trim().Length < 8)
+            {
+                pictureBoxTeacherPasswordU.Visible = true;
+            }
+            else
+            {
+                pictureBoxTeacherPasswordU.Visible = false;
             }
         }
     }

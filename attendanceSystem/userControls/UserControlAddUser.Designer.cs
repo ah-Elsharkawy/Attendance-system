@@ -90,6 +90,9 @@
             label9 = new Label();
             label10 = new Label();
             tabPageUpdateTeacher = new TabPage();
+            pictureBoxTeacherClassesU = new PictureBox();
+            pictureBoxTeacherPasswordU = new PictureBox();
+            pictureBoxTeacherNameU = new PictureBox();
             pictureBoxTeacherEmailU = new PictureBox();
             checkBoxAIU = new CheckBox();
             checkBoxOSU = new CheckBox();
@@ -124,6 +127,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentNameU).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmailU).BeginInit();
             tabPageUpdateTeacher.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherClassesU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherPasswordU).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherNameU).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmailU).BeginInit();
             SuspendLayout();
             // 
@@ -827,6 +833,9 @@
             // 
             // tabPageUpdateTeacher
             // 
+            tabPageUpdateTeacher.Controls.Add(pictureBoxTeacherClassesU);
+            tabPageUpdateTeacher.Controls.Add(pictureBoxTeacherPasswordU);
+            tabPageUpdateTeacher.Controls.Add(pictureBoxTeacherNameU);
             tabPageUpdateTeacher.Controls.Add(pictureBoxTeacherEmailU);
             tabPageUpdateTeacher.Controls.Add(checkBoxAIU);
             tabPageUpdateTeacher.Controls.Add(checkBoxOSU);
@@ -852,6 +861,45 @@
             tabPageUpdateTeacher.UseVisualStyleBackColor = true;
             tabPageUpdateTeacher.Enter += tabPageUpdateTeacher_Enter;
             tabPageUpdateTeacher.Leave += tabPageUpdateTeacher_Leave;
+            // 
+            // pictureBoxTeacherClassesU
+            // 
+            pictureBoxTeacherClassesU.Anchor = AnchorStyles.None;
+            pictureBoxTeacherClassesU.Image = Properties.Resources.TEST;
+            pictureBoxTeacherClassesU.Location = new Point(739, 232);
+            pictureBoxTeacherClassesU.Name = "pictureBoxTeacherClassesU";
+            pictureBoxTeacherClassesU.Size = new Size(31, 37);
+            pictureBoxTeacherClassesU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxTeacherClassesU.TabIndex = 50;
+            pictureBoxTeacherClassesU.TabStop = false;
+            pictureBoxTeacherClassesU.Visible = false;
+            pictureBoxTeacherClassesU.MouseHover += pictureBoxTeacherClassesU_MouseHover;
+            // 
+            // pictureBoxTeacherPasswordU
+            // 
+            pictureBoxTeacherPasswordU.Anchor = AnchorStyles.None;
+            pictureBoxTeacherPasswordU.Image = Properties.Resources.TEST;
+            pictureBoxTeacherPasswordU.Location = new Point(391, 226);
+            pictureBoxTeacherPasswordU.Name = "pictureBoxTeacherPasswordU";
+            pictureBoxTeacherPasswordU.Size = new Size(19, 17);
+            pictureBoxTeacherPasswordU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxTeacherPasswordU.TabIndex = 49;
+            pictureBoxTeacherPasswordU.TabStop = false;
+            pictureBoxTeacherPasswordU.Visible = false;
+            pictureBoxTeacherPasswordU.MouseHover += pictureBoxTeacherPasswordU_MouseHover;
+            // 
+            // pictureBoxTeacherNameU
+            // 
+            pictureBoxTeacherNameU.Anchor = AnchorStyles.None;
+            pictureBoxTeacherNameU.Image = Properties.Resources.TEST;
+            pictureBoxTeacherNameU.Location = new Point(391, 156);
+            pictureBoxTeacherNameU.Name = "pictureBoxTeacherNameU";
+            pictureBoxTeacherNameU.Size = new Size(19, 17);
+            pictureBoxTeacherNameU.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxTeacherNameU.TabIndex = 48;
+            pictureBoxTeacherNameU.TabStop = false;
+            pictureBoxTeacherNameU.Visible = false;
+            pictureBoxTeacherNameU.MouseHover += pictureBoxTeacherNameU_MouseHover;
             // 
             // pictureBoxTeacherEmailU
             // 
@@ -936,6 +984,7 @@
             textBoxTeacherPasswordU.Name = "textBoxTeacherPasswordU";
             textBoxTeacherPasswordU.Size = new Size(270, 21);
             textBoxTeacherPasswordU.TabIndex = 41;
+            textBoxTeacherPasswordU.Leave += textBoxTeacherPasswordU_Leave;
             // 
             // label17
             // 
@@ -994,6 +1043,7 @@
             textBoxTeacherNameU.Name = "textBoxTeacherNameU";
             textBoxTeacherNameU.Size = new Size(270, 21);
             textBoxTeacherNameU.TabIndex = 37;
+            textBoxTeacherNameU.Leave += textBoxTeacherNameU_Leave;
             // 
             // label19
             // 
@@ -1047,6 +1097,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudentEmailU).EndInit();
             tabPageUpdateTeacher.ResumeLayout(false);
             tabPageUpdateTeacher.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherClassesU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherPasswordU).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherNameU).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeacherEmailU).EndInit();
             ResumeLayout(false);
         }
@@ -1131,5 +1184,8 @@
         private PictureBox pictureBoxStudentClassU;
         private PictureBox pictureBoxStudentPasswordU;
         private PictureBox pictureBoxStudentNameU;
+        private PictureBox pictureBoxTeacherClassesU;
+        private PictureBox pictureBoxTeacherPasswordU;
+        private PictureBox pictureBoxTeacherNameU;
     }
 }
