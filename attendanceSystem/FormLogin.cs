@@ -25,7 +25,7 @@ namespace attendanceSystem
         public FormLogin()
         {
             InitializeComponent();
-            AllocConsole(); 
+            AllocConsole();
 
         }
 
@@ -41,60 +41,16 @@ namespace attendanceSystem
         }
 
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxShow_MouseHover(object sender, EventArgs e)
-        {
-            toolTip.SetToolTip(pictureBoxShow, "show Password");
-        }
-
-        private void pictureBoxHide_MouseHover(object sender, EventArgs e)
-        {
-            toolTip.SetToolTip(pictureBoxHide, "Hide Password");
-        }
-
         private void pictureBoxShow_Click(object sender, EventArgs e)
         {
             textBoxPassword.UseSystemPasswordChar = false;
             pictureBoxShow.Hide();
             pictureBoxHide.Show();
+        }
+
+        private void pictureBoxShow_MouseHover(object sender, EventArgs e)
+        {
+            toolTip.SetToolTip(pictureBoxShow, "show Password");
         }
 
         private void pictureBoxHide_Click(object sender, EventArgs e)
@@ -104,10 +60,11 @@ namespace attendanceSystem
             pictureBoxHide.Hide();
         }
 
-        private void pictureBoxError_Click(object sender, EventArgs e)
+        private void pictureBoxHide_MouseHover(object sender, EventArgs e)
         {
-
+            toolTip.SetToolTip(pictureBoxHide, "hide Password");
         }
+
         private void FormLogin_Load(object sender, EventArgs e)
         {
             pictureBoxHide.Hide();
@@ -282,6 +239,7 @@ namespace attendanceSystem
         {
 
         }
+
 
     }
 }
