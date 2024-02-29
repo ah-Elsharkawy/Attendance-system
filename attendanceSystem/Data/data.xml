@@ -660,36 +660,6 @@
     <SClass>OS</SClass>
   </user>
   <user>
-    <Id>22</Id>
-    <Name>fjdb</Name>
-    <Email>sbdvsc@fgbd.eg</Email>
-    <Password>12345678</Password>
-    <Role>Student</Role>
-    <Attendance>
-      <Record>
-        <Date>2024-02-03</Date>
-        <Status>Present</Status>
-      </Record>
-      <Record>
-        <Date>2024-02-09</Date>
-        <Status>Absent</Status>
-      </Record>
-      <Record>
-        <Date>2024-02-28</Date>
-        <Status>Absent</Status>
-      </Record>
-      <Record>
-        <Date>2024-02-17</Date>
-        <Status>Absent</Status>
-      </Record>
-      <Record>
-        <Date>2024-02-16</Date>
-        <Status>Absent</Status>
-      </Record>
-    </Attendance>
-    <SClass>AI</SClass>
-  </user>
-  <user>
     <Id>23</Id>
     <Name>ahmed</Name>
     <Email>a@gmail.com</Email>

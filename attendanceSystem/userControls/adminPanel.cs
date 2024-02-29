@@ -32,6 +32,7 @@ namespace attendanceSystem.userControls
                 var columnName = usersGridView.Columns[e.ColumnIndex].Name;
                 var clickedUserId = usersGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
                 var clickedUserName = usersGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                var clickedUserRole = usersGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
 
                 //Console.WriteLine(columnName, clickedUserName, clickedUserId);
 
@@ -57,6 +58,25 @@ namespace attendanceSystem.userControls
                 else if (columnName == "editBtn")
                 {
                     // edit user
+                    try
+                    {
+                        mainForm parentForm = (mainForm)this.FindForm();
+                        if (parentForm != null)
+                        {
+                            UserControlAddUser userControlAddUser = new UserControlAddUser();
+                            userControlAddUser.UID = clickedUserId;
+                            parentForm.displayUserControl(userControlAddUser);
+                            
+                            if (clickedUserRole == "Teacher")
+                                userControlAddUser.SelectTab(3);
+                            else
+                                userControlAddUser.SelectTab(2);
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+
+                    }
                 }
             }
         }

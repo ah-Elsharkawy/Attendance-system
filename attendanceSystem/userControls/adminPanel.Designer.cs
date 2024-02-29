@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             usersGridView = new DataGridView();
+            searchByNameBox = new TextBox();
+            nxtPgaeBtn = new Button();
+            prvPageBtn = new Button();
             userId = new DataGridViewTextBoxColumn();
             userName = new DataGridViewTextBoxColumn();
             userEmail = new DataGridViewTextBoxColumn();
             userRole = new DataGridViewTextBoxColumn();
             editBtn = new DataGridViewButtonColumn();
             deleteBtn = new DataGridViewButtonColumn();
-            searchByNameBox = new TextBox();
-            nxtPgaeBtn = new Button();
-            prvPageBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)usersGridView).BeginInit();
             SuspendLayout();
             // 
@@ -45,11 +47,13 @@
             // 
             usersGridView.AllowUserToAddRows = false;
             usersGridView.AllowUserToDeleteRows = false;
-            usersGridView.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.BackColor = Color.LightSkyBlue;
+            usersGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            usersGridView.BackgroundColor = Color.MintCream;
             usersGridView.BorderStyle = BorderStyle.None;
             usersGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             usersGridView.Columns.AddRange(new DataGridViewColumn[] { userId, userName, userEmail, userRole, editBtn, deleteBtn });
-            usersGridView.GridColor = Color.White;
+            usersGridView.GridColor = Color.MediumBlue;
             usersGridView.Location = new Point(40, 123);
             usersGridView.Name = "usersGridView";
             usersGridView.ReadOnly = true;
@@ -57,6 +61,34 @@
             usersGridView.Size = new Size(810, 277);
             usersGridView.TabIndex = 0;
             usersGridView.CellContentClick += usersGridView_CellContentClick;
+            // 
+            // searchByNameBox
+            // 
+            searchByNameBox.Location = new Point(315, 59);
+            searchByNameBox.Name = "searchByNameBox";
+            searchByNameBox.Size = new Size(249, 27);
+            searchByNameBox.TabIndex = 1;
+            searchByNameBox.TextChanged += searchByNameBox_TextChanged;
+            // 
+            // nxtPgaeBtn
+            // 
+            nxtPgaeBtn.Location = new Point(449, 406);
+            nxtPgaeBtn.Name = "nxtPgaeBtn";
+            nxtPgaeBtn.Size = new Size(94, 29);
+            nxtPgaeBtn.TabIndex = 2;
+            nxtPgaeBtn.Text = "nextPage";
+            nxtPgaeBtn.UseVisualStyleBackColor = true;
+            nxtPgaeBtn.Click += nxtPgaeBtn_Click;
+            // 
+            // prvPageBtn
+            // 
+            prvPageBtn.Location = new Point(294, 406);
+            prvPageBtn.Name = "prvPageBtn";
+            prvPageBtn.Size = new Size(94, 29);
+            prvPageBtn.TabIndex = 3;
+            prvPageBtn.Text = "prevPage";
+            prvPageBtn.UseVisualStyleBackColor = true;
+            prvPageBtn.Click += prvPageBtn_Click;
             // 
             // userId
             // 
@@ -92,6 +124,9 @@
             // 
             // editBtn
             // 
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(128, 128, 255);
+            editBtn.DefaultCellStyle = dataGridViewCellStyle2;
             editBtn.HeaderText = "Edit";
             editBtn.MinimumWidth = 6;
             editBtn.Name = "editBtn";
@@ -109,34 +144,6 @@
             deleteBtn.Text = "delete";
             deleteBtn.UseColumnTextForButtonValue = true;
             deleteBtn.Width = 125;
-            // 
-            // searchByNameBox
-            // 
-            searchByNameBox.Location = new Point(315, 59);
-            searchByNameBox.Name = "searchByNameBox";
-            searchByNameBox.Size = new Size(249, 27);
-            searchByNameBox.TabIndex = 1;
-            searchByNameBox.TextChanged += searchByNameBox_TextChanged;
-            // 
-            // nxtPgaeBtn
-            // 
-            nxtPgaeBtn.Location = new Point(449, 406);
-            nxtPgaeBtn.Name = "nxtPgaeBtn";
-            nxtPgaeBtn.Size = new Size(94, 29);
-            nxtPgaeBtn.TabIndex = 2;
-            nxtPgaeBtn.Text = "nextPage";
-            nxtPgaeBtn.UseVisualStyleBackColor = true;
-            nxtPgaeBtn.Click += nxtPgaeBtn_Click;
-            // 
-            // prvPageBtn
-            // 
-            prvPageBtn.Location = new Point(294, 406);
-            prvPageBtn.Name = "prvPageBtn";
-            prvPageBtn.Size = new Size(94, 29);
-            prvPageBtn.TabIndex = 3;
-            prvPageBtn.Text = "prevPage";
-            prvPageBtn.UseVisualStyleBackColor = true;
-            prvPageBtn.Click += prvPageBtn_Click;
             // 
             // adminPanel
             // 
@@ -158,14 +165,14 @@
         #endregion
 
         public DataGridView usersGridView;
+        private TextBox searchByNameBox;
+        private Button nxtPgaeBtn;
+        private Button prvPageBtn;
         private DataGridViewTextBoxColumn userId;
         private DataGridViewTextBoxColumn userName;
         private DataGridViewTextBoxColumn userEmail;
         private DataGridViewTextBoxColumn userRole;
         private DataGridViewButtonColumn editBtn;
         private DataGridViewButtonColumn deleteBtn;
-        private TextBox searchByNameBox;
-        private Button nxtPgaeBtn;
-        private Button prvPageBtn;
     }
 }

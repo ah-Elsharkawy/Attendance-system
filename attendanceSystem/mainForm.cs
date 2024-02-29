@@ -27,28 +27,26 @@ namespace attendanceSystem
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            Admin admin = new Admin("AdminName", "admin@example.com", "adminPassword", "Admin");
-
-            // Creating an instance of Teacher
-            Teacher teacher = new Teacher("TeacherName", "teacher@example.com", "teacherPassword", "Teacher", new List<string> { "ClassA", "ClassB" });
-
-            // Creating an instance of Student
-            Student student = new Student("StudentName", "student@example.com", "studentPassword", "Student", "ClassA");
-
-
             currentUserNameLabel.Text = DataManager.currentUser.Name;
             var role = DataManager.currentUser.Role;
             if (role == "Admin")
+            {
                 attendanceBtn.Hide();
+                adminPanel adminPanel = new adminPanel();
+                displayUserControl(adminPanel);
+            }
+                
             else if (role == "Teacher")
             {
-                button2.Hide();
+                Attendace attendace = new Attendace();
+                displayUserControl(attendace);
                 usersBtn.Hide();
                 addUserBtn.Hide();
             }
             else
             {
-                button2.Hide();
+                UserControlReport userControlReport = new UserControlReport();
+                displayUserControl(userControlReport);
                 usersBtn.Hide();
                 addUserBtn.Hide();
                 attendanceBtn.Hide();
@@ -84,6 +82,7 @@ namespace attendanceSystem
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
             // clear current user data before closing
+            DataManager.currentUser = null;
             MoveSidePanel(LogoutBtn);
             DialogResult result = MessageBox.Show("Are you sure?", "Log out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -97,13 +96,10 @@ namespace attendanceSystem
             sidePanel.Location = new Point(0, button.Location.Y - 164);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MoveSidePanel(button2);
-        }
-
         private void usersBtn_Click(object sender, EventArgs e)
         {
+            adminPanel adminPanel = new adminPanel();
+            displayUserControl(adminPanel);
             MoveSidePanel(usersBtn);
         }
 
@@ -120,11 +116,16 @@ namespace attendanceSystem
 
         private void addUserBtn_Click(object sender, EventArgs e)
         {
+            UserControlAddUser userControlAddUser = new UserControlAddUser();
+            displayUserControl(userControlAddUser);
             MoveSidePanel(addUserBtn);
         }
 
         private void reportsBtn_Click(object sender, EventArgs e)
         {
+            
+            UserControlReport userControlReport = new UserControlReport();
+            displayUserControl(userControlReport);
             MoveSidePanel(reportsBtn);
         }
 
@@ -141,6 +142,12 @@ namespace attendanceSystem
         private void adminPanel1_Load(object sender, EventArgs e)
         {
             
+        }
+
+        public void displayUserControl(UserControl userControl)
+        {
+            pagesPanel.Controls.Clear();
+            pagesPanel.Controls.Add(userControl);
         }
     }
 }
