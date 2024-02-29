@@ -51,7 +51,7 @@ namespace attendanceSystem.userControls
                         {
                             Console.WriteLine(ex);
                         }
-                        
+
                     }
                 }
 
@@ -66,14 +66,14 @@ namespace attendanceSystem.userControls
                             UserControlAddUser userControlAddUser = new UserControlAddUser();
                             userControlAddUser.UID = clickedUserId;
                             parentForm.displayUserControl(userControlAddUser);
-                            
+
                             if (clickedUserRole == "Teacher")
                                 userControlAddUser.SelectTab(3);
                             else
                                 userControlAddUser.SelectTab(2);
                         }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
 
                     }
@@ -133,7 +133,7 @@ namespace attendanceSystem.userControls
 
         private void nxtPgaeBtn_Click(object sender, EventArgs e)
         {
-            if(currentPage+1 >= getPagesCount())
+            if (currentPage + 1 >= getPagesCount())
                 return;
 
             currentPage++;
@@ -158,7 +158,7 @@ namespace attendanceSystem.userControls
 
         private void displayUsersInCurrentPage()
         {
-      
+
             string newText = searchByNameBox.Text;
             //Console.WriteLine("Text changed: " + newText);
             string searchResultUsers = DataManager.getUsersByName(newText);
@@ -180,11 +180,26 @@ namespace attendanceSystem.userControls
                 usersGridView.Rows.Clear();
                 return;
             }
-                
+
 
             int count = Math.Min(usersPerPage, remainingItems);
 
             displayUsersInTheGrid(deserilizaedUsers(searchResultUsers).GetRange(startIndex, count));
+        }
+
+        private void searchByNameBox_Enter(object sender, EventArgs e)
+        {
+            searchByNameBox.Text = "";
+            searchByNameBox.ForeColor = Color.Black;
+        }
+
+        private void searchByNameBox_Leave(object sender, EventArgs e)
+        {
+            if(searchByNameBox.Text.Trim().Length <= 0)
+            {
+                searchByNameBox.Text = "search by name";
+                searchByNameBox.ForeColor = Color.DarkGray;
+            }
         }
     }
 }
