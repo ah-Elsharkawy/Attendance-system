@@ -42,20 +42,18 @@
             labelError = new Label();
             labelFP = new Label();
             groupBox1 = new GroupBox();
-            buttonLogin = new Button();
-            pictureBoxError = new PictureBox();
             pictureBoxShow = new PictureBox();
             pictureBoxHide = new PictureBox();
-            pictureBox2 = new PictureBox();
+            buttonLogin = new Button();
+            pictureBoxError = new PictureBox();
             toolTip = new ToolTip(components);
             pictureBoxMinimize = new PictureBox();
             pictureBoxClose = new PictureBox();
             pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxError).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShow).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxError).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -72,7 +70,6 @@
             label3.Size = new Size(362, 32);
             label3.TabIndex = 0;
             label3.Text = "Attendance Management ";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -85,7 +82,6 @@
             label4.Size = new Size(106, 32);
             label4.TabIndex = 0;
             label4.Text = "System";
-            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -98,7 +94,6 @@
             label5.Size = new Size(282, 33);
             label5.TabIndex = 0;
             label5.Text = "By C# Model Design";
-            label5.Click += label5_Click;
             // 
             // label6
             // 
@@ -132,7 +127,7 @@
             label1.Size = new Size(58, 19);
             label1.TabIndex = 0;
             label1.Text = "Email:";
-            label1.Click += label1_Click;
+
             // 
             // textBoxEmail
             // 
@@ -153,12 +148,11 @@
             label2.Size = new Size(92, 19);
             label2.TabIndex = 0;
             label2.Text = "Password:";
-            label2.Click += label2_Click;
             // 
             // textBoxPassword
             // 
             textBoxPassword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxPassword.Location = new Point(79, 152);
+            textBoxPassword.Location = new Point(79, 153);
             textBoxPassword.Margin = new Padding(2, 3, 2, 3);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(222, 28);
@@ -193,17 +187,16 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(pictureBoxShow);
+            groupBox1.Controls.Add(pictureBoxHide);
             groupBox1.Controls.Add(buttonLogin);
             groupBox1.Controls.Add(labelFP);
             groupBox1.Controls.Add(labelError);
             groupBox1.Controls.Add(pictureBoxError);
-            groupBox1.Controls.Add(pictureBoxShow);
             groupBox1.Controls.Add(textBoxPassword);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(textBoxEmail);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(pictureBoxHide);
-            groupBox1.Controls.Add(pictureBox2);
             groupBox1.Location = new Point(154, 160);
             groupBox1.Margin = new Padding(2, 3, 2, 3);
             groupBox1.Name = "groupBox1";
@@ -212,7 +205,36 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Please Login First";
-            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // pictureBoxShow
+            // 
+            pictureBoxShow.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxShow.Cursor = Cursors.Hand;
+            pictureBoxShow.Image = (Image)resources.GetObject("pictureBoxShow.Image");
+            pictureBoxShow.Location = new Point(266, 153);
+            pictureBoxShow.Margin = new Padding(2, 3, 2, 3);
+            pictureBoxShow.Name = "pictureBoxShow";
+            pictureBoxShow.Size = new Size(35, 28);
+            pictureBoxShow.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxShow.TabIndex = 7;
+            pictureBoxShow.TabStop = false;
+            pictureBoxShow.Click += pictureBoxShow_Click;
+            pictureBoxShow.MouseHover += pictureBoxShow_MouseHover;
+            // 
+            // pictureBoxHide
+            // 
+            pictureBoxHide.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxHide.Cursor = Cursors.Hand;
+            pictureBoxHide.Image = Properties.Resources.icons8_hide_96;
+            pictureBoxHide.Location = new Point(266, 153);
+            pictureBoxHide.Margin = new Padding(2, 3, 2, 3);
+            pictureBoxHide.Name = "pictureBoxHide";
+            pictureBoxHide.Size = new Size(35, 28);
+            pictureBoxHide.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxHide.TabIndex = 8;
+            pictureBoxHide.TabStop = false;
+            pictureBoxHide.Click += pictureBoxHide_Click;
+            pictureBoxHide.MouseHover += pictureBoxHide_MouseHover;
             // 
             // buttonLogin
             // 
@@ -245,49 +267,6 @@
             pictureBoxError.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxError.TabIndex = 5;
             pictureBoxError.TabStop = false;
-            pictureBoxError.Click += pictureBoxError_Click;
-            // 
-            // pictureBoxShow
-            // 
-            pictureBoxShow.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxShow.Cursor = Cursors.Hand;
-            pictureBoxShow.Image = (Image)resources.GetObject("pictureBoxShow.Image");
-            pictureBoxShow.Location = new Point(266, 152);
-            pictureBoxShow.Margin = new Padding(2, 3, 2, 3);
-            pictureBoxShow.Name = "pictureBoxShow";
-            pictureBoxShow.Size = new Size(35, 28);
-            pictureBoxShow.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxShow.TabIndex = 4;
-            pictureBoxShow.TabStop = false;
-            pictureBoxShow.Click += label2_Click;
-            pictureBoxShow.MouseHover += pictureBoxShow_MouseHover;
-            // 
-            // pictureBoxHide
-            // 
-            pictureBoxHide.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxHide.Cursor = Cursors.Hand;
-            pictureBoxHide.Location = new Point(266, 152);
-            pictureBoxHide.Margin = new Padding(2, 3, 2, 3);
-            pictureBoxHide.Name = "pictureBoxHide";
-            pictureBoxHide.Size = new Size(35, 24);
-            pictureBoxHide.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxHide.TabIndex = 7;
-            pictureBoxHide.TabStop = false;
-            pictureBoxHide.Click += pictureBoxHide_Click;
-            pictureBoxHide.MouseHover += pictureBoxHide_MouseHover;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox2.Cursor = Cursors.Hand;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(266, 152);
-            pictureBox2.Margin = new Padding(2, 3, 2, 3);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(35, 24);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 8;
-            pictureBox2.TabStop = false;
             // 
             // pictureBoxMinimize
             // 
@@ -329,7 +308,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click_1;
             // 
             // FormLogin
             // 
@@ -357,10 +335,9 @@
             Load += FormLogin_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxError).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShow).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxError).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMinimize).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -381,15 +358,14 @@
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.PictureBox pictureBoxShow;
         private System.Windows.Forms.PictureBox pictureBoxError;
         private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Label labelFP;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.PictureBox pictureBoxHide;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox pictureBoxShow;
+        private PictureBox pictureBoxHide;
     }
 }
