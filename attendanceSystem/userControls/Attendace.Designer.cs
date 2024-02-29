@@ -121,7 +121,6 @@
             // 
             // dataGridViewStudentAtt
             // 
-            dataGridViewStudentAtt.AllowUserToAddRows = false;
             dataGridViewStudentAtt.AllowUserToDeleteRows = false;
             dataGridViewStudentAtt.AllowUserToResizeColumns = false;
             dataGridViewStudentAtt.AllowUserToResizeRows = false;
@@ -143,7 +142,6 @@
             Column1.HeaderText = "Student Name";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
-            Column1.ReadOnly = true;
             // 
             // RegNo
             // 
@@ -151,7 +149,6 @@
             RegNo.HeaderText = "RegNo";
             RegNo.MinimumWidth = 6;
             RegNo.Name = "RegNo";
-            RegNo.ReadOnly = true;
             // 
             // Column3
             // 
@@ -159,7 +156,6 @@
             Column3.HeaderText = "Class";
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
-            Column3.ReadOnly = true;
             // 
             // Column4
             // 
@@ -167,7 +163,6 @@
             Column4.HeaderText = "Date";
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
-            Column4.ReadOnly = true;
             // 
             // Status
             // 
@@ -175,7 +170,6 @@
             Status.Items.AddRange(new object[] { "Absent", "Present" });
             Status.MinimumWidth = 6;
             Status.Name = "Status";
-            Status.ReadOnly = true;
             // 
             // panel5
             // 
