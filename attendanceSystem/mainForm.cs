@@ -6,17 +6,23 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace attendanceSystem
 {
     public partial class mainForm : Form
     {
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
         public mainForm()
         {
             InitializeComponent();
+            AllocConsole();
         }
 
         private void mainForm_Load(object sender, EventArgs e)
@@ -29,7 +35,7 @@ namespace attendanceSystem
             // Creating an instance of Student
             Student student = new Student("StudentName", "student@example.com", "studentPassword", "Student", "ClassA");
 
-            
+
             currentUserNameLabel.Text = DataManager.currentUser.Name;
             var role = DataManager.currentUser.Role;
             if (role == "Admin")
@@ -125,6 +131,16 @@ namespace attendanceSystem
         private void button2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void userControlReport2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adminPanel1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

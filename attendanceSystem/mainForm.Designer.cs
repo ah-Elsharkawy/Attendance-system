@@ -45,7 +45,7 @@
             panel5 = new Panel();
             currentUserNameLabel = new Label();
             label3 = new Label();
-            userControlReport2 = new userControls.UserControlReport();
+            adminPanel1 = new userControls.adminPanel();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
@@ -68,7 +68,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(252, 673);
+            panel1.Size = new Size(252, 521);
             panel1.TabIndex = 0;
             // 
             // LogoutBtn
@@ -179,7 +179,7 @@
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 164);
             panel4.Name = "panel4";
-            panel4.Size = new Size(8, 509);
+            panel4.Size = new Size(8, 357);
             panel4.TabIndex = 1;
             // 
             // sidePanel
@@ -206,7 +206,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = SystemColors.Window;
-            label1.Location = new Point(12, 122);
+            label1.Location = new Point(8, 133);
             label1.Name = "label1";
             label1.Size = new Size(238, 20);
             label1.TabIndex = 1;
@@ -273,24 +273,23 @@
             label3.TabIndex = 2;
             label3.Text = "Welcome: ";
             // 
-            // userControlReport2
+            // adminPanel1
             // 
-            userControlReport2.BackColor = Color.White;
-            userControlReport2.Dock = DockStyle.Fill;
-            userControlReport2.Font = new Font("Century Gothic", 9.75F);
-            userControlReport2.Location = new Point(252, 130);
-            userControlReport2.Margin = new Padding(3, 4, 3, 4);
-            userControlReport2.Name = "userControlReport2";
-            userControlReport2.Size = new Size(930, 543);
-            userControlReport2.TabIndex = 3;
+            adminPanel1.BackColor = Color.White;
+            adminPanel1.Dock = DockStyle.Fill;
+            adminPanel1.Location = new Point(252, 130);
+            adminPanel1.Name = "adminPanel1";
+            adminPanel1.Size = new Size(930, 391);
+            adminPanel1.TabIndex = 3;
+            adminPanel1.Load += adminPanel1_Load;
             // 
             // mainForm
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1182, 673);
-            Controls.Add(userControlReport2);
+            ClientSize = new Size(1182, 521);
+            Controls.Add(adminPanel1);
             Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(panel1);
@@ -332,6 +331,6 @@
         private Button usersBtn;
         private Button LogoutBtn;
         private Button addUserBtn;
-        private userControls.UserControlReport userControlReport2;
+        private userControls.adminPanel adminPanel1;
     }
 }

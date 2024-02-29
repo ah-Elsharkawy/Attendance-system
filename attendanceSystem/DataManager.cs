@@ -83,7 +83,35 @@ namespace attendanceSystem
 
         public static string getUsers()
         {
-            return DataDocument.DocumentElement.OuterXml;
+            try
+            {
+                return DataDocument.DocumentElement.OuterXml;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return "";
+            }
+            
+        }
+
+        public static string getUsersByName(string subName)
+        {
+            try
+            {
+                XslCompiledTransform usersFilterByName = new();
+                usersFilterByName.Load($@"{dataFolderPath}\searchByNameFilter.xslt");
+
+                XsltArgumentList xsltArgs = new XsltArgumentList();
+                xsltArgs.AddParam("substring", "", subName);
+
+                return GetXmlDocumentFromXslt(usersFilterByName, xsltArgs).DocumentElement.OuterXml;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return "";
+            }
         }
 
 
@@ -160,18 +188,6 @@ namespace attendanceSystem
             xsltArgs.AddParam("userEmail", "", email);
 
             return GetXmlDocumentFromXslt(xslt, xsltArgs);
-        }
-
-        public static XmlDocument getUserXmlByClass(int Id)
-        {
-            XslCompiledTransform xslt = new();
-            xslt.Load($@"{dataFolderPath}\filterByClass.xslt");
-
-            XsltArgumentList xsltArgs = new XsltArgumentList();
-            xsltArgs.AddParam("userId", "", Id);
-
-            return GetXmlDocumentFromXslt(xslt, xsltArgs);
-
         }
 
         public static void addUser()

@@ -42,36 +42,46 @@ namespace attendanceSystem.userControls
 
         private void UserControlReport_VisibleChanged(object sender, EventArgs e)
         {
-            // When the UserControl becomes visible, load the data
-            if (this.Visible)
-            {
-                LoadData();
-            }
+            // loading data here causes error
+            //When the UserControl becomes visible, load the data
+            //if (this.Visible)
+            //{
+            //    LoadData();
+            //}
         }
 
         public void LoadData()
         {
-            DataManager.getUserXmlByClass("PD");
+            ParseAndPopulateDataGridView();
 
         }
 
         private void ParseAndPopulateDataGridView()
         {
-            XmlDocument xmlDocument = DataManager.getUserXmlByClass("PD");
-            // Clear existing rows
+            XmlDocument xmlDocument = DataManager.getUserXmlByClass("OS");
+            //Clear existing rows
             //dataGridView1.Rows.Clear();
+            XmlNodeList l = xmlDocument.SelectNodes("//tr");
+            Console.WriteLine(l);
 
-            // Loop through each <tr> element in the transformed XML
-            foreach (XmlNode trNode in xmlDocument.SelectNodes("//tr"))
+            foreach(XmlNode e in l)
             {
-                // Extract data from <td> elements within <tr>
-                string studentId = trNode.SelectSingleNode("td[1]").InnerText;
-                string studentName = trNode.SelectSingleNode("td[2]").InnerText;
-                string studentClass = trNode.SelectSingleNode("td[3]").InnerText;
-
-                // Add a new row to custom DataGridView with extracted data
-                dataGridViewClassReport.Rows.Add(studentId, studentName, studentClass);
+                //  Console.WriteLine(e.SelectSingleNode("td[1]").InnerText, e.SelectSingleNode("td[2]").InnerText, e.SelectSingleNode("td[3]").InnerText);
             }
+
+
+            //Loop through each<tr> element in the transformed XML
+            //foreach (XmlNode trNode in xmlDocument.SelectNodes("//tr"))
+            //{
+            //    // Extract data from <td> elements within <tr>
+            //    string studentId = trNode.SelectSingleNode("td[1]").InnerText;
+            //    string studentName = trNode.SelectSingleNode("td[2]").InnerText;
+            //    string studentClass = trNode.SelectSingleNode("td[3]").InnerText;
+
+            //    Console.WriteLine(studentId, studentName, studentClass);
+            //    // Add a new row to custom DataGridView with extracted data
+            //    //dataGridViewClassReport.Rows.Add(studentId, studentName, studentClass);
+            //}
         }
 
         private void tabPage1_Click(object sender, EventArgs e)

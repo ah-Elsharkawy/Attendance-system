@@ -15,7 +15,7 @@ namespace attendanceSystem
         public static T Deserialize<T>(string xmlData, string role)
         {
             xmlData = $"<{role}>{xmlData}</{role}>";
-            Console.WriteLine(xmlData);
+            //Console.WriteLine(xmlData);
             XmlSerializer serializer = new XmlSerializer(typeof(T));
             using (StringReader reader = new StringReader(xmlData))
             {
