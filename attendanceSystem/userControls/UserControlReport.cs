@@ -51,17 +51,41 @@ namespace attendanceSystem.userControls
                     studentsAttendance = GetAllStudentsAttendance(@"..\..\..\Data\data.xml");
                 }
 
-                // Add rows to DataGridView
+                // Dictionary to store the total absence days for each student
+                Dictionary<string, int> studentAbsenceDays = new Dictionary<string, int>();
+
+                // Calculate total absence days for each student
+                // Calculate total absence days for each student
                 foreach (var studentAttendance in studentsAttendance)
                 {
-                    // Count absence days
-                    int absenceCount = studentAttendance.AttendanceStatus.Split(new[] { "absent" }, StringSplitOptions.RemoveEmptyEntries).Length;
+                    string studentKey = studentAttendance.StudentID + "|" + studentAttendance.Name;
+
+                    if (studentAttendance.AttendanceStatus == "Absent")
+                    {
+                        if (studentAbsenceDays.ContainsKey(studentKey))
+                        {
+                            // If student already exists in the dictionary, increment absence days count
+                            studentAbsenceDays[studentKey]++;
+                        }
+                        else
+                        {
+                            // If student doesn't exist in the dictionary, initialize absence days count to 1
+                            studentAbsenceDays.Add(studentKey, 1);
+                        }
+                    }
+                }
+
+
+                // Add rows to DataGridView
+                foreach (var studentInfo in studentAbsenceDays)
+                {
+                    string[] studentData = studentInfo.Key.Split('|');
+                    string studentID = studentData[0];
+                    string studentName = studentData[1];
+                    int absenceCount = studentInfo.Value;
 
                     // Add row to DataGridView
-                    dataGridViewClassReport.Rows.Add(
-                        studentAttendance.StudentID,
-                        studentAttendance.Name,
-                        absenceCount);
+                    dataGridViewClassReport.Rows.Add(studentID, studentName, absenceCount);
                 }
 
             }
@@ -70,6 +94,7 @@ namespace attendanceSystem.userControls
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 

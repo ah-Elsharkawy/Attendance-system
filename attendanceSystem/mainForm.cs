@@ -159,9 +159,9 @@ namespace attendanceSystem
             pagesPanel.Controls.Add(userControl);
         }
 
-        private void userControlReport2_Load(object sender, EventArgs e)
-        {
+        //private void userControlReport2_Load(object sender, EventArgs e)
+        //{
 
-        }
+        //}
     }
 }
