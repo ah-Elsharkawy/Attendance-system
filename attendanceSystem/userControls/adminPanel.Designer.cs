@@ -40,6 +40,7 @@
             searchByNameBox = new TextBox();
             nxtPgaeBtn = new Button();
             prvPageBtn = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)usersGridView).BeginInit();
             SuspendLayout();
             // 
@@ -124,10 +125,7 @@
             searchByNameBox.Name = "searchByNameBox";
             searchByNameBox.Size = new Size(249, 27);
             searchByNameBox.TabIndex = 1;
-            searchByNameBox.Text = "search by name";
             searchByNameBox.TextChanged += searchByNameBox_TextChanged;
-            searchByNameBox.Enter += searchByNameBox_Enter;
-            searchByNameBox.Leave += searchByNameBox_Leave;
             // 
             // nxtPgaeBtn
             // 
@@ -149,11 +147,21 @@
             prvPageBtn.UseVisualStyleBackColor = true;
             prvPageBtn.Click += prvPageBtn_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(165, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(114, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Search by name";
+            // 
             // adminPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(label1);
             Controls.Add(prvPageBtn);
             Controls.Add(nxtPgaeBtn);
             Controls.Add(searchByNameBox);
@@ -178,5 +186,6 @@
         private DataGridViewTextBoxColumn userRole;
         private DataGridViewButtonColumn editBtn;
         private DataGridViewButtonColumn deleteBtn;
+        private Label label1;
     }
 }
